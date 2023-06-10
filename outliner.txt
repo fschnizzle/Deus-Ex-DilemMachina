@@ -2,26 +2,56 @@ Rough UML Class Outline
 
 @startuml
 
-abstract class Entity {
-    + String species
-    + boolean isPet
-    + String bodyType
+
+enum Gender {
+    FEMALE
+    MALE
+    UNKNOWN
 }
 
-class Human extends Entity {
-    + String gender
-    + int age
-    + String profession
-    + boolean pregnant
+enum BodyType {
+    AVERAGE
+    ATHLETIC
+    OVERWEIGHT
+    UNSPECIFIED
 }
 
-class Animal extends Entity {
-    + boolean isWild
+enum AgeCategory {
+    BABY
+    CHILD
+    ADULT
+    SENIOR
+}
+
+enum Profession {
+    DOCTOR
+    CEO
+    CRIMINAL
+    HOMELESS
+    UNEMPLOYED
+    NONE
+}
+
+class Character {
+    - age: int
+    - gender: Gender
+    - bodyType: BodyType
+}
+
+class Human extends Character{
+    - profession: Profession
+    - isPregnant: boolean
+    - ageCategory: AgeCategory
+}
+
+class Animal extends Character{
+    - species: String
+    - isPet: boolean
 }
 
 class Location {
     + boolean isTrespassing
-    + List<Entity> entities
+    + List<Character> characters
 }
 
 class Scenario {
@@ -78,8 +108,8 @@ src/
 │   │   │   ├── DecisionAlgorithm.java
 │   │   │   ├── FirstLocationAlgorithm.java
 │   │   │   └── OtherAlgorithmImplementations.java
-│   │   ├── entity/
-│   │   │   ├── Entity.java
+│   │   ├── character/
+│   │   │   ├── Character.java
 │   │   │   ├── Human.java
 │   │   │   └── Animal.java
 │   │   ├── location/
@@ -100,10 +130,8 @@ src/
 └── test (optional unit tests)/
     └── java/
         ├── decision/
-        ├── entity/
+        ├── character/
         ├── location/
         ├── scenario/
         ├── statistics/
         └── RescueBotTest.java
-
-@enduml
