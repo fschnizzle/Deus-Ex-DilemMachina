@@ -1,0 +1,24 @@
+         __
+ _(\    |@@|
+(__/\__ \--/ __
+   \___|----|  |   __
+       \ }{ /\ )_ / _\
+       /\__/\ \__O (_COMP90041
+      (--/\--)    \__/
+      _)(  )(_x
+     `---''---`
+
+    $$$$$$$\                                                    $$$$$$$\             $$\     
+    $$  __$$\                                                   $$  __$$\            $$ |    
+    $$ |  $$ | $$$$$$\   $$$$$$$\  $$$$$$$\ $$\   $$\  $$$$$$\  $$ |  $$ | $$$$$$\ $$$$$$\   
+    $$$$$$$  |$$  __$$\ $$  _____|$$  _____|$$ |  $$ |$$  __$$\ $$$$$$$\ |$$  __$$\\_$$  _|  
+    $$  __$$< $$$$$$$$ |\$$$$$$\  $$ /      $$ |  $$ |$$$$$$$$ |$$  __$$\ $$ /  $$ | $$ |    
+    $$ |  $$ |$$   ____| \____$$\ $$ |      $$ |  $$ |$$   ____|$$ |  $$ |$$ |  $$ | $$ |$$\ 
+    $$ |  $$ |\$$$$$$$\ $$$$$$$  |\$$$$$$$\ \$$$$$$  |\$$$$$$$\ $$$$$$$  |\$$$$$$  | \$$$$  |
+    \__|  \__| \_______|\_______/  \_______| \______/  \_______|\_______/  \______/   \____/ 
+
+Welcome to RescueBot!
+
+The idea of RescueBot is based on the Trolley Dilemma, a fictional scenario presenting a decision maker with a moral dilemma: prioritising whom to rescue. The scenario entails a natural disaster, which has multiple groups of actors stranded. The RescueBot is sent on its way to save one group at a time.
+
+The answers are not straightforward. There are a number of variables at play, which influence how people may feel about the decision: the number of actors, whether the people are trespassing, and personal characteristics that our RescueBot can somehow infer (people's body type, profession, gender, age, etc.). This program is a thought experiment, which explores how decisions should be made by auditing algorithms and collecting user feedback. You, the user of this program, will be put into (im)possible situations, left to decide about life and potential death.

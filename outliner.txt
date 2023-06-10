@@ -1,0 +1,109 @@
+Rough UML Class Outline
+
+@startuml
+
+abstract class Entity {
+    + String species
+    + boolean isPet
+    + String bodyType
+}
+
+class Human extends Entity {
+    + String gender
+    + int age
+    + String profession
+    + boolean pregnant
+}
+
+class Animal extends Entity {
+    + boolean isWild
+}
+
+class Location {
+    + boolean isTrespassing
+    + List<Entity> entities
+}
+
+class Scenario {
+    + String emergencyDetails
+    + List<Location> locations
+}
+
+interface DecisionAlgorithm {
+    + decide(Scenario): Location
+}
+
+class User {
+    + List<Decision> decisions
+    + Statistics statistics
+}
+
+class RescueBot {
+    + DecisionAlgorithm decisionAlgorithm
+    + rescue(Scenario): void
+}
+
+class Statistics {
+    + Map<String, Double> detailsPercentage
+}
+
+class AuditLog {
+    + String outputFile
+    + log(Decision): void
+}
+
+class ScenarioManager {
+    + List<Scenario> scenarios
+    + loadScenarios(String): void
+    + generateScenario(): Scenario
+}
+
+class Decision {
+    + User user
+    + Scenario scenario
+    + Location decision
+}
+
+@enduml
+
+_______________
+
+Rough Directory Outline 
+
+
+src/
+├── main/
+│   ├── java/
+│   │   ├── decision/
+│   │   │   ├── DecisionAlgorithm.java
+│   │   │   ├── FirstLocationAlgorithm.java
+│   │   │   └── OtherAlgorithmImplementations.java
+│   │   ├── entity/
+│   │   │   ├── Entity.java
+│   │   │   ├── Human.java
+│   │   │   └── Animal.java
+│   │   ├── location/
+│   │   │   └── Location.java
+│   │   ├── scenario/
+│   │   │   ├── Scenario.java
+│   │   │   └── ScenarioLoader.java
+│   │   ├── statistics/
+│   │   │   ├── Statistics.java
+│   │   │   └── StatisticLogger.java
+│   │   ├── RescueBot.java
+│   │   └── Main.java
+│   └── resources/
+│       ├── scenarios/
+│       │   └── example_scenario.txt
+│       └── logs/
+│           └── audit_log.txt
+└── test (optional unit tests)/
+    └── java/
+        ├── decision/
+        ├── entity/
+        ├── location/
+        ├── scenario/
+        ├── statistics/
+        └── RescueBotTest.java
+
+@enduml
