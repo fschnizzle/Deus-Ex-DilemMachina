@@ -5,6 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.Math;
 
+import main.java.character.Animal;
+import main.java.character.Human;
+
 /**
  * COMP90041, Sem1, 2023: Final Project
  * 
@@ -57,13 +60,17 @@ public class RescueBot {
         String welcomeFileName = "main/java/etc/welcome.ascii";
         printMessage(welcomeFileName);
 
-        // Load the scenarios
+        // Load the scenarios file
         // Print out the number of loaded scenarios
         System.out.println("{N} scenarios imported.");
 
         // Initiate Menu Loop
         Menu menu = new Menu();
         menu.runMenuLoop();
+
+        // TESTING
+        // Human ben = new Human(80, "Male", "ATHLETIC", "Hacker", true);
+        // System.out.println(ben.toString());
 
         // Exit the program
         System.exit(0);
