@@ -32,12 +32,12 @@ public class Location {
         // super(age, gender, bodyType);
         this.lat = new Coordinate(latVal, latCard);
         this.lon = new Coordinate(lonVal, lonCard);
-        this.isTrespassing = isTrespassing;
-        this.characters = new ArrayList<character>();
+        setIsTrespassing(isTrespassing);
+        setCharacters();
     }
 
     // Getters
-    public boolean getIsTresspassing() {
+    public boolean getIsTrespassing() {
         return this.isTrespassing;
     }
 
@@ -58,7 +58,7 @@ public class Location {
     }
 
     // Setters
-    public void setIsTresspassing(boolean isTrespassing) {
+    public void setIsTrespassing(boolean isTrespassing) {
         this.isTrespassing = isTrespassing;
     }
 
@@ -78,6 +78,10 @@ public class Location {
         this.characters = characters;
     }
 
+    public void setCharacters() {
+        this.characters = new ArrayList<character>();
+    }
+
     // Methods
     public String toString() {
         // First Line
@@ -91,7 +95,7 @@ public class Location {
 
         // Successive (character) Lines
         for (character entity : characters) {
-            locationDetails += entity.toString() + "\n";
+            locationDetails += "- " + entity.toString() + "\n";
         }
 
         return locationDetails;

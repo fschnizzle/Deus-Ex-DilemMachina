@@ -8,6 +8,7 @@ import java.lang.Math;
 import main.java.character.Animal;
 import main.java.character.Human;
 import main.java.location.Location;
+import main.java.scenario.Scenario;
 
 /**
  * COMP90041, Sem1, 2023: Final Project
@@ -69,11 +70,21 @@ public class RescueBot {
         Menu menu = new Menu();
         menu.runMenuLoop();
 
-        // TESTING
+        // MANUAL TESTING (instead of randomly generated or read from file)
+        Scenario sc1 = new Scenario("Flood");
         Location loc1 = new Location(13.7154, 'N', 150.9094, 'W', true);
         Human ben = new Human(0, "MALE", "AVERAGE", "Banker", false);
+        Animal kol = new Animal(10, "MALE", "ATHLETIC", "Koala", true);
+        Location loc2 = new Location(99.7154, 'N', 150.9094, 'W', false);
+        Human anne = new Human(30, "FEMALE", "ATHLETIC", "Midwife", true);
+        Human jil = new Human(80, "FEMALE", "ATHLETIC", "Midwife", true);
         loc1.addCharacter(ben);
-        System.out.println(loc1.toString());
+        loc1.addCharacter(kol);
+        loc2.addCharacter(anne);
+        loc2.addCharacter(jil);
+        sc1.addLocation(loc1);
+        sc1.addLocation(loc2);
+        System.out.println(sc1.toString());
 
         // Exit the program
         System.exit(0);
