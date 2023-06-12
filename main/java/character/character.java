@@ -1,19 +1,19 @@
 package main.java.character;
 
-public abstract class Character {
+public abstract class character {
     // Base Variables
     private int age;
     private String gender;
     private String bodyType;
 
     // Constructor
-    public Character(int age, String gender, String bodyType) {
+    public character(int age, String gender, String bodyType) {
         setAge(age);
         setGender(gender);
         setBodyType(bodyType);
     }
 
-    public Character() {
+    public character() {
         setAge(age);
     }
 

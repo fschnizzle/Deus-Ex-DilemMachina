@@ -7,6 +7,7 @@ import java.lang.Math;
 
 import main.java.character.Animal;
 import main.java.character.Human;
+import main.java.location.Location;
 
 /**
  * COMP90041, Sem1, 2023: Final Project
@@ -69,8 +70,10 @@ public class RescueBot {
         menu.runMenuLoop();
 
         // TESTING
-        // Human ben = new Human(80, "Male", "ATHLETIC", "Hacker", true);
-        // System.out.println(ben.toString());
+        Location loc1 = new Location(13.7154, 'N', 150.9094, 'W', true);
+        Human ben = new Human(0, "MALE", "AVERAGE", "Banker", false);
+        loc1.addCharacter(ben);
+        System.out.println(loc1.toString());
 
         // Exit the program
         System.exit(0);

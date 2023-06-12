@@ -1,6 +1,6 @@
 package main.java.character;
 
-public class Human extends Character {
+public class Human extends character {
     // Instance variables
     private String ageCategory;
     private String profession;
@@ -56,7 +56,8 @@ public class Human extends Character {
     // Methods
     public String toString() {
         return (this.getBodyType() + " " + this.getAgeCategory()
-                + (this.getAgeCategory() == "ADULT" ? " " + this.getProfession() + " " : " ") + this.getGender() + " "
+                + (this.getAgeCategory() == "ADULT" ? " " + this.getProfession() + " " : " ")
+                + (this.getGender() != "UNKNOWN" ? this.getGender() : "") + " "
                 + (this.getIsPregant() && this.getGender() == "Female" ? "pregnant" : "")).toLowerCase();
     }
 }

@@ -1,6 +1,6 @@
 package main.java.character;
 
-public class Animal extends Character {
+public class Animal extends character {
     // Instance variables
     private String species;
     private boolean isPet;
