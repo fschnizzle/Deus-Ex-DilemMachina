@@ -5,12 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.Math;
 
-import main.java.character.Animal;
-import main.java.character.Human;
-import main.java.location.Location;
-import main.java.scenario.Scenario;
-import main.java.User;
-
 /**
  * COMP90041, Sem1, 2023: Final Project
  * 
@@ -20,7 +14,7 @@ import main.java.User;
  */
 public class RescueBot {
 
-    private int scenariosImportedCount;
+    // private int scenariosImportedCount;
 
     /**
      * Decides whether to save the passengers or the pedestrians
@@ -59,38 +53,12 @@ public class RescueBot {
      * Program entry
      */
     public static void main(String[] args) {
-        // Print the welcome message
-        String welcomeFileName = "main/java/etc/welcome.ascii";
-        printMessage(welcomeFileName);
-
-        // Load the scenarios file
-        // Print out the number of loaded scenarios
-        System.out.println("{N} scenarios imported.");
 
         // Initiate Menu Loop
         Menu menu = new Menu();
         menu.runMenuLoop();
 
         // MANUAL TESTING (instead of randomly generated or read from file)
-        User user1 = new User();
-        Scenario sc1 = new Scenario("Flood");
-        Location loc1 = new Location(13.7154, 'N', 150.9094, 'W', true);
-        Human ben = new Human(35, "MALE", "AVERAGE", "Banker", false);
-        Animal kol = new Animal(10, "MALE", "ATHLETIC", "Koala", true);
-        Location loc2 = new Location(99.7154, 'N', 150.9094, 'W', false);
-        Human anne = new Human(30, "FEMALE", "ATHLETIC", "Midwife", true);
-        Human jil = new Human(80, "FEMALE", "ATHLETIC", "Midwife", true);
-        loc1.addCharacter(ben);
-        loc1.addCharacter(kol);
-        loc2.addCharacter(anne);
-        loc2.addCharacter(jil);
-        sc1.addLocation(loc1);
-        sc1.addLocation(loc2);
-        System.out.println(sc1.toString());
-        // user1.seenDict = new HashMap<String, Integer>();
-        // user1.getStatistics();
-        user1.updateStatistics(sc1, 2);
-        System.out.println(user1.showStatistics());
         // System.out.println(user1.seenDict.toString());
         // System.out.println(user1.savedDict.toString());
         // System.out.println(user1.displayStats());

@@ -13,9 +13,9 @@ public abstract class character {
         setBodyType(bodyType);
     }
 
-    public character() {
-        setAge(age);
-    }
+    // public character() {
+    //     setAge(age);
+    // }
 
     // Getters
     public int getAge() {

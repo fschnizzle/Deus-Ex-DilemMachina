@@ -1,27 +1,62 @@
 package main.java;
 
 import java.util.HashMap;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 import main.java.scenario.Scenario;
 import main.java.statistics.Statistics;
 import main.java.location.Location;
+import main.java.scenario.ScenarioLoader;
 
 public class User {
     // Instance Variables
-    // public HashMap<String, Integer> seenDict;
-    // public HashMap<String, Integer> savedDict;
     private boolean givesLogConsent;
     private Statistics statistics;
+    private ArrayList<Scenario> scenarios;
+    private ScenarioLoader scenarioLoader;
 
     // Constructors
     public User() {
+
+        // Load Scenarios
+        setScenarioLoader("/Users/flynnschneider/Desktop/RescueBots/Deus-Ex-DilemMachina/main/data/scenarios.csv");
+        try {
+            setScenarios();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
         setStatistics();
         // COMPLETE
     }
 
+    // public User(String filePath) {
+    // // Load Scenarios
+    // setScenarioLoader(filePath);
+    // try {
+    // setScenarios();
+    // } catch (FileNotFoundException e) {
+    // // TODO Auto-generated catch block
+    // e.printStackTrace();
+    // }
+
+    // setStatistics();
+    // // COMPLETE
+    // }
+
     // Getters
     public Statistics getStatistics() {
         return this.statistics;
+    }
+
+    public ArrayList<Scenario> getScenarios() {
+        return this.scenarios;
+    }
+
+    public ScenarioLoader getScenarioLoader() {
+        return this.scenarioLoader;
     }
 
     // // Setters
@@ -29,7 +64,25 @@ public class User {
         this.statistics = new Statistics();
     }
 
+    public void setScenarios() throws FileNotFoundException {
+        this.scenarios = this.scenarioLoader.loadScenarios();
+    }
+
+    public void setScenarioLoader(String filePath) {
+        this.scenarioLoader = new ScenarioLoader(filePath);
+    }
+
     // Methods
+    public void judgeScenarios() {
+        for (Scenario scenario : this.scenarios) {
+            System.out.println(scenario.toString());
+
+            // Prompt user for judgement
+            System.out.println("PICK ONE!");
+        }
+
+    }
+
     public void updateStatistics(Scenario scenario, int choice) {
         this.statistics.updateSeen(scenario);
         this.statistics.updateSaved(scenario, choice);

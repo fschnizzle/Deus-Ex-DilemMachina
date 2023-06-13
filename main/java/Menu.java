@@ -2,6 +2,12 @@ package main.java;
 
 import java.util.Scanner;
 
+import main.java.character.Animal;
+import main.java.character.Human;
+import main.java.location.Location;
+import main.java.scenario.Scenario;
+import main.java.User;
+
 public class Menu {
     private Scanner keyboard;
     private User user;
@@ -10,16 +16,17 @@ public class Menu {
     public Menu() {
         this.keyboard = new Scanner(System.in);
         setUser();
+        // this.user.sc
     }
 
     // Getters
-    public User getUser(User user) {
+    public User getUser() {
         return user;
     }
 
     // Setters
     public void setUser() {
-        this.user = new User();
+        this.user = new User(); // Calls to filepath DEFAULT
     }
 
     public void displayMenu() {
@@ -32,17 +39,53 @@ public class Menu {
     }
 
     public void runMenuLoop() {
+        // Print the welcome message
+        String welcomeFileName = "main/java/etc/welcome.ascii";
+        RescueBot.printMessage(welcomeFileName);
+
+        // Count the scenarios loaded
+        int N = this.getUser().getScenarioLoader().scenarioCount;
+
+        // Print out the number of loaded scenarios
+        System.out.println(N + " scenarios imported.");
+
         String input;
         do {
             displayMenu();
-            input = keyboard.nextLine().trim();
+            input = keyboard.nextLine().toLowerCase();
             handleUserInput(input);
         } while (!input.equals("q") && !input.equals("quit"));
     }
 
     public void handleUserInput(String input) {
         // Switch statement to handle different user input cases
-        System.out.print("You entered: " + input + "\n");
+        switch (input) {
+            case "judge":
+            case "j":
+                // Starts the user judge
+                this.user.judgeScenarios();
+                break;
 
+            case "run":
+            case "r":
+                // Code for running simulations goes here.
+                break;
+
+            case "audit":
+            case "a":
+                // Code for showing audit from history goes here.
+
+                System.out.println(this.user.showStatistics());
+                break;
+
+            case "quit":
+            case "q":
+                // Code for quitting the program goes here.
+                break;
+
+            default:
+                System.out.println("Invalid command. Please try again.");
+                break;
+        }
     }
 }

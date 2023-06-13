@@ -36,6 +36,8 @@ public class Location {
         setCharacters();
     }
 
+    // public Location()
+
     // Getters
     public boolean getIsTrespassing() {
         return this.isTrespassing;
