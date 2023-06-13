@@ -88,11 +88,12 @@ public class RescueBot {
         sc1.addLocation(loc2);
         System.out.println(sc1.toString());
         // user1.seenDict = new HashMap<String, Integer>();
-        user1.updateSeen(sc1);
-        user1.updateSaved(sc1, 1);
+        // user1.getStatistics();
+        user1.updateStatistics(sc1, 2);
+        System.out.println(user1.showStatistics());
         // System.out.println(user1.seenDict.toString());
         // System.out.println(user1.savedDict.toString());
-        System.out.println(user1.displayStats());
+        // System.out.println(user1.displayStats());
 
         // Exit the program
         System.exit(0);

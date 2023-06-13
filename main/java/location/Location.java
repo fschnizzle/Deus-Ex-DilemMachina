@@ -13,7 +13,7 @@ public class Location {
     private int numCharacters;
 
     // Lat and Lon sub classes
-    public class Coordinate {
+    static class Coordinate {
         private double value;
         private char cardinality; // 'N' for North, 'S' for South, 'E' for East, 'W' for west
 

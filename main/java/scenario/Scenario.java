@@ -24,7 +24,7 @@ public class Scenario {
     }
 
     public Location getLocation(int index) {
-        if (index >= 0 && index < locations.size() - 1) {
+        if (index >= 0 && index < locations.size()) {
             return locations.get(index);
         } else {
             throw new IndexOutOfBoundsException("Index out of range for locations list");

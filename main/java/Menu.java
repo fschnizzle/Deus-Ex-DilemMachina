@@ -4,10 +4,22 @@ import java.util.Scanner;
 
 public class Menu {
     private Scanner keyboard;
+    private User user;
 
     // Constructor
     public Menu() {
         this.keyboard = new Scanner(System.in);
+        setUser();
+    }
+
+    // Getters
+    public User getUser(User user) {
+        return user;
+    }
+
+    // Setters
+    public void setUser() {
+        this.user = new User();
     }
 
     public void displayMenu() {
