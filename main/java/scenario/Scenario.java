@@ -9,6 +9,8 @@ public class Scenario {
     private String emergencyDescription;
     private ArrayList<Location> locations;
     private int locationCount;
+    // TESTING
+    // public HashMap<String, Integer> seenDict;
 
     // Constructor
     public Scenario(String emergencyDescription) {
@@ -22,7 +24,7 @@ public class Scenario {
     }
 
     public Location getLocation(int index) {
-        if (index > 0 && index < locations.size()) {
+        if (index >= 0 && index < locations.size() - 1) {
             return locations.get(index);
         } else {
             throw new IndexOutOfBoundsException("Index out of range for locations list");
@@ -64,7 +66,6 @@ public class Scenario {
     }
 
     // Methods
-
     public String toString() {
         int locCounter = 1;
         String scenarioOutput = "======================================\n";
@@ -78,7 +79,6 @@ public class Scenario {
         }
 
         return scenarioOutput;
-
     }
 
 }
