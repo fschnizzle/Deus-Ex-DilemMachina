@@ -3,6 +3,7 @@ package main.java;
 import java.util.HashMap;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import main.java.scenario.Scenario;
 import main.java.statistics.Statistics;
@@ -73,12 +74,18 @@ public class User {
     }
 
     // Methods
-    public void judgeScenarios() {
+    public void judgeScenarios(Scanner keyboard) {
+        int deployTo;
         for (Scenario scenario : this.scenarios) {
+            // Print Scenario details
             System.out.println(scenario.toString());
 
             // Prompt user for judgement
-            System.out.println("PICK ONE!");
+            System.out.print("To which location should RescueBot be deployed?\n> ");
+            deployTo = keyboard.nextInt();
+
+            // Update their statistics
+            updateStatistics(scenario, deployTo);
         }
 
     }

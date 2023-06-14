@@ -29,7 +29,7 @@ public class Menu {
         this.user = new User(); // Calls to filepath DEFAULT
     }
 
-    public void displayMenu() {
+    public void displayMenuText() {
         // Print out the menu options
         System.out.println("Please enter one of the following commands to continue:");
         System.out.println("- judge scenarios: [judge] or [j]");
@@ -51,7 +51,7 @@ public class Menu {
 
         String input;
         do {
-            displayMenu();
+            displayMenuText();
             input = keyboard.nextLine().toLowerCase();
             handleUserInput(input);
         } while (!input.equals("q") && !input.equals("quit"));
@@ -63,7 +63,7 @@ public class Menu {
             case "judge":
             case "j":
                 // Starts the user judge
-                this.user.judgeScenarios();
+                this.user.judgeScenarios(this.keyboard);
                 break;
 
             case "run":

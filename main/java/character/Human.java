@@ -57,7 +57,7 @@ public class Human extends character {
     public String toString() {
         return (this.getBodyType() + " " + this.getAgeCategory()
                 + (this.getAgeCategory() == "ADULT" ? " " + this.getProfession() + " " : " ")
-                + (this.getGender() != "UNKNOWN" ? this.getGender() : "") + " "
-                + (this.getIsPregant() && this.getGender() == "Female" ? "pregnant" : "")).toLowerCase();
+                + (this.getGender() != "unknown" ? this.getGender() : "") + " "
+                + (this.getIsPregant() && this.getGender().equals("female") ? "pregnant" : "")).toLowerCase();
     }
 }

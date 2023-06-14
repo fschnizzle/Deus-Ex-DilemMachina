@@ -29,7 +29,6 @@ public class Location {
 
     // Constructors
     public Location(double latVal, char latCard, double lonVal, char lonCard, boolean isTrespassing) {
-        // super(age, gender, bodyType);
         this.lat = new Coordinate(latVal, latCard);
         this.lon = new Coordinate(lonVal, lonCard);
         setIsTrespassing(isTrespassing);
@@ -92,7 +91,7 @@ public class Location {
         locationDetails += this.lon.toString() + "\n";
 
         // Second and third Lines
-        locationDetails += "Tresspassing: " + (this.isTrespassing ? "yes" : "no") + "\n";
+        locationDetails += "Trespassing: " + (this.isTrespassing ? "yes" : "no") + "\n";
         locationDetails += characters.size() + " Characters:\n";
 
         // Successive (character) Lines

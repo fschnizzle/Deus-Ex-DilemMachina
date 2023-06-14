@@ -58,11 +58,6 @@ public class RescueBot {
         Menu menu = new Menu();
         menu.runMenuLoop();
 
-        // MANUAL TESTING (instead of randomly generated or read from file)
-        // System.out.println(user1.seenDict.toString());
-        // System.out.println(user1.savedDict.toString());
-        // System.out.println(user1.displayStats());
-
         // Exit the program
         System.exit(0);
     }

@@ -67,6 +67,14 @@ public class Statistics {
 
             // Loop over each Character String to derive attributes
             for (String charStr : charactersStrings) {
+                // Update trespassing attribute count
+                if (charStr.startsWith("Trespassing")) {
+                    // If "yes"
+                    if (charStr.substring(charStr.length() - 3).equals("yes")) {
+                        this.seenDict.put("trespassing", seenDict.getOrDefault("trespassing", 0) + 1);
+                    }
+                }
+                // Update character attributes
                 if (charStr.startsWith("-")) {
                     // Extracts list of attribute keywords with regex and string operations
                     String[] attributes = charStr.substring(2).trim().split("\\s+");
@@ -94,6 +102,13 @@ public class Statistics {
 
         // Loop over each Character String to derive attributes
         for (String charStr : charactersStrings) {
+            // Update trespassing attribute count
+            if (charStr.startsWith("Trespassing")) {
+                // If "yes"
+                if (charStr.substring(charStr.length() - 3).equals("yes")) {
+                    this.savedDict.put("trespassing", savedDict.getOrDefault("trespassing", 0) + 1);
+                }
+            }
             if (charStr.startsWith("-")) {
                 // Extracts list of attribute keywords with regex and string operations
                 String[] attributes = charStr.substring(2).trim().split("\\s+");
