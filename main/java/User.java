@@ -17,6 +17,8 @@ public class User {
     private ArrayList<Scenario> scenarios;
     private ScenarioLoader scenarioLoader;
 
+    final int SCENARIOS_PER_RUN = 3;
+
     // Constructors
     public User() {
         // Load Scenarios
@@ -39,6 +41,10 @@ public class User {
 
     public ArrayList<Scenario> getScenarios() {
         return this.scenarios;
+    }
+
+    public Scenario getScenario(int id) {
+        return getScenarios().get(id);
     }
 
     public ScenarioLoader getScenarioLoader() {
@@ -71,14 +77,14 @@ public class User {
         String consentResponse = null;
 
         // Initial consent prompt
-        System.out.print("Do you consent to have your decisions saved to a file? (yes/no)\n>");
+        System.out.print("Do you consent to have your decisions saved to a file? (yes/no)\n> ");
         consentResponse = keyboard.nextLine().toLowerCase();
 
         // Loops until valid "yes" / "no" reponse given to consent prompt
         do {
             if (consentResponse == null) {
                 System.out
-                        .print("Invalid response! Do you consent to have your decisions saved to a file? (yes/no)\n>");
+                        .print("Invalid response! Do you consent to have your decisions saved to a file? (yes/no)\n> ");
                 consentResponse = keyboard.nextLine().toLowerCase();
             }
             // Process consent response and update accordingly
@@ -117,7 +123,7 @@ public class User {
         do {
             // Call judge scenarios
             if (cont.equals("yes")) {
-                judgeScenarios(keyboard);
+                judgeScenarios(keyboard, scenSeenCount);
 
                 // Update seen scenarios count
                 scenSeenCount = statistics.getScenariosSeenCount();
@@ -144,11 +150,20 @@ public class User {
 
     }
 
-    public void judgeScenarios(Scanner keyboard) {
+    public void judgeScenarios(Scanner keyboard, int scenSeenCount) {
         // id of Location value for each scenarios
         int deployTo;
 
-        for (Scenario scenario : this.scenarios) {
+        // Number of scenarios seen in session
+        int seshScenCount = scenSeenCount;
+
+        // Number of scenarios seen resets after every 3
+        int toThreeCount = 0;
+
+        // for (Scenario scenario : this.scenarios) {
+        for (int i = seshScenCount; i < this.getScenarios().size() && toThreeCount < 3; i++) {
+
+            Scenario scenario = this.getScenario(i);
             // Print Scenario details
             System.out.println(scenario.toString());
 
@@ -157,8 +172,9 @@ public class User {
             deployTo = keyboard.nextInt();
             keyboard.nextLine();
 
-            // Update their statistics
+            // Update their statistics and toThreeCount
             updateStatistics(scenario, deployTo);
+            toThreeCount++;
 
             // Update log if consent is given
             // if (givesLogConsent){
