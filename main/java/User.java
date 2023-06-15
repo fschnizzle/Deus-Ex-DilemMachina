@@ -19,9 +19,8 @@ public class User {
 
     // Constructors
     public User() {
-
         // Load Scenarios
-        setScenarioLoader("/Users/flynnschneider/Desktop/RescueBots/Deus-Ex-DilemMachina/main/data/scenarios.csv");
+        setScenarioLoader("main/data/scenarios.csv");
         try {
             setScenarios();
         } catch (FileNotFoundException e) {
@@ -29,23 +28,9 @@ public class User {
             e.printStackTrace();
         }
 
-        setStatistics();
+        // setStatistics();
         // COMPLETE
     }
-
-    // public User(String filePath) {
-    // // Load Scenarios
-    // setScenarioLoader(filePath);
-    // try {
-    // setScenarios();
-    // } catch (FileNotFoundException e) {
-    // // TODO Auto-generated catch block
-    // e.printStackTrace();
-    // }
-
-    // setStatistics();
-    // // COMPLETE
-    // }
 
     // Getters
     public Statistics getStatistics() {
@@ -58,6 +43,10 @@ public class User {
 
     public ScenarioLoader getScenarioLoader() {
         return this.scenarioLoader;
+    }
+
+    public boolean getGivesLogConsent() {
+        return this.givesLogConsent;
     }
 
     // // Setters
@@ -73,9 +62,92 @@ public class User {
         this.scenarioLoader = new ScenarioLoader(filePath);
     }
 
+    public void setGivesLogConsent(boolean givesLogConsent) {
+        this.givesLogConsent = givesLogConsent;
+    }
+
     // Methods
+    public void updateGivesLogConsent(Scanner keyboard) {
+        String consentResponse = null;
+
+        // Initial consent prompt
+        System.out.print("Do you consent to have your decisions saved to a file? (yes/no)\n>");
+        consentResponse = keyboard.nextLine().toLowerCase();
+
+        // Loops until valid "yes" / "no" reponse given to consent prompt
+        do {
+            if (consentResponse == null) {
+                System.out
+                        .print("Invalid response! Do you consent to have your decisions saved to a file? (yes/no)\n>");
+                consentResponse = keyboard.nextLine().toLowerCase();
+            }
+            // Process consent response and update accordingly
+            switch (consentResponse) {
+                case "yes":
+                case "y":
+                    setGivesLogConsent(true);
+                    break;
+                case "no":
+                case "n":
+                    setGivesLogConsent(false);
+                    break;
+                default:
+                    // TODO: Change to "an InvalidInputException should be thrown and the user
+                    // should be prompted again"
+                    consentResponse = null;
+                    break;
+            }
+        } while (consentResponse == null);
+    }
+
+    public void handleJudgeScenarios(Scanner keyboard) {
+        // First asks for consent and updates the users givesLogConsent value
+        updateGivesLogConsent(keyboard);
+
+        // Initiate new statistics
+        setStatistics();
+
+        // Scenario count and scenarios seen count
+        int scenCount = scenarioLoader.getScenarioCount();
+        int scenSeenCount = statistics.getScenariosSeenCount();
+
+        String cont = "yes"; // Continue value
+
+        // Loop until "no" given or out of scenarios
+        do {
+            // Call judge scenarios
+            if (cont.equals("yes")) {
+                judgeScenarios(keyboard);
+
+                // Update seen scenarios count
+                scenSeenCount = statistics.getScenariosSeenCount();
+            }
+
+            // Break if user has seen all scenarios
+            if (scenCount == scenSeenCount) {
+                cont = "no";
+
+                // Output FINAL statistics
+                System.out.println(showStatistics());
+                break;
+            }
+
+            // show session statistics
+            System.out.println(showStatistics());
+
+            // Prompt REPEAT ("yes") or RETURN ("no")
+            System.out.println("Would you like to continue? (yes/no)");
+            System.out.print("> ");
+            cont = keyboard.nextLine();
+
+        } while (!cont.equals("no"));
+
+    }
+
     public void judgeScenarios(Scanner keyboard) {
+        // id of Location value for each scenarios
         int deployTo;
+
         for (Scenario scenario : this.scenarios) {
             // Print Scenario details
             System.out.println(scenario.toString());
@@ -83,100 +155,28 @@ public class User {
             // Prompt user for judgement
             System.out.print("To which location should RescueBot be deployed?\n> ");
             deployTo = keyboard.nextInt();
+            keyboard.nextLine();
 
             // Update their statistics
             updateStatistics(scenario, deployTo);
+
+            // Update log if consent is given
+            // if (givesLogConsent){
+            // updateLog(logFilePath);
+            // }
+
         }
 
     }
 
     public void updateStatistics(Scenario scenario, int choice) {
-        this.statistics.updateSeen(scenario);
-        this.statistics.updateSaved(scenario, choice);
+        statistics.updateSeen(scenario);
+        statistics.updateSaved(scenario, choice);
+        statistics.updateAgeStatistics(scenario, choice);
     }
 
     public String showStatistics() {
         return this.statistics.displayStats();
     }
 
-    // public void setSeenDict(HashMap<String, Integer> seenDict) {
-    // this.seenDict = seenDict;
-    // }
-
-    // public void setSeenDict() {
-    // this.seenDict = new HashMap<String, Integer>();
-    // }
-
-    // public void setSavedDict(HashMap<String, Integer> savedDict) {
-    // this.savedDict = savedDict;
-    // }
-
-    // public void setSavedDict() {
-    // this.savedDict = new HashMap<String, Integer>();
-    // }
-
-    // // Methods
-    // public void updateSeen(Scenario scenario) {
-    // // Updates how many times each attribute has been seen
-
-    // for (Location location : scenario.getLocations()) {
-    // String[] charactersStrings = location.toString().split("\n");
-
-    // // Loop over each Character String to derive attributes
-    // for (String charStr : charactersStrings) {
-    // if (charStr.startsWith("-")) {
-    // // Extracts list of attribute keywords with regex and string operations
-    // String[] attributes = charStr.substring(2).trim().split("\\s+");
-
-    // for (String attribute : attributes) {
-    // // Skip if empty
-    // if (attribute.isEmpty()) {
-    // continue;
-    // }
-
-    // // Add to dictionary (if not yet in it) or update count by 1
-    // this.seenDict.put(attribute, seenDict.getOrDefault(attribute, 0) + 1);
-    // }
-    // }
-    // }
-    // }
-    // }
-
-    // public void updateSaved(Scenario scenario, int choice) {
-    // // Updates how many times each attribute has been seen
-
-    // // Update dict for characters in chosen location only
-    // Location location = scenario.getLocation(choice - 1);
-    // String[] charactersStrings = location.toString().split("\n");
-
-    // // Loop over each Character String to derive attributes
-    // for (String charStr : charactersStrings) {
-    // if (charStr.startsWith("-")) {
-    // // Extracts list of attribute keywords with regex and string operations
-    // String[] attributes = charStr.substring(2).trim().split("\\s+");
-
-    // for (String attribute : attributes) {
-    // // Skip if empty
-    // if (attribute.isEmpty()) {
-    // continue;
-    // }
-
-    // // Add to dictionary (if not yet in it) or update count by 1
-    // this.savedDict.put(attribute, savedDict.getOrDefault(attribute, 0) + 1);
-    // }
-    // }
-    // }
-    // }
-
-    // public String displayStats() {
-    // String statsString = "";
-    // HashMap<String, Integer> seen = this.seenDict;
-    // HashMap<String, Integer> saved = this.savedDict;
-    // // Loops over all keys
-    // for (String key : this.seenDict.keySet()) {
-    // double percentage = (double) saved.getOrDefault(key, 0) / seen.get(key);
-    // statsString += String.format("%s: %.2f\n", key, percentage);
-    // }
-    // return statsString;
-    // }
 }

@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class ScenarioLoader {
 
     private File scenarioFile;
-    public int scenarioCount;
+    private int scenarioCount;
 
     public ScenarioLoader(String filePath) {
         this.scenarioFile = new File(filePath);

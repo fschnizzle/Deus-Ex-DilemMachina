@@ -14,9 +14,8 @@ public class Menu {
 
     // Constructor
     public Menu() {
-        this.keyboard = new Scanner(System.in);
+        keyboard = new Scanner(System.in);
         setUser();
-        // this.user.sc
     }
 
     // Getters
@@ -44,7 +43,7 @@ public class Menu {
         RescueBot.printMessage(welcomeFileName);
 
         // Count the scenarios loaded
-        int N = this.getUser().getScenarioLoader().scenarioCount;
+        int N = this.getUser().getScenarioLoader().getScenarioCount();
 
         // Print out the number of loaded scenarios
         System.out.println(N + " scenarios imported.");
@@ -63,7 +62,9 @@ public class Menu {
             case "judge":
             case "j":
                 // Starts the user judge
-                this.user.judgeScenarios(this.keyboard);
+                user.handleJudgeScenarios(keyboard);
+                // this.user.judgeScenarios(this.keyboard);
+                // this.user.judgeScenarios(this.keyboard);
                 break;
 
             case "run":
