@@ -148,6 +148,10 @@ public class User {
 
         } while (!cont.equals("no"));
 
+        // Finally, return to main menu
+        System.out.print("That's all. Press Enter to return to main menu.\n> ");
+        keyboard.nextLine();
+
     }
 
     public void judgeScenarios(Scanner keyboard, int scenSeenCount) {
@@ -182,7 +186,6 @@ public class User {
             // }
 
         }
-
     }
 
     public void updateStatistics(Scenario scenario, int choice) {
