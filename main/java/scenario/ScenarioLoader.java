@@ -42,16 +42,22 @@ public class ScenarioLoader {
         this.scenarioCount = this.scenarioCount + add;
     }
 
-    public ArrayList<Scenario> loadScenariosFromRSG() {
-        ArrayList<Scenario> scenarios = new ArrayList<>();
-        Scenario curScenario = null;
-        Location curLocation = null;
-        int outOfThreeCount = 1;
+    public ArrayList<Scenario> loadScenariosFromRSG(ArrayList<Scenario> scenarios) {
 
-        while (outOfThreeCount <= 3) {
+        // Scenario curScenario = null;
+        // Location curLocation = null;
+        int outOfThreeCount = 0;
+
+        while (outOfThreeCount < 3) {
             // Generate a scenario and add to scenarios
-            Scenario newScenario = new Scenario(true);
+            // Scenario
+            Scenario rgScen = new Scenario(true);
+            Scenario scenario = rgScen.randomGen();
+            // System.out.println(scenario.extendedToString());
+            scenarios.add(scenario);
+            outOfThreeCount++;
         }
+        setScenarioCount(outOfThreeCount);
         return scenarios;
     }
 

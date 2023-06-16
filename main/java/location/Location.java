@@ -36,10 +36,12 @@ public class Location implements RandomGenerator {
         this.lat = new Coordinate(latVal, latCard);
         this.lon = new Coordinate(lonVal, lonCard);
         setIsTrespassing(isTrespassing);
+        setCharacters();
     }
 
     public Location(Boolean randomlyGenerated) {
         // Creates new location using ENUM attributes and RNG
+        setCharacters();
     }
 
     // Getters
@@ -125,7 +127,7 @@ public class Location implements RandomGenerator {
         String thisIsTrespassing = (random.nextBoolean() ? "trespassing" : "legal");
 
         // Randomize characters list
-        ArrayList<character> thisCharacters = new ArrayList<>();
+        ArrayList<character> thisCharacters = new ArrayList<character>();
         int numCharacters = random.nextInt(5) + 1; // Generate between 1 and 5 characters
         for (int i = 0; i < numCharacters; i++) {
             Human humanRandomizer = new Human(true);

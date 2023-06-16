@@ -5,8 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.Math;
 
-import main.java.ErrorHandler;
-
 import java.io.File;
 
 /**
@@ -64,9 +62,12 @@ public class RescueBot {
                 this.logFilePath = logFilePath;
             }
         } catch (IOException e) {
-            System.out.println("HERE");
+            // System.out.println("HERE");
             // If filepath is invalid then create or use default logfile
-            setLogFilePath("logfile.log");
+            System.out.print("ERROR: could not print results. Target directory does not exist.\n");
+            // terminate
+            System.exit(1);
+            // setLogFilePath();
 
         }
     }

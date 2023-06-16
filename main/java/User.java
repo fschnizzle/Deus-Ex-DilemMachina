@@ -10,6 +10,7 @@ import main.java.statistics.Statistics;
 import main.java.location.Location;
 import main.java.scenario.ScenarioLoader;
 import main.java.RescueBot;
+import main.java.statistics.AuditLog;
 
 public class User {
     // Instance Variables
@@ -18,34 +19,27 @@ public class User {
     // private ArrayList<Statistics> allStatistics
     private ArrayList<Scenario> scenarios;
     private ScenarioLoader scenarioLoader;
+    private String logPath;
+    private boolean scenarioFileExists;
+    private AuditLog log;
 
     final int SCENARIOS_PER_RUN = 3;
 
     // Constructors
-    // NOT BEING USED
-    public User() {
-        // Load Scenarios
-        setScenarioLoader("main/data/scenarios.csv");
-        try {
-            setScenariosFromFile();
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        // setStatistics();
-        // COMPLETE
-    }
 
     public User(String logFilePath, String scenarioFilePath) {
         // Load Scenarios either thru RSG (Random Scenario generation) or from file
         // CHECK IF scenarioFilePath is empty!!
+        setLogPath(logFilePath);
         if (scenarioFilePath == null) {
             // RSG
-            System.out.println("NO FILE GIVEN, TIME FOR RSG!!");
+            this.scenarioFileExists = false;
+            // System.out.println("NO FILE GIVEN, TIME FOR RSG!!");
+            setScenarios();
             setScenarioLoader();
-            // setScenariosFromRSG();
+            setScenariosFromRSG();
         } else {
+            this.scenarioFileExists = true;
             setScenarioLoader(scenarioFilePath);
             try {
                 setScenariosFromFile();
@@ -65,6 +59,10 @@ public class User {
         return this.statistics;
     }
 
+    public boolean getFileExists() {
+        return this.scenarioFileExists;
+    }
+
     public ArrayList<Scenario> getScenarios() {
         return this.scenarios;
     }
@@ -73,12 +71,20 @@ public class User {
         return getScenarios().get(id);
     }
 
+    public AuditLog getLog() {
+        return this.log;
+    }
+
     public ScenarioLoader getScenarioLoader() {
         return this.scenarioLoader;
     }
 
     public boolean getGivesLogConsent() {
         return this.givesLogConsent;
+    }
+
+    public String getLogFilePath() {
+        return this.logPath;
     }
 
     // // Setters
@@ -90,9 +96,19 @@ public class User {
         scenarios = scenarioLoader.loadScenariosFromFile();
     }
 
+    public void setLogPath(String logPath) {
+        this.logPath = logPath;
+        this.log = new AuditLog(logPath);
+    }
+
+    public void setScenarios() {
+        this.scenarios = new ArrayList<Scenario>();
+    }
+
     public void setScenariosFromRSG() {
         // Set scenarios arraylist
-        scenarios = scenarioLoader.loadScenariosFromRSG();
+        ArrayList<Scenario> scenarios = this.getScenarios();
+        this.addScenarios(scenarioLoader.loadScenariosFromRSG(this.getScenarios()));
     }
 
     public void setScenarioLoader(String filePath) {
@@ -100,6 +116,10 @@ public class User {
     }
 
     // RSG
+    public void addScenarios(ArrayList<Scenario> scenarios) {
+        this.scenarios.addAll(scenarios);
+    }
+
     public void setScenarioLoader() {
         this.scenarioLoader = new ScenarioLoader();
     }
@@ -115,6 +135,7 @@ public class User {
         // Initial consent prompt
         System.out.print("Do you consent to have your decisions saved to a file? (yes/no)\n> ");
         consentResponse = keyboard.nextLine().toLowerCase();
+        // keyboard.nextLine();
 
         // Loops until valid "yes" / "no" reponse given to consent prompt
         do {
@@ -147,32 +168,39 @@ public class User {
         updateGivesLogConsent(keyboard);
 
         // Handle consent or not with get
-
         // Initiate new statistics
         setStatistics();
 
         // Scenario count and scenarios seen count
         int scenCount = scenarioLoader.getScenarioCount();
-        if (scenCount == 0) {
-            // Generate some scenarios (RSG)
-            scenarioLoader.loadScenariosFromRSG();
-        }
+
         int scenSeenCount = statistics.getScenariosSeenCount();
 
         String cont = "yes"; // Continue value
 
+        // Start writing to log
+        if (this.givesLogConsent) {
+            log.writeLogHeader("User");
+        }
+
         // Loop until "no" given or out of scenarios
         do {
+            // Generate Scenarios
+            if (!scenarioFileExists) {
+                scenarioLoader.loadScenariosFromRSG(this.getScenarios());
+            }
+
             // Call judge scenarios
             if (cont.equals("yes")) {
+                // System.out.println("got here");
                 judgeScenarios(keyboard, scenSeenCount);
-
+                // System.out.println("got out");
                 // Update seen scenarios count
                 scenSeenCount = statistics.getScenariosSeenCount();
             }
 
             // Break if user has seen all scenarios
-            if (scenCount == scenSeenCount) {
+            if (scenCount == scenSeenCount && this.getFileExists()) {
                 cont = "no";
 
                 // Output FINAL statistics
@@ -202,19 +230,41 @@ public class User {
         int choiceRange; // Number of locations to pick from at scenario
 
         // Number of scenarios seen in session
-        int seshScenCount = scenSeenCount;
+        int scenCount;
 
         // Number of scenarios seen resets after every 3
         int toThreeCount = 0;
+        int lastID;
 
-        // for (Scenario scenario : this.scenarios) {
-        for (int i = seshScenCount; i < this.getScenarios().size() && toThreeCount < 3; i++) {
+        // Auto stop at lastID (never if RSG)
+        if (scenarioFileExists) {
+            lastID = this.getScenarios().size();
+            scenCount = scenSeenCount;
+        } else {
+            lastID = 999; // Will never reach
+            scenCount = this.getScenarios().size() - 3;
 
-            Scenario scenario = this.getScenario(i);
+        }
+
+        for (int i = scenCount; i < lastID
+                && toThreeCount < 3; i++) {
+            Scenario scenario;
+
+            // If file
+            if (this.getFileExists()) {
+                scenario = this.getScenario(i);
+            }
+
+            // Else RSG
+            else {
+                scenario = this.getScenario(i);
+            }
+
             // Print Scenario details
             System.out.println(scenario.toString());
 
             // Location count for scenario (upper bound of range)
+            // System.out.println(scenario.extendedToString());
             choiceRange = scenario.getLocations().size();
 
             // Prompt user for judgement
@@ -230,21 +280,22 @@ public class User {
             }
 
             // Update their statistics and toThreeCount
-            updateStatistics(scenario, deployTo);
+            updateStatistics(scenario, deployTo, givesLogConsent);
             toThreeCount++;
-
-            // Update log if consent is given
-            // if (givesLogConsent){
-            // updateLog(logFilePath);
-            // }
 
         }
     }
 
-    public void updateStatistics(Scenario scenario, int choice) {
+    public void updateStatistics(Scenario scenario, int choice, boolean givesLogConsent) {
         statistics.updateSeen(scenario);
         statistics.updateSaved(scenario, choice);
         statistics.updateAgeStatistics(scenario, choice);
+
+        // Only append to logfile if consent is given
+        if (givesLogConsent) {
+            log.writeDecision(scenario, choice);
+        }
+
     }
 
     public String showStatistics() {

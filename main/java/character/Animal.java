@@ -52,6 +52,7 @@ public class Animal extends character implements RandomGenerator {
     // RG Methods
 
     // Generate a new Animal with random values for the attributes of the object
+    @Override
     public Animal randomGen() {
         // Uses randomiser functions
         Random random = new Random();
@@ -72,6 +73,7 @@ public class Animal extends character implements RandomGenerator {
     }
 
     // Output the values of the attributes in a specific format
+    @Override
     public String extendedToString() {
         // return "" + + + + + +;
         // return (this.getSpecies() + (this.getIsPet() ? " is pet" :

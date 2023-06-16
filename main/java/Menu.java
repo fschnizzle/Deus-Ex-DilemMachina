@@ -1,11 +1,13 @@
 package main.java;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import main.java.character.Animal;
 import main.java.character.Human;
 import main.java.location.Location;
 import main.java.scenario.Scenario;
+import main.java.statistics.AuditLog;
 import main.java.User;
 
 // TODO: SetStatisticsLogger which contains deets on algo and user
@@ -15,10 +17,6 @@ public class Menu {
     private User user;
 
     // Constructor
-    public Menu() {
-        keyboard = new Scanner(System.in);
-        setUser();
-    }
 
     public Menu(String logFilePath, String scenarioFilePath) {
         keyboard = new Scanner(System.in);
@@ -31,12 +29,10 @@ public class Menu {
     }
 
     // Setters
-    public void setUser() {
-        this.user = new User(); // Calls to filepath DEFAULT
-    }
 
     public void setUser(String logFilePath, String scenarioFilePath) {
         this.user = new User(logFilePath, scenarioFilePath); // Calls to filepath DEFAULT
+
     }
 
     public void displayMenuText() {
@@ -51,6 +47,7 @@ public class Menu {
     public void runMenuLoop(boolean scenarioFileExists) {
         // Print the welcome message
         String welcomeFileName = "main/java/etc/welcome.ascii";
+
         // RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
 
         // If scenarios file given, count the scenarios loaded from file and print
@@ -93,6 +90,14 @@ public class Menu {
 
             case "audit":
             case "a":
+                AuditLog log = user.getLog();
+                try {
+                    log.decisionAudit();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                log.printStatistics();
                 // Code for showing audit from history goes here.
 
                 // How many statistics file does user have
@@ -101,19 +106,24 @@ public class Menu {
 
                 // Interface Implentations
                 // Animal
-                Animal rgAnimal = new Animal(true);
-                Animal animal = rgAnimal.randomGen();
-                System.out.println(animal.extendedToString());
-                // Human
-                Human rgHuman = new Human(true);
-                Human human = rgHuman.randomGen();
-                System.out.println(human.extendedToString());
+                // Animal rgAnimal = new Animal(true);
+                // Animal animal = rgAnimal.randomGen();
+                // System.out.println(animal.extendedToString());
+                // // Human
+                // Human rgHuman = new Human(true);
+                // Human human = rgHuman.randomGen();
+                // System.out.println(human.extendedToString());
 
-                // Location
-                Location rgLoc = new Location(true);
-                Location location = rgLoc.randomGen();
-                System.out.println(location.extendedToString());
-                System.out.println(location.toString());
+                // // Location
+                // Location rgLoc = new Location(true);
+                // Location location = rgLoc.randomGen();
+                // System.out.println(location.extendedToString());
+                // System.out.println(location.toString());
+
+                // // Scenario
+                // Scenario rgScen = new Scenario(true);
+                // Scenario scenario = rgScen.randomGen();
+                // System.out.println(scenario.extendedToString());
 
                 // System.out.println(this.user.showStatistics());
                 break;
