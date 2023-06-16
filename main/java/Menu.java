@@ -8,6 +8,8 @@ import main.java.location.Location;
 import main.java.scenario.Scenario;
 import main.java.User;
 
+// TODO: SetStatisticsLogger which contains deets on algo and user
+
 public class Menu {
     private Scanner keyboard;
     private User user;
@@ -16,6 +18,11 @@ public class Menu {
     public Menu() {
         keyboard = new Scanner(System.in);
         setUser();
+    }
+
+    public Menu(String logFilePath, String scenarioFilePath) {
+        keyboard = new Scanner(System.in);
+        setUser(logFilePath, scenarioFilePath);
     }
 
     // Getters
@@ -28,6 +35,10 @@ public class Menu {
         this.user = new User(); // Calls to filepath DEFAULT
     }
 
+    public void setUser(String logFilePath, String scenarioFilePath) {
+        this.user = new User(logFilePath, scenarioFilePath); // Calls to filepath DEFAULT
+    }
+
     public void displayMenuText() {
         // Print out the menu options
         System.out.println("Please enter one of the following commands to continue:");
@@ -37,16 +48,16 @@ public class Menu {
         System.out.print("- quit the program: [quit] or [q]\n> ");
     }
 
-    public void runMenuLoop() {
+    public void runMenuLoop(boolean scenarioFileExists) {
         // Print the welcome message
         String welcomeFileName = "main/java/etc/welcome.ascii";
         // RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
 
-        // Count the scenarios loaded
-        int N = this.getUser().getScenarioLoader().getScenarioCount();
-
-        // Print out the number of loaded scenarios
-        System.out.println(N + " scenarios imported.");
+        // If scenarios file given, count the scenarios loaded from file and print
+        if (scenarioFileExists) {
+            int N = this.getUser().getScenarioLoader().getScenarioCount();
+            System.out.println(N + " scenarios imported.");
+        }
 
         String input;
         do {
@@ -69,6 +80,14 @@ public class Menu {
 
             case "run":
             case "r":
+                // user.handleJudgeScenarios(keyboard)
+                // Prompt users for scenario count
+
+                // Create scenarios (RSG generation)
+
+                // Add scenario objects using loadScenariosFromFile() equivalent
+
+                // Call decision() method (simulate decision making process)
                 // Code for running simulations goes here.
                 break;
 
@@ -78,7 +97,11 @@ public class Menu {
 
                 // How many statistics file does user have
                 // user.getStatistics();
-                System.out.println("SHOW CURRENT FINAL AUDIT FOR BOTH USER AND ALGORITHM!!");
+                // System.out.println("SHOW CURRENT FINAL AUDIT FOR BOTH USER AND ALGORITHM!!");
+
+                Animal rgAnimal = new Animal(true);
+                Animal animal = rgAnimal.randomGen();
+                System.out.println(animal.extendedToString());
 
                 // System.out.println(this.user.showStatistics());
                 break;

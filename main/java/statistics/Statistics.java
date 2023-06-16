@@ -44,7 +44,7 @@ public class Statistics {
     public Statistics() {
         setSeenDict();
         setSavedDict();
-        setScenariosSeenCount();
+        setScenariosFromFileSeenCount();
         setAgeStatistics();
         // COMPLETE
     }
@@ -59,7 +59,7 @@ public class Statistics {
     }
 
     // Setters
-    public void setScenariosSeenCount() {
+    public void setScenariosFromFileSeenCount() {
         this.scenariosSeenCount = 0;
     }
 

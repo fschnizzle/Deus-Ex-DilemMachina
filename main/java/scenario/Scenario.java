@@ -2,6 +2,7 @@ package main.java.scenario;
 
 import java.util.ArrayList;
 
+import main.java.RandomGenerator;
 import main.java.location.Location;
 
 public class Scenario {
@@ -16,6 +17,10 @@ public class Scenario {
     public Scenario(String emergencyDescription) {
         setEmergencyDescription(emergencyDescription);
         setLocations();
+    }
+
+    public Scenario(Boolean randomlyGenerated) {
+        // Creates new scenario using ENUM attributes
     }
 
     // Getters
@@ -66,6 +71,7 @@ public class Scenario {
     }
 
     // Methods
+
     public String toString() {
         int locCounter = 1;
         String scenarioOutput = "======================================\n";

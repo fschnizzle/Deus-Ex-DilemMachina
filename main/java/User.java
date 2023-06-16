@@ -9,6 +9,7 @@ import main.java.scenario.Scenario;
 import main.java.statistics.Statistics;
 import main.java.location.Location;
 import main.java.scenario.ScenarioLoader;
+import main.java.RescueBot;
 
 public class User {
     // Instance Variables
@@ -21,15 +22,39 @@ public class User {
     final int SCENARIOS_PER_RUN = 3;
 
     // Constructors
+    // NOT BEING USED
     public User() {
         // Load Scenarios
         setScenarioLoader("main/data/scenarios.csv");
         try {
-            setScenarios();
+            setScenariosFromFile();
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        // setStatistics();
+        // COMPLETE
+    }
+
+    public User(String logFilePath, String scenarioFilePath) {
+        // Load Scenarios either thru RSG (Random Scenario generation) or from file
+        // CHECK IF scenarioFilePath is empty!!
+        if (scenarioFilePath == null) {
+            // RSG
+            System.out.println("NO FILE GIVEN, TIME FOR RSG!!");
+            setScenarioLoader();
+            // setScenariosFromRSG();
+        } else {
+            setScenarioLoader(scenarioFilePath);
+            try {
+                setScenariosFromFile();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // setStatisticsLogger
 
         // setStatistics();
         // COMPLETE
@@ -61,12 +86,22 @@ public class User {
         this.statistics = new Statistics();
     }
 
-    public void setScenarios() throws FileNotFoundException {
-        this.scenarios = this.scenarioLoader.loadScenarios();
+    public void setScenariosFromFile() throws FileNotFoundException {
+        scenarios = scenarioLoader.loadScenariosFromFile();
+    }
+
+    public void setScenariosFromRSG() {
+        // Set scenarios arraylist
+        scenarios = scenarioLoader.loadScenariosFromRSG();
     }
 
     public void setScenarioLoader(String filePath) {
         this.scenarioLoader = new ScenarioLoader(filePath);
+    }
+
+    // RSG
+    public void setScenarioLoader() {
+        this.scenarioLoader = new ScenarioLoader();
     }
 
     public void setGivesLogConsent(boolean givesLogConsent) {
@@ -111,11 +146,17 @@ public class User {
         // First asks for consent and updates the users givesLogConsent value
         updateGivesLogConsent(keyboard);
 
+        // Handle consent or not with get
+
         // Initiate new statistics
         setStatistics();
 
         // Scenario count and scenarios seen count
         int scenCount = scenarioLoader.getScenarioCount();
+        if (scenCount == 0) {
+            // Generate some scenarios (RSG)
+            scenarioLoader.loadScenariosFromRSG();
+        }
         int scenSeenCount = statistics.getScenariosSeenCount();
 
         String cont = "yes"; // Continue value
@@ -158,6 +199,7 @@ public class User {
     public void judgeScenarios(Scanner keyboard, int scenSeenCount) {
         // id of Location value for each scenarios
         int deployTo;
+        int choiceRange; // Number of locations to pick from at scenario
 
         // Number of scenarios seen in session
         int seshScenCount = scenSeenCount;
@@ -172,10 +214,20 @@ public class User {
             // Print Scenario details
             System.out.println(scenario.toString());
 
+            // Location count for scenario (upper bound of range)
+            choiceRange = scenario.getLocations().size();
+
             // Prompt user for judgement
             System.out.print("To which location should RescueBot be deployed?\n> ");
             deployTo = keyboard.nextInt();
             keyboard.nextLine();
+
+            // Continue prompting if invalid location id (deployTo) given
+            while (deployTo < 1 || deployTo > choiceRange) {
+                System.out.print("Invalid response! To which location should RescueBot be deployed?\n> ");
+                deployTo = keyboard.nextInt();
+                keyboard.nextLine();
+            }
 
             // Update their statistics and toThreeCount
             updateStatistics(scenario, deployTo);

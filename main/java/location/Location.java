@@ -32,10 +32,11 @@ public class Location {
         this.lat = new Coordinate(latVal, latCard);
         this.lon = new Coordinate(lonVal, lonCard);
         setIsTrespassing(isTrespassing);
-        setCharacters();
     }
 
-    // public Location()
+    public Location(Boolean randomlyGenerated) {
+        // Creates new location using ENUM attributes and RNG
+    }
 
     // Getters
     public boolean getIsTrespassing() {

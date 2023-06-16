@@ -98,7 +98,6 @@ public class RescueBot {
             setScenarioFilePath();
 
         }
-        this.scenarioFilePath = scenarioFilePath;
     }
 
     public void setScenarioFilePath() {
@@ -142,8 +141,8 @@ public class RescueBot {
         // System.out.println(rescueBot.getScenarioFilePath());
 
         // Initiate Menu Loop
-        Menu menu = new Menu();
-        menu.runMenuLoop();
+        Menu menu = new Menu(rescueBot.logFilePath, rescueBot.scenarioFilePath);
+        menu.runMenuLoop(rescueBot.scenarioFileExists());
 
         // Exit the program
         System.exit(0);

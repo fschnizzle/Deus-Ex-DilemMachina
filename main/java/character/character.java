@@ -6,6 +6,15 @@ public abstract class character {
     private String gender;
     private String bodyType;
 
+    // Enums
+    public enum Gender {
+        male, female
+    }
+
+    public enum BodyType {
+        athletic, average, overweight
+    }
+
     // Constructor
     public character(int age, String gender, String bodyType) {
         setAge(age);
@@ -13,8 +22,14 @@ public abstract class character {
         setBodyType(bodyType);
     }
 
+    public character() {
+        setAge();
+        setGender();
+        setBodyType();
+    }
+
     // public character() {
-    //     setAge(age);
+    // setAge(age);
     // }
 
     // Getters
