@@ -5,6 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.Math;
 
+import main.java.ErrorHandler;
+
+import java.io.File;
+
 /**
  * COMP90041, Sem1, 2023: Final Project
  * 
@@ -32,21 +36,74 @@ public class RescueBot {
         return this.scenarioFilePath;
     }
 
+    public boolean scenarioFileExists() {
+        if (this.scenarioFilePath == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     // Setters
     public void setLogFilePath(String logFilePath) {
-        this.logFilePath = logFilePath;
+        // Do a more thorough check if valid pathname by trying to open the file
+        try {
+            File file = new File(logFilePath);
+
+            // File already exists
+            if (file.exists() && !file.isDirectory()) {
+                this.logFilePath = logFilePath;
+            }
+            // If file is directory
+            else if (file.isDirectory()) {
+                printHelp();
+            }
+            // Else file does not exist. Create it and set this log filepath to it.
+            else {
+                file.createNewFile();
+                this.logFilePath = logFilePath;
+            }
+        } catch (IOException e) {
+            System.out.println("HERE");
+            // If filepath is invalid then create or use default logfile
+            setLogFilePath("logfile.log");
+
+        }
     }
 
     public void setLogFilePath() {
-        this.logFilePath = "main/rescuebot.log";
+        this.logFilePath = "rescuebot.log";
     }
 
     public void setScenarioFilePath(String scenarioFilePath) {
+        // Do a more thorough check if valid pathname by trying to open the file
+        try {
+            File file = new File(scenarioFilePath);
+
+            // File already exists
+            if (file.exists() && !file.isDirectory()) {
+                this.scenarioFilePath = scenarioFilePath;
+            }
+            // If file is directory (not a file)
+            else if (file.isDirectory()) {
+                printHelp();
+            }
+            // Else file does not exist, default is used (ie: no scenarios file)
+            else {
+                setScenarioFilePath();
+            }
+        } catch (Exception e) {
+            System.out.println("HERE");
+            // If filepath is invalid then scenario path should be null (default)
+            setScenarioFilePath();
+
+        }
         this.scenarioFilePath = scenarioFilePath;
     }
 
     public void setScenarioFilePath() {
-        this.scenarioFilePath = "main/data/scenarios.csv";
+        // this.scenarioFilePath = "main/data/scenarios.csv";
+        this.scenarioFilePath = null;
     }
 
     /**
@@ -80,6 +137,10 @@ public class RescueBot {
         // Process arguments if any given
         rescueBot.processArgs(args);
 
+        // TESTING:
+        // System.out.println(rescueBot.getLogFilePath());
+        // System.out.println(rescueBot.getScenarioFilePath());
+
         // Initiate Menu Loop
         Menu menu = new Menu();
         menu.runMenuLoop();
@@ -89,24 +150,75 @@ public class RescueBot {
     }
 
     private void processArgs(String[] args) {
-        // Loop through arguments
-        for (int i = 0; i < args.length; i++) {
+
+        // Set default values for log and scenarios filePaths
+        setScenarioFilePath();
+        setLogFilePath();
+        String potentialPathName;
+
+        // Display help if a singular argument is given (Incorrect argument or arg
+        // format results in same as --help)
+        if (args.length == 1) {
+            printHelp();
+        }
+
+        // Loop through arguments. Only works for multiple arguments
+        for (int i = 0; i < args.length && args.length > 1; i++) {
             String arg = args[i];
             // Process each arg accordingly
             switch (arg) {
-
-                // Help Case
-                case "-h":
-                case "--help":
-                    printHelp();
-                    break;
-
                 // Log file path given Case
                 case "-l":
                 case "--log":
                     if (args.length > i + 1) {
-                        logFilePath = args[i + 1];
+                        // Next argument should be a pathname
+                        potentialPathName = args[i + 1];
+
+                        // Performs simple 'could be a pathname' check with regex
+                        // setLogFilePath will later check if it is actually valid
+                        if (potentialPathName.matches(".*\\.[a-zA-Z0-9]+")) {
+                            // try {
+                            setLogFilePath(potentialPathName);
+                            // } catch (Exception e) {
+                            // // ErrorHandler.handleFileOpeningError(potentialPathName, e);
+                            // // System.out.println("ERROR!");
+                            // // System.exit(1);
+                            // }
+
+                            i++; // Skip processing next argument in switch (pathName)
+                        } else {
+                            printHelp();
+                        }
                     }
+                    break;
+                case "-s":
+                case "--scenarios":
+                    if (args.length > i + 1) {
+                        // Next argument should be a pathname
+                        potentialPathName = args[i + 1];
+
+                        // Performs simple 'could be a pathname' check with regex
+                        // setLogFilePath will later check if it is actually valid
+                        if (potentialPathName.matches(".*\\.[a-zA-Z0-9]+")) {
+                            // try {
+                            setScenarioFilePath(potentialPathName);
+                            // } catch (Exception e) {
+                            // // ErrorHandler.handleFileOpeningError(potentialPathName, e);
+                            // System.out.println("ERROR!");
+                            // System.exit(1);
+                            // }
+                            i++; // Skip processing next argument in switch (pathName)
+                        } else {
+                            printHelp();
+                        }
+                    }
+                    break;
+                // Anything else defaults to help. *Cases ("-h" / "--help") kept for clarity
+                case "-h":
+                case "--help":
+                default:
+                    printHelp();
+                    break;
             }
             // System.out.println(arg);
         }

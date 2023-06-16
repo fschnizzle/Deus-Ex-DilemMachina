@@ -14,6 +14,7 @@ public class User {
     // Instance Variables
     private boolean givesLogConsent;
     private Statistics statistics;
+    // private ArrayList<Statistics> allStatistics
     private ArrayList<Scenario> scenarios;
     private ScenarioLoader scenarioLoader;
 

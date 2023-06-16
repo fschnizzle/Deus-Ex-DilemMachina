@@ -40,7 +40,7 @@ public class Menu {
     public void runMenuLoop() {
         // Print the welcome message
         String welcomeFileName = "main/java/etc/welcome.ascii";
-        RescueBot.printMessage(welcomeFileName);
+        // RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
 
         // Count the scenarios loaded
         int N = this.getUser().getScenarioLoader().getScenarioCount();
@@ -76,7 +76,11 @@ public class Menu {
             case "a":
                 // Code for showing audit from history goes here.
 
-                System.out.println(this.user.showStatistics());
+                // How many statistics file does user have
+                // user.getStatistics();
+                System.out.println("SHOW CURRENT FINAL AUDIT FOR BOTH USER AND ALGORITHM!!");
+
+                // System.out.println(this.user.showStatistics());
                 break;
 
             case "quit":
