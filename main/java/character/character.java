@@ -72,4 +72,8 @@ public abstract class character {
 
     // Methods
     public abstract String toString(); // Animal & Human overrides this
+
+    public String extendedToString() {
+        return "";
+    }
 }

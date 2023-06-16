@@ -1,14 +1,18 @@
 package main.java.location;
 
-import java.util.ArrayList;
-
 import main.java.character.character;
+import main.java.RandomGenerator;
 
-public class Location {
+import java.util.ArrayList;
+import java.util.Random;
+import main.java.character.Animal;
+import main.java.character.Human;
+
+public class Location implements RandomGenerator {
     // Instance variables
     private Coordinate lat; // Latitude Coordinate (N or S)
     private Coordinate lon; // Longitude Coordinate (E or W)
-    private boolean isTrespassing;
+    private String isTrespassing;
     private ArrayList<character> characters;
     private int numCharacters;
 
@@ -28,7 +32,7 @@ public class Location {
     }
 
     // Constructors
-    public Location(double latVal, char latCard, double lonVal, char lonCard, boolean isTrespassing) {
+    public Location(double latVal, char latCard, double lonVal, char lonCard, String isTrespassing) {
         this.lat = new Coordinate(latVal, latCard);
         this.lon = new Coordinate(lonVal, lonCard);
         setIsTrespassing(isTrespassing);
@@ -39,7 +43,7 @@ public class Location {
     }
 
     // Getters
-    public boolean getIsTrespassing() {
+    public String getIsTrespassing() {
         return this.isTrespassing;
     }
 
@@ -60,7 +64,7 @@ public class Location {
     }
 
     // Setters
-    public void setIsTrespassing(boolean isTrespassing) {
+    public void setIsTrespassing(String isTrespassing) {
         this.isTrespassing = isTrespassing;
     }
 
@@ -92,7 +96,7 @@ public class Location {
         locationDetails += this.lon.toString() + "\n";
 
         // Second and third Lines
-        locationDetails += "Trespassing: " + (this.isTrespassing ? "yes" : "no") + "\n";
+        locationDetails += "Trespassing: " + (this.isTrespassing == "trespassing" ? "yes" : "no") + "\n";
         locationDetails += characters.size() + " Characters:\n";
 
         // Successive (character) Lines
@@ -101,5 +105,52 @@ public class Location {
         }
 
         return locationDetails;
+    }
+
+    // RG Methods
+    @Override
+    public Location randomGen() {
+        Random random = new Random();
+
+        // Randomize latitude and longitude
+        double latVal = random.nextDouble() * 180.0 - 90.0; // Latitude is between -90 and 90 degrees
+        char latCard = random.nextBoolean() ? 'N' : 'S';
+        double lonVal = random.nextDouble() * 360.0 - 180.0; // Longitude is between -180 and 180 degrees
+        char lonCard = random.nextBoolean() ? 'E' : 'W';
+
+        Coordinate thisLat = new Coordinate(latVal, latCard);
+        Coordinate thisLon = new Coordinate(lonVal, lonCard);
+
+        // Randomize isTrespassing
+        String thisIsTrespassing = (random.nextBoolean() ? "trespassing" : "legal");
+
+        // Randomize characters list
+        ArrayList<character> thisCharacters = new ArrayList<>();
+        int numCharacters = random.nextInt(5) + 1; // Generate between 1 and 5 characters
+        for (int i = 0; i < numCharacters; i++) {
+            Human humanRandomizer = new Human(true);
+            Animal animalRandomizer = new Animal(true);
+            if (random.nextBoolean()) {
+                Animal newAnimal = animalRandomizer.randomGen();
+                thisCharacters.add(newAnimal);
+            } else {
+                Human newHuman = humanRandomizer.randomGen();
+                thisCharacters.add(newHuman);
+            }
+
+        }
+        Location location = new Location(latVal, latCard, lonVal, lonCard, thisIsTrespassing);
+        location.setCharacters(thisCharacters);
+        return location;
+    }
+
+    public String extendedToString() {
+        String locString = String.format("location:%s;%s;\n%s,,,,,,,\n", this.lat.toString(), this.lon.toString(),
+                (this.getIsTrespassing() == "trespassing" ? "trespassing" : "legal"));
+        for (character entity : this.getCharacters()) {
+            locString += entity.extendedToString() + "\n";
+        }
+
+        return locString;
     }
 }

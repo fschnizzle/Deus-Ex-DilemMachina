@@ -109,6 +109,12 @@ public class Menu {
                 Human human = rgHuman.randomGen();
                 System.out.println(human.extendedToString());
 
+                // Location
+                Location rgLoc = new Location(true);
+                Location location = rgLoc.randomGen();
+                System.out.println(location.extendedToString());
+                System.out.println(location.toString());
+
                 // System.out.println(this.user.showStatistics());
                 break;
 

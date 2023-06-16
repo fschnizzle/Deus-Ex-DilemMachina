@@ -72,6 +72,23 @@ public class Human extends character implements RandomGenerator {
     }
 
     // Methods
+
+    public static String getAgeGroup(int age) {
+
+        // Also update age category accordingly
+        if (age >= 0 && age <= 4) {
+            return ("baby");
+        } else if (age >= 5 && age <= 16) {
+            return ("child");
+        } else if (age >= 17 && age <= 68) {
+            return ("adult");
+        } else {
+            return ("senior");
+        }
+
+    }
+
+    @Override
     public String toString() {
         return (this.getBodyType() + " " + this.getAgeCategory()
                 + (this.getAgeCategory() == "ADULT" ? " " + this.getProfession() + " " : " ")
@@ -92,7 +109,12 @@ public class Human extends character implements RandomGenerator {
         int thisAge = random.nextInt(100) + 1;
 
         // Randomise instance attributes
-        String thisProfession = HelperFunctions.randomFromEnum(Profession.class);
+        String thisProfession;
+        if (getAgeGroup(thisAge).equals("adult")) {
+            thisProfession = HelperFunctions.randomFromEnum(Profession.class);
+        } else {
+            thisProfession = "none";
+        }
         boolean thisIsPregnant;
         if (thisGender.equals("female") && thisAge > 15) {
             thisIsPregnant = HelperFunctions.randomBoolean(25, 75);

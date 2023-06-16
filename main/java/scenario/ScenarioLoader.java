@@ -93,7 +93,7 @@ public class ScenarioLoader {
                             char latCard = locationParts[0].split(" ")[1].charAt(0);
                             double lonVal = Double.parseDouble(locationParts[1].split(" ")[0]);
                             char lonCard = locationParts[1].split(" ")[1].charAt(0);
-                            boolean isTrespassing = !locationParts[2].substring(0, 5).equals("legal");
+                            String isTrespassing = locationParts[2].substring(0, 5);
 
                             currentLocation = new Location(latVal, latCard, lonVal, lonCard, isTrespassing);
                             currentScenario.addLocation(currentLocation);
@@ -132,7 +132,7 @@ public class ScenarioLoader {
                     char latCard = locationParts[0].split(" ")[1].charAt(0);
                     double lonVal = Double.parseDouble(locationParts[1].split(" ")[0]);
                     char lonCard = locationParts[1].split(" ")[1].charAt(0);
-                    boolean isTrespassing = !locationParts[2].substring(0, 5).equals("legal");
+                    String isTrespassing = locationParts[2].substring(0, 5);
 
                     currentLocation = new Location(latVal, latCard, lonVal, lonCard, isTrespassing);
                     currentScenario.addLocation(currentLocation);
