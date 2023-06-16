@@ -1,4 +1,4 @@
-package main.java.character;
+package model.character;
 
 public abstract class character {
     // Base Variables

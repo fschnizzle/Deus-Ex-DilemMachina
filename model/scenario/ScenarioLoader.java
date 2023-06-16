@@ -1,9 +1,9 @@
-package main.java.scenario;
+package model.scenario;
 
-import main.java.scenario.Scenario;
-import main.java.statistics.Statistics;
-import main.java.location.Location;
-import main.java.character.*;
+import model.scenario.Scenario;
+import statistics.Statistics;
+import model.location.Location;
+import model.character.*;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

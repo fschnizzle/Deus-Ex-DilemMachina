@@ -1,12 +1,12 @@
-package main.java.location;
+package model.location;
 
-import main.java.character.character;
-import main.java.RandomGenerator;
+import model.character.character;
+import model.RandomGenerator;
 
 import java.util.ArrayList;
 import java.util.Random;
-import main.java.character.Animal;
-import main.java.character.Human;
+import model.character.Animal;
+import model.character.Human;
 
 public class Location implements RandomGenerator {
     // Instance variables

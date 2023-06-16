@@ -1,5 +1,3 @@
-package main.java;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -94,7 +92,6 @@ public class RescueBot {
                 setScenarioFilePath();
             }
         } catch (Exception e) {
-            System.out.println("HERE");
             // If filepath is invalid then scenario path should be null (default)
             setScenarioFilePath();
 

@@ -1,4 +1,4 @@
-package main.java.statistics;
+package statistics;
 
 public class AgeStatistics {
     private int totalSavedHumanAge;

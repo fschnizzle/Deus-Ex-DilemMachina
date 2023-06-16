@@ -126,3 +126,31 @@ trespassing,,,,,,,
 human,female,49,average,criminal,true,,
 human,male,99,athletic,none,false,,
 1
+User
+3
+scenario:fire,,,,,,,
+[1] location:-4.0406 N;62.4977 W;
+legal,,,,,,,
+animal,male,21,average,,,cat,false
+animal,female,20,average,,,cockatoo,false
+human,male,64,average,teacher,false,,
+[2] location:0.2320 S;-125.0781 E;
+legal,,,,,,,
+human,male,70,average,none,false,,
+[3] location:-54.2054 S;-165.2646 W;
+legal,,,,,,,
+animal,male,43,athletic,,,koala,false
+animal,male,46,average,,,snake,true
+3
+scenario:hurricane,,,,,,,
+[1] location:-64.9620 S;-25.6240 E;
+trespassing,,,,,,,
+animal,female,46,athletic,,,snake,true
+human,female,79,athletic,none,false,,
+[2] location:-12.6997 S;116.9800 W;
+legal,,,,,,,
+animal,male,40,athletic,,,dog,true
+animal,male,23,overweight,,,dog,true
+[3] location:85.2415 S;-4.8118 E;
+legal,,,,,,,
+animal,female,21,overweight,,,snake,false

@@ -1,11 +1,11 @@
-package main.java.scenario;
+package model.scenario;
 
 import java.util.ArrayList;
 
-import main.java.RandomGenerator;
-import main.java.location.Location;
+import model.RandomGenerator;
+import model.location.Location;
 import java.util.Random;
-import main.java.helper.HelperFunctions;
+import helper.HelperFunctions;
 
 public class Scenario implements RandomGenerator {
     // Instance Variables

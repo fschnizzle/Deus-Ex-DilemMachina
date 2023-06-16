@@ -1,16 +1,16 @@
-package main.java;
+package user;
 
 import java.util.HashMap;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import main.java.scenario.Scenario;
-import main.java.statistics.Statistics;
-import main.java.location.Location;
-import main.java.scenario.ScenarioLoader;
-import main.java.RescueBot;
-import main.java.statistics.AuditLog;
+import model.scenario.Scenario;
+import statistics.Statistics;
+import model.location.Location;
+import model.scenario.ScenarioLoader;
+// import RescueBot;
+import statistics.AuditLog;
 
 public class User {
     // Instance Variables
@@ -34,7 +34,6 @@ public class User {
         if (scenarioFilePath == null) {
             // RSG
             this.scenarioFileExists = false;
-            // System.out.println("NO FILE GIVEN, TIME FOR RSG!!");
             setScenarios();
             setScenarioLoader();
             setScenariosFromRSG();
@@ -192,9 +191,8 @@ public class User {
 
             // Call judge scenarios
             if (cont.equals("yes")) {
-                // System.out.println("got here");
                 judgeScenarios(keyboard, scenSeenCount);
-                // System.out.println("got out");
+
                 // Update seen scenarios count
                 scenSeenCount = statistics.getScenariosSeenCount();
             }
@@ -208,7 +206,7 @@ public class User {
                 break;
             }
 
-            // show session statistics
+            // show current statistics
             System.out.println(showStatistics());
 
             // Prompt REPEAT ("yes") or RETURN ("no")
@@ -264,7 +262,6 @@ public class User {
             System.out.println(scenario.toString());
 
             // Location count for scenario (upper bound of range)
-            // System.out.println(scenario.extendedToString());
             choiceRange = scenario.getLocations().size();
 
             // Prompt user for judgement

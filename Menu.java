@@ -1,14 +1,13 @@
-package main.java;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-import main.java.character.Animal;
-import main.java.character.Human;
-import main.java.location.Location;
-import main.java.scenario.Scenario;
-import main.java.statistics.AuditLog;
-import main.java.User;
+import model.character.Animal;
+import model.character.Human;
+import model.location.Location;
+import model.scenario.Scenario;
+import statistics.AuditLog;
+import user.User;
 
 // TODO: SetStatisticsLogger which contains deets on algo and user
 
@@ -46,9 +45,9 @@ public class Menu {
 
     public void runMenuLoop(boolean scenarioFileExists) {
         // Print the welcome message
-        String welcomeFileName = "main/java/etc/welcome.ascii";
+        String welcomeFileName = "etc/welcome.ascii";
 
-        // RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
+        RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
 
         // If scenarios file given, count the scenarios loaded from file and print
         if (scenarioFileExists) {
@@ -99,33 +98,6 @@ public class Menu {
                 }
                 log.printStatistics();
                 // Code for showing audit from history goes here.
-
-                // How many statistics file does user have
-                // user.getStatistics();
-                // System.out.println("SHOW CURRENT FINAL AUDIT FOR BOTH USER AND ALGORITHM!!");
-
-                // Interface Implentations
-                // Animal
-                // Animal rgAnimal = new Animal(true);
-                // Animal animal = rgAnimal.randomGen();
-                // System.out.println(animal.extendedToString());
-                // // Human
-                // Human rgHuman = new Human(true);
-                // Human human = rgHuman.randomGen();
-                // System.out.println(human.extendedToString());
-
-                // // Location
-                // Location rgLoc = new Location(true);
-                // Location location = rgLoc.randomGen();
-                // System.out.println(location.extendedToString());
-                // System.out.println(location.toString());
-
-                // // Scenario
-                // Scenario rgScen = new Scenario(true);
-                // Scenario scenario = rgScen.randomGen();
-                // System.out.println(scenario.extendedToString());
-
-                // System.out.println(this.user.showStatistics());
                 break;
 
             case "quit":

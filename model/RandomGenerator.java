@@ -1,7 +1,8 @@
-package main.java;
 
-import main.java.character.Animal;
-import main.java.helper.HelperFunctions;
+package model;
+
+import model.character.Animal;
+import helper.HelperFunctions;
 
 public abstract interface RandomGenerator<T> {
     // Generate random values for the attributes of the object

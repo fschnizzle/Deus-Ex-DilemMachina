@@ -1,4 +1,4 @@
-package main.java.statistics;
+package statistics;
 
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -8,10 +8,10 @@ import java.util.Comparator;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import main.java.scenario.Scenario;
-import main.java.character.*;
-import main.java.location.Location;
-import main.java.statistics.AgeStatistics;
+import model.scenario.Scenario;
+import model.character.*;
+import model.location.Location;
+import statistics.AgeStatistics;
 
 public class Statistics {
     // Instance Variables

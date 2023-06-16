@@ -84,7 +84,7 @@ class AuditLog {
 
 class ScenarioManager {
     + List<Scenario> scenarios
-    + loadScenarios(String): void
+    + loadScenariosFromFile(String): void
     + generateScenario(): Scenario
 }
 

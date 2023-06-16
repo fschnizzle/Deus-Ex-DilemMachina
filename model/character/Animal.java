@@ -1,7 +1,7 @@
-package main.java.character;
+package model.character;
 
-import main.java.RandomGenerator;
-import main.java.helper.HelperFunctions;
+import model.RandomGenerator;
+import helper.HelperFunctions;
 
 import java.util.Random;
 

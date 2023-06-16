@@ -1,11 +1,11 @@
-package main.java.statistics;
+package statistics;
 
 import java.io.*;
 import java.util.*;
-import main.java.scenario.Scenario;
-import main.java.character.*;
-import main.java.location.Location;
-import main.java.statistics.AgeStatistics;
+import model.scenario.Scenario;
+import model.character.*;
+import model.location.Location;
+import statistics.AgeStatistics;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
