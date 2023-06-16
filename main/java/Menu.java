@@ -99,9 +99,15 @@ public class Menu {
                 // user.getStatistics();
                 // System.out.println("SHOW CURRENT FINAL AUDIT FOR BOTH USER AND ALGORITHM!!");
 
+                // Interface Implentations
+                // Animal
                 Animal rgAnimal = new Animal(true);
                 Animal animal = rgAnimal.randomGen();
                 System.out.println(animal.extendedToString());
+                // Human
+                Human rgHuman = new Human(true);
+                Human human = rgHuman.randomGen();
+                System.out.println(human.extendedToString());
 
                 // System.out.println(this.user.showStatistics());
                 break;

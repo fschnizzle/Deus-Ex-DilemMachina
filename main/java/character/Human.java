@@ -1,10 +1,19 @@
 package main.java.character;
 
-public class Human extends character {
+import main.java.RandomGenerator;
+import main.java.helper.HelperFunctions;
+
+import java.util.Random;
+
+public class Human extends character implements RandomGenerator {
     // Instance variables
     private String ageCategory;
     private String profession;
     private boolean isPregnant;
+
+    public enum Profession {
+        doctor, ceo, homeless, criminal, unemployed, teacher, student, retiree
+    }
 
     // Constructors
     public Human(int age, String gender, String bodyType, String profession, boolean isPregnant) {
@@ -13,6 +22,11 @@ public class Human extends character {
         setProfession(profession);
         setIsPregnant(isPregnant);
 
+    }
+
+    public Human(Boolean randomlyGenerated) {
+        super();
+        randomGen();
     }
 
     // Getters
@@ -24,7 +38,7 @@ public class Human extends character {
         return this.profession;
     }
 
-    public boolean getIsPregant() {
+    public boolean getIsPregnant() {
         return this.isPregnant;
     }
 
@@ -49,6 +63,10 @@ public class Human extends character {
         this.profession = profession;
     }
 
+    public void setProfession() {
+        this.profession = "none";
+    }
+
     public void setIsPregnant(boolean isPregnant) {
         this.isPregnant = isPregnant;
     }
@@ -58,6 +76,39 @@ public class Human extends character {
         return (this.getBodyType() + " " + this.getAgeCategory()
                 + (this.getAgeCategory() == "ADULT" ? " " + this.getProfession() + " " : " ")
                 + (this.getGender() != "unknown" ? this.getGender() : "") + " "
-                + (this.getIsPregant() && this.getGender().equals("female") ? "pregnant" : "")).toLowerCase();
+                + (this.getIsPregnant() && this.getGender().equals("female") ? "pregnant" : "")).toLowerCase();
+    }
+
+    // RG Methods
+    // Generate a new Human with random values for the attributes of the object
+    @Override
+    public Human randomGen() {
+        // Uses randomiser functions
+        Random random = new Random();
+
+        // Randomise super attributes
+        String thisGender = HelperFunctions.randomFromEnum(character.Gender.class);
+        String thisBodyType = HelperFunctions.randomFromEnum(character.BodyType.class);
+        int thisAge = random.nextInt(100) + 1;
+
+        // Randomise instance attributes
+        String thisProfession = HelperFunctions.randomFromEnum(Profession.class);
+        boolean thisIsPregnant;
+        if (thisGender.equals("female") && thisAge > 15) {
+            thisIsPregnant = HelperFunctions.randomBoolean(25, 75);
+        } else {
+            thisIsPregnant = false;
+        }
+
+        // Call to constructor
+        Human human = new Human(thisAge, thisGender, thisBodyType, thisProfession, thisIsPregnant);
+
+        return human;
+    }
+
+    // Output the values of the attributes in a specific format
+    public String extendedToString() {
+        return String.format("%s,%s,%d,%s,%s,%b,,", this.getClass().getSimpleName().toLowerCase(), this.getGender(),
+                this.getAge(), this.getBodyType(), this.getProfession(), this.getIsPregnant());
     }
 }
