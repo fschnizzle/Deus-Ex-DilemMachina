@@ -41,9 +41,8 @@ public class RescueBot {
     }
 
     // Setters
-    public void setLogFilePath(String logFilePath) {
+    public void setLogFilePath(String logFilePath) throws IOException{
         // Do a more thorough check if valid pathname by trying to open the file
-        try {
             File file = new File(logFilePath);
 
             // File already exists
@@ -59,42 +58,29 @@ public class RescueBot {
                 file.createNewFile();
                 this.logFilePath = logFilePath;
             }
-        } catch (IOException e) {
-            // System.out.println("HERE");
-            // If filepath is invalid then create or use default logfile
-            System.out.print("ERROR: could not print results. Target directory does not exist.\n");
-            // terminate
-            System.exit(1);
-            // setLogFilePath();
-
-        }
     }
 
     public void setLogFilePath() {
         this.logFilePath = "rescuebot.log";
     }
 
-    public void setScenarioFilePath(String scenarioFilePath) {
+    public void setScenarioFilePath(String scenarioFilePath) throws IOException{
         // Do a more thorough check if valid pathname by trying to open the file
-        try {
-            File file = new File(scenarioFilePath);
+        File file = new File(scenarioFilePath);
 
-            // File already exists
-            if (file.exists() && !file.isDirectory()) {
-                this.scenarioFilePath = scenarioFilePath;
-            }
-            // If file is directory (not a file)
-            else if (file.isDirectory()) {
-                printHelp();
-            }
-            // Else file does not exist, default is used (ie: no scenarios file)
-            else {
-                setScenarioFilePath();
-            }
-        } catch (Exception e) {
-            // If filepath is invalid then scenario path should be null (default)
-            setScenarioFilePath();
-
+        // File already exists
+        if (file.exists() && !file.isDirectory()) {
+            this.scenarioFilePath = scenarioFilePath;
+        }
+        // If file is directory (not a file)
+        else if (file.isDirectory()) {
+            printHelp();
+        }
+        // Else file does not exist, default is used (ie: no scenarios file)
+        else {
+            System.out.println("java.io.FileNotFoundException: could not find scenarios file.");
+            printHelp();
+            // setScenarioFilePath();
         }
     }
 
@@ -162,6 +148,9 @@ public class RescueBot {
         // Loop through arguments. Only works for multiple arguments
         for (int i = 0; i < args.length && args.length > 1; i++) {
             String arg = args[i];
+            potentialPathName = null;
+            
+
             // Process each arg accordingly
             switch (arg) {
                 // Log file path given Case
@@ -174,18 +163,21 @@ public class RescueBot {
                         // Performs simple 'could be a pathname' check with regex
                         // setLogFilePath will later check if it is actually valid
                         if (potentialPathName.matches(".*\\.[a-zA-Z0-9]+")) {
-                            // try {
-                            setLogFilePath(potentialPathName);
-                            // } catch (Exception e) {
-                            // // ErrorHandler.handleFileOpeningError(potentialPathName, e);
-                            // // System.out.println("ERROR!");
-                            // // System.exit(1);
-                            // }
+                            try{
+                                setLogFilePath(potentialPathName);
+                            } catch (IOException e){
+                                System.out.print("ERROR: could not print results. Target directory does not exist.\n");
+                                // terminate
+                                System.exit(1);
+                            }
 
                             i++; // Skip processing next argument in switch (pathName)
                         } else {
                             printHelp();
                         }
+                    }
+                    else{
+                        printHelp();
                     }
                     break;
                 case "-s":
@@ -197,26 +189,32 @@ public class RescueBot {
                         // Performs simple 'could be a pathname' check with regex
                         // setLogFilePath will later check if it is actually valid
                         if (potentialPathName.matches(".*\\.[a-zA-Z0-9]+")) {
-                            // try {
-                            setScenarioFilePath(potentialPathName);
-                            // } catch (Exception e) {
-                            // // ErrorHandler.handleFileOpeningError(potentialPathName, e);
-                            // System.out.println("ERROR!");
-                            // System.exit(1);
-                            // }
+                            try{
+                                setScenarioFilePath(potentialPathName);
+                            }
+                            catch (IOException e){
+                                System.out.print("ERROR: could not print results. Target directory does not exist.\n");
+                                // terminate
+                                System.exit(1);
+                            }
                             i++; // Skip processing next argument in switch (pathName)
                         } else {
                             printHelp();
                         }
+                    }
+                    else{
+                        printHelp();
                     }
                     break;
                 // Anything else defaults to help. *Cases ("-h" / "--help") kept for clarity
                 case "-h":
                 case "--help":
                 default:
+                    System.out.println("Arg " + i + " " + potentialPathName);
                     printHelp();
                     break;
             }
+
             // System.out.println(arg);
         }
     }
@@ -224,10 +222,12 @@ public class RescueBot {
     public static void printMessage(String filePath) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
+            int count = 0;
             while ((line = reader.readLine()) != null) {
+                count++;
                 System.out.println(line);
             }
-            System.out.println("");
+            // System.out.println("");
         } catch (IOException e) {
             System.out.println("An error occurred while reading the file: " + e.getMessage());
         }
@@ -238,9 +238,9 @@ public class RescueBot {
         System.out.println("RescueBot - COMP90041 - Final Project\n");
         System.out.println("Usage: java RescueBot [arguments]\n");
         System.out.println("Arguments:");
-        System.out.println("-s or --scenarios    Optional: path to scenario file");
-        System.out.println("-h or --help         Optional: Print Help (this message) and exit");
-        System.out.println("-l or --log          Optional: path to data log file");
+        System.out.println("-s or --scenarios\tOptional: path to scenario file");
+        System.out.println("-h or --help\t\tOptional: Print Help (this message) and exit");
+        System.out.println("-l or --log\t\tOptional: path to data log file");
 
         // System immediately exits after
         System.exit(0);

@@ -39,7 +39,7 @@ public class AuditLog {
             // writer.write("User\n");
             // for (Scenario scenario : scenarios) {
             writer.write(decisionLocID + "\n");
-            writer.write(scenario.extendedToString());
+            // writer.write(scenario.extendedToString());
             // }
             // ("Scenario ID: " + scenarioId + "\n");
         } catch (IOException e) {

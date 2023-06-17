@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import model.character.Animal;
 import model.character.Human;
+import java.text.DecimalFormat;
 
 public class Location implements RandomGenerator {
     // Instance variables
@@ -27,8 +28,10 @@ public class Location implements RandomGenerator {
         }
 
         public String toString() {
-            return String.format("%.4f %c", value, cardinality);
+            DecimalFormat df = new DecimalFormat("0.####");
+            return (String) (df.format(value) + " " + cardinality);
         }
+
     }
 
     // Constructors
@@ -98,8 +101,8 @@ public class Location implements RandomGenerator {
         locationDetails += this.lon.toString() + "\n";
 
         // Second and third Lines
-        locationDetails += "Trespassing: " + (this.isTrespassing == "trespassing" ? "yes" : "no") + "\n";
-        locationDetails += characters.size() + " Characters:\n";
+        locationDetails += "Trespassing: " + (this.getIsTrespassing().equals("legal") ? "no" : "yes") + "\n";
+        locationDetails += characters.size() + " Characters: \n";
 
         // Successive (character) Lines
         for (character entity : characters) {
@@ -148,7 +151,7 @@ public class Location implements RandomGenerator {
 
     public String extendedToString() {
         String locString = String.format("location:%s;%s;\n%s,,,,,,,\n", this.lat.toString(), this.lon.toString(),
-                (this.getIsTrespassing() == "trespassing" ? "trespassing" : "legal"));
+                (this.getIsTrespassing().equals("trespassing") ? "trespassing" : "legal"));
         for (character entity : this.getCharacters()) {
             locString += entity.extendedToString() + "\n";
         }

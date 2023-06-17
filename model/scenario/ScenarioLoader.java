@@ -53,7 +53,6 @@ public class ScenarioLoader {
             // Scenario
             Scenario rgScen = new Scenario(true);
             Scenario scenario = rgScen.randomGen();
-            // System.out.println(scenario.extendedToString());
             scenarios.add(scenario);
             outOfThreeCount++;
         }
@@ -88,45 +87,48 @@ public class ScenarioLoader {
                     currentScenario = new Scenario(scenarioType);
                     this.scenarioCount++;
 
-                    while (!line.startsWith("scenario:")) {
-                        if (line.startsWith("location:")) {
-                            // New location, so add it to the current scenario
-                            // FORMAT: "location:13.7154 N;150.9094 W;trespassing,,,,,,,"
-                            String locationDetails = line.split(":")[1].trim();
-                            String[] locationParts = locationDetails.split(";");
+                    // while (!line.startsWith("scenario:")) {
+                    // System.out.println("LINE!!");
+                    // if (line.startsWith("location:")) {
+                    // // New location, so add it to the current scenario
+                    // // FORMAT: "location:13.7154 N;150.9094 W;trespassing,,,,,,,"
+                    // String locationDetails = line.split(":")[1].trim();
+                    // String[] locationParts = locationDetails.split(";");
 
-                            double latVal = Double.parseDouble(locationParts[0].split(" ")[0]);
-                            char latCard = locationParts[0].split(" ")[1].charAt(0);
-                            double lonVal = Double.parseDouble(locationParts[1].split(" ")[0]);
-                            char lonCard = locationParts[1].split(" ")[1].charAt(0);
-                            String isTrespassing = locationParts[2].substring(0, 5);
+                    // double latVal = Double.parseDouble(locationParts[0].split(" ")[0]);
+                    // char latCard = locationParts[0].split(" ")[1].charAt(0);
+                    // double lonVal = Double.parseDouble(locationParts[1].split(" ")[0]);
+                    // char lonCard = locationParts[1].split(" ")[1].charAt(0);
+                    // String isTrespassing = locationParts[2].substring(0, 5);
 
-                            currentLocation = new Location(latVal, latCard, lonVal, lonCard, isTrespassing);
-                            currentScenario.addLocation(currentLocation);
-                        } else
-                            while ((line.startsWith("human:")) || (line.startsWith("animal:"))) {
-                                // Character details, so add a new character to the current scenario's current
-                                // location
-                                // FORMAT: "human,male,71,athletic,none,false,,"
-                                String[] characterDetails = line.split(",");
+                    // currentLocation = new Location(latVal, latCard, lonVal, lonCard,
+                    // isTrespassing);
+                    // currentScenario.addLocation(currentLocation);
+                    // } else
+                    // while ((line.startsWith("human:")) || (line.startsWith("animal:"))) {
+                    // // Character details, so add a new character to the current scenario's
+                    // current
+                    // // location
+                    // // FORMAT: "human,male,71,athletic,none,false,,"
+                    // String[] characterDetails = line.split(",");
 
-                                int age = Integer.parseInt(characterDetails[2]);
-                                String gender = characterDetails[1];
-                                String bodyType = characterDetails[3];
+                    // int age = Integer.parseInt(characterDetails[2]);
+                    // String gender = characterDetails[1];
+                    // String bodyType = characterDetails[3];
 
-                                if (!characterDetails[4].isEmpty()) { // it's a human
-                                    String profession = characterDetails[4];
-                                    boolean isPregnant = Boolean.parseBoolean(characterDetails[5]);
-                                    Human human = new Human(age, gender, bodyType, profession, isPregnant);
-                                    currentLocation.addCharacter(human);
-                                } else if (!characterDetails[6].isEmpty()) { // it's an animal
-                                    String species = characterDetails[6];
-                                    boolean isPet = Boolean.parseBoolean(characterDetails[7]);
-                                    Animal animal = new Animal(age, gender, bodyType, species, isPet);
-                                    currentLocation.addCharacter(animal);
-                                }
-                            }
-                    }
+                    // if (!characterDetails[4].isEmpty()) { // it's a human
+                    // String profession = characterDetails[4];
+                    // boolean isPregnant = Boolean.parseBoolean(characterDetails[5]);
+                    // Human human = new Human(age, gender, bodyType, profession, isPregnant);
+                    // currentLocation.addCharacter(human);
+                    // } else if (!characterDetails[6].isEmpty()) { // it's an animal
+                    // String species = characterDetails[6];
+                    // boolean isPet = Boolean.parseBoolean(characterDetails[7]);
+                    // Animal animal = new Animal(age, gender, bodyType, species, isPet);
+                    // currentLocation.addCharacter(animal);
+                    // }
+                    // }
+                    // }
 
                 } else if (line.startsWith("location:")) {
                     // New location, so add it to the current scenario

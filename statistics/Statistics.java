@@ -92,6 +92,38 @@ public class Statistics {
         for (Location location : scenario.getLocations()) {
             String[] charactersStrings = location.toString().split("\n");
 
+            // Adds extra details (HUMAN, ANIMAL, LEGAL, TRESPASSING)
+            String[] extDetails = location.extendedToString().split("\n");
+
+            for (String detail : extDetails) {
+                String[] attributes = detail.split(",");
+
+                // Extract entity type from first attribute
+                String entityType = attributes[0];
+
+                // Update seenDict for these entity types
+                if (entityType.equals("legal") || entityType.equals("trespassing") || entityType.equals("animal")
+                        || entityType.equals("human")) {
+                    incrementDictValue(this.seenDict, entityType);
+                }
+
+                // // If the entity is a human or animal, iterate over the rest of the
+                // attributes
+                // if (entityType.equals("human") || entityType.equals("animal")) {
+                // for (int i = 1; i < attributes.length; i++) {
+                // String attribute = attributes[i];
+
+                // // Skip if empty
+                // if (attribute.isEmpty()) {
+                // continue;
+                // }
+
+                // // Add to seenDict (if not yet in it) or update count by 1
+                // incrementDictValue(this.seenDict, attribute);
+                // }
+                // }
+            }
+
             // Loop over each Character String to derive attributes
             for (String charStr : charactersStrings) {
                 // Update trespassing attribute count
@@ -125,6 +157,22 @@ public class Statistics {
 
         // Update dict for characters in chosen location only
         Location location = scenario.getLocation(choice - 1);
+
+        // Adds extra details (HUMAN, ANIMAL, LEGAL, TRESPASSING)
+        String[] extDetails = location.extendedToString().split("\n");
+
+        for (String detail : extDetails) {
+            String[] attributes = detail.split(",");
+
+            // Extract entity type from first attribute
+            String entityType = attributes[0];
+
+            // Update seenDict for these entity types
+            if (entityType.equals("legal") || entityType.equals("trespassing") || entityType.equals("animal")
+                    || entityType.equals("human")) {
+                incrementDictValue(this.savedDict, entityType);
+            }
+        }
         String[] charactersStrings = location.toString().split("\n");
 
         // Loop over each Character String to derive attributes

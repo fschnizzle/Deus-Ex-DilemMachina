@@ -92,8 +92,8 @@ public class Human extends character implements RandomGenerator {
     public String toString() {
         return (this.getBodyType() + " " + this.getAgeCategory()
                 + (this.getAgeCategory() == "ADULT" ? " " + this.getProfession() + " " : " ")
-                + (this.getGender() != "unknown" ? this.getGender() : "") + " "
-                + (this.getIsPregnant() && this.getGender().equals("female") ? "pregnant" : "")).toLowerCase();
+                + (this.getGender() != "unknown" ? this.getGender() : "")
+                + (this.getIsPregnant() && this.getGender().equals("female") ? " pregnant" : "")).toLowerCase();
     }
 
     // RG Methods
