@@ -30,7 +30,9 @@ public class User {
     public User(String logFilePath, String scenarioFilePath) {
         // Load Scenarios either thru RSG (Random Scenario generation) or from file
         // CHECK IF scenarioFilePath is empty!!
+
         setLogPath(logFilePath);
+        // this.log = new AuditLog(this.getLogFilePath());
         if (scenarioFilePath == null) {
             // RSG
             this.scenarioFileExists = false;
@@ -97,7 +99,10 @@ public class User {
 
     public void setLogPath(String logPath) {
         this.logPath = logPath;
-        this.log = new AuditLog(logPath);
+    }
+
+    public void setLog(AuditLog log) {
+        this.log = log;
     }
 
     public void setScenarios() {
@@ -296,7 +301,7 @@ public class User {
     }
 
     public String showStatistics() {
-        return this.statistics.displayStats();
+        return this.statistics.displayStats(false);
     }
 
 }

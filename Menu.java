@@ -47,7 +47,7 @@ public class Menu {
         // Print the welcome message
         String welcomeFileName = "etc/welcome.ascii";
 
-        RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
+        // RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
 
         // If scenarios file given, count the scenarios loaded from file and print
         if (scenarioFileExists) {
@@ -89,14 +89,21 @@ public class Menu {
 
             case "audit":
             case "a":
-                AuditLog log = user.getLog();
+                // AuditLog log = user.getLog();
+
                 try {
-                    log.decisionAudit();
+                    AuditLog algoLog = new AuditLog(user.getLogFilePath());
+                    algoLog.decisionAudit("Algorithm");
+                    algoLog.printStatistics();
+                    AuditLog userLog = new AuditLog(user.getLogFilePath());
+                    userLog.decisionAudit("User");
+                    userLog.printStatistics();
+
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-                log.printStatistics();
+
                 // Code for showing audit from history goes here.
                 break;
 

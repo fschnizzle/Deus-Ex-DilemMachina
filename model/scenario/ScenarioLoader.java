@@ -140,10 +140,10 @@ public class ScenarioLoader {
                     char latCard = locationParts[0].split(" ")[1].charAt(0);
                     double lonVal = Double.parseDouble(locationParts[1].split(" ")[0]);
                     char lonCard = locationParts[1].split(" ")[1].charAt(0);
-                    String isTrespassing = locationParts[2].substring(0, 5);
+                    String isTrespassing = (locationParts[2].substring(0, 5).equals("legal") ? "legal" : "trespassing");
 
                     currentLocation = new Location(latVal, latCard, lonVal, lonCard, isTrespassing);
-                    currentScenario.addLocation(currentLocation);
+
                 } else {
                     // Character details, so add a new character to the current scenario's current
                     // location

@@ -106,22 +106,6 @@ public class Statistics {
                         || entityType.equals("human")) {
                     incrementDictValue(this.seenDict, entityType);
                 }
-
-                // // If the entity is a human or animal, iterate over the rest of the
-                // attributes
-                // if (entityType.equals("human") || entityType.equals("animal")) {
-                // for (int i = 1; i < attributes.length; i++) {
-                // String attribute = attributes[i];
-
-                // // Skip if empty
-                // if (attribute.isEmpty()) {
-                // continue;
-                // }
-
-                // // Add to seenDict (if not yet in it) or update count by 1
-                // incrementDictValue(this.seenDict, attribute);
-                // }
-                // }
             }
 
             // Loop over each Character String to derive attributes
@@ -219,17 +203,20 @@ public class Statistics {
 
     }
 
-    public String displayStats() {
+    public String displayStats(boolean bypassHeader) {
         HashMap<String, Integer> seen = this.seenDict;
         HashMap<String, Integer> saved = this.savedDict;
 
         ArrayList<AttributePercentagePair> attributes = new ArrayList<>();
 
         // Statistics Header
+        String statsString = "";
+        if (!bypassHeader) {
+            statsString += "======================================\n";
+            statsString += "# Statistic\n";
+            statsString += "======================================\n";
+        }
 
-        String statsString = "======================================\n";
-        statsString += "# Statistic\n";
-        statsString += "======================================\n";
         statsString += "- % SAVED AFTER " + scenariosSeenCount + " RUNS\n";
 
         // Loops over all keys

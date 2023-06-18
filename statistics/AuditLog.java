@@ -5,7 +5,7 @@ import java.util.*;
 import model.scenario.Scenario;
 import model.character.*;
 import model.location.Location;
-import statistics.AgeStatistics;
+import statistics.*;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -17,11 +17,14 @@ public class AuditLog {
     // private String logFile;
     private HashMap<String, Integer> seen;
     private HashMap<String, Integer> saved;
+    public Statistics statistic;
+    public String userOrAlgo;
 
     public AuditLog(String filename) {
         this.filename = filename;
         this.seen = new HashMap<>();
         this.saved = new HashMap<>();
+        this.statistic = new Statistics();
     }
 
     public void writeLogHeader(String userOrAlgo) {
@@ -39,7 +42,7 @@ public class AuditLog {
             // writer.write("User\n");
             // for (Scenario scenario : scenarios) {
             writer.write(decisionLocID + "\n");
-            // writer.write(scenario.extendedToString());
+            writer.write(scenario.extendedToString() + "\n");
             // }
             // ("Scenario ID: " + scenarioId + "\n");
         } catch (IOException e) {
@@ -48,121 +51,129 @@ public class AuditLog {
         }
     }
 
-    public void decisionAudit() throws IOException {
+    public void decisionAudit(String userOrAlgo) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get(filename));
         boolean isUserSection = false;
+        this.userOrAlgo = userOrAlgo;
         int chosenLocation = -1; // Initialize chosen location with an invalid index
-        for (String line : lines) {
-            if (line.equals("User")) {
+        int curLocID = 0;
+        Scenario scenario = null; // Assuming you have a Scenario class that contains a list of Locations
+        // int lineNum = 0;
+        String line;
+        for (int i = 0; i < lines.size(); i++) {
+
+            // get next line
+            line = lines.get(i);
+
+            if (line.equals(userOrAlgo)) {
                 isUserSection = true;
-                continue;
+                continue; // Skips to next line
             }
+
             if (isUserSection) {
-                if (line.matches("\\d+")) {
-                    chosenLocation = Integer.parseInt(line);
+                // Scenario Header
+                if (line.startsWith("scenario:")) {
+                    scenario = new Scenario(true);
+                    scenario.setEmergencyDescription(line);
+                    scenario.setLocations();
                     continue;
                 }
+                // Decision index
+                if (line.matches("\\d+")) {
+                    chosenLocation = Integer.parseInt(line);
+                    // If current scenario exists
+                    // currentScenario.addLocation(currentLocation);
+                    continue;
+                }
+                // Start of location
+                if (line.startsWith("[")) {
+
+                    // Iterate locID
+                    curLocID++;
+
+                    Location location = new Location(null);
+
+                    // Location line for loc details
+                    String locationDetails = line.split(":")[1].trim();
+                    String[] locationParts = locationDetails.split(";");
+
+                    double latVal = Double.parseDouble(locationParts[0].split(" ")[0]);
+                    char latCard = locationParts[0].split(" ")[1].charAt(0);
+                    double lonVal = Double.parseDouble(locationParts[1].split(" ")[0]);
+                    char lonCard = locationParts[1].split(" ")[1].charAt(0);
+
+                    // Get next line
+                    i++;
+                    line = lines.get(i);
+                    String trespassing = line.split(",")[0].trim();
+                    // locationParts = locationDetails.split(";");
+                    // System.out.println(trespassing);
+                    String isTrespassing = (trespassing.equals("legal") ? "legal" : "trespassing");
+
+                    Location curLoc = new Location(latVal, latCard, lonVal, lonCard, isTrespassing);
+                    scenario.addLocation(curLoc);
+                    // continue;
+                }
+                // character details
                 String[] splitLine = line.split(",", -1);
-                if (splitLine.length > 1) {
-                    System.out.println(line);
+                // System.out.println(splitLine[0]);
+                if (splitLine[0].equals("human") || splitLine[0].equals("animal")) {
+                    // System.out.println(line);
                     String gender = splitLine[1];
                     String ageStr = splitLine[2];
+                    String bodyType = splitLine[3];
                     int age = ageStr.isEmpty() ? 0 : Integer.parseInt(ageStr);
                     String profession = splitLine[4];
                     boolean pregnant = Boolean.parseBoolean(splitLine[5]);
                     String species = splitLine[6];
                     boolean isPet = Boolean.parseBoolean(splitLine[7]);
 
-                    String ageGroup = getAgeGroup(age);
-                    seen.put(ageGroup, seen.getOrDefault(ageGroup, 0) + 1);
-                    seen.put(gender, seen.getOrDefault(gender, 0) + 1);
-                    seen.put(profession, seen.getOrDefault(profession, 0) + 1);
-                    seen.put(species, seen.getOrDefault(species, 0) + 1);
-                    seen.put("pregnant", seen.getOrDefault("pregnant", 0) + (pregnant ? 1 : 0));
-                    seen.put("pet", seen.getOrDefault("pet", 0) + (isPet ? 1 : 0));
-
-                    if (splitLine[0].startsWith("[" + chosenLocation + "]")) {
-                        saved.put(ageGroup, saved.getOrDefault(ageGroup, 0) + 1);
-                        saved.put(gender, saved.getOrDefault(gender, 0) + 1);
-                        saved.put(profession, saved.getOrDefault(profession, 0) + 1);
-                        saved.put(species, saved.getOrDefault(species, 0) + 1);
-                        saved.put("pregnant", saved.getOrDefault("pregnant", 0) + (pregnant ? 1 : 0));
-                        saved.put("pet", saved.getOrDefault("pet", 0) + (isPet ? 1 : 0));
+                    character character;
+                    // Assuming you have a Character class that can take these parameters
+                    if (splitLine[0].equals("human")) {
+                        character = new Human(age, gender, bodyType, profession, pregnant);
+                    } else if (splitLine[0].equals("animal")) {
+                        character = new Animal(age, gender, bodyType, species, isPet);
+                    } else {
+                        // System.out.println();
+                        throw new IllegalArgumentException(splitLine[0] + " is Not a human or animal apparently");
                     }
+                    // int locationIndex = Integer.parseInt(splitLine[0].substring(1,
+                    // splitLine[0].length() - 1));
+                    scenario.getLocation(curLocID - 1).addCharacter(character); // Assuming your Location class has an
+                                                                                // addCharacter method
+
+                }
+                if (line.equals("")) { // Assuming an empty line indicates the end of a scenario
+                    isUserSection = false;
+                    statistic.updateSeen(scenario);
+                    statistic.updateSaved(scenario, chosenLocation);
+                    statistic.updateAgeStatistics(scenario, chosenLocation);
+
                 }
             }
         }
     }
 
-    // // Prints out the final statistic for all users.
-    // public void decisionAudit() throws IOException {
-    // File file = new File(this.filename);
-    // if (!file.exists() || file.length() == 0) {
-    // throw new FileNotFoundException("No history found. Press enter to return to
-    // main menu.");
-    // }
-
-    // BufferedReader reader = new BufferedReader(new FileReader(file));
-    // String line;
-    // boolean isUserSection = false;
-    // boolean scenarioFinished = false;
-
-    // while ((line = reader.readLine()) != null) {
-    // if (line.startsWith("User")) {
-    // isUserSection = true;
-    // scenarioFinished = false;
-    // continue;
-    // }
-
-    // if (line.startsWith("Algorithm")) {
-    // isUserSection = false;
-    // continue;
-    // }
-
-    // if (isUserSection && !scenarioFinished) {
-    // String[] splitLine = line.split(",", -1);
-    // if (splitLine.length > 1 && !line.startsWith("scenario:")) {
-    // // process attributes
-    // String gender = splitLine[1];
-    // System.out.println("attribute: " + splitLine[0]);
-    // int age = Integer.parseInt(splitLine[2]);
-    // String profession = splitLine[4];
-    // boolean pregnant = Boolean.parseBoolean(splitLine[5]);
-    // String species = splitLine[6];
-    // boolean isPet = Boolean.parseBoolean(splitLine[7]);
-
-    // String ageGroup = getAgeGroup(age);
-    // seen.put(ageGroup, seen.getOrDefault(ageGroup, 0) + 1);
-    // seen.put(gender, seen.getOrDefault(gender, 0) + 1);
-    // seen.put(profession, seen.getOrDefault(profession, 0) + 1);
-    // seen.put(species, seen.getOrDefault(species, 0) + 1);
-    // seen.put("pregnant", seen.getOrDefault("pregnant", 0) + (pregnant ? 1 : 0));
-    // seen.put("pet", seen.getOrDefault("pet", 0) + (isPet ? 1 : 0));
-    // } else if (!line.isEmpty() && !line.startsWith("scenario:")) {
-    // // This line indicates a decision
-    // String[] decision = line.split(" ");
-    // int chosenLocation = Integer.parseInt(decision[0]);
-    // saved.put(String.valueOf(chosenLocation),
-    // saved.getOrDefault(String.valueOf(chosenLocation), 0) + 1);
-    // scenarioFinished = true;
-    // }
-    // }
-    // }
-
-    // reader.close();
-    // printStatistics();
-    // }
-
     public void printStatistics() {
-        System.out.println("======================================");
-        System.out.println("# User Audit");
-        System.out.println("======================================");
-        System.out.println("- % SAVED AFTER " + seen.size() + " RUNS");
-        for (Map.Entry<String, Integer> entry : seen.entrySet()) {
-            double percentage = (double) saved.getOrDefault(entry.getKey(), 0) / entry.getValue();
-            System.out.printf("%s: %.2f\n", entry.getKey(), percentage);
+
+        // Print only if the user or algorithm has seen at least 1 scenario
+        if (statistic.getScenariosSeenCount() > 0) {
+            System.out.println("======================================");
+            System.out.println("# " + this.userOrAlgo + " Audit");
+            System.out.println("======================================");
+            // System.out.println("- % SAVED AFTER " + seen.size() + " RUNS");
+            System.out.println(statistic.displayStats(true));
+            System.out.println(statistic.getAgeStatistics().getAverageAgeOfSavedHumans());
+            System.out.println();
+            // for (Map.Entry<String, Integer> entry : seen.entrySet()) {
+            // double percentage = (double) saved.getOrDefault(entry.getKey(), 0) /
+            // entry.getValue();
+            // System.out.printf("%s: %.2f\n", entry.getKey(), percentage);
+            // }
+            // System.out.println("======================================");
         }
-        System.out.println("======================================");
+
     }
 
     public static String getAgeGroup(int age) {
