@@ -60,31 +60,59 @@ public class AuditLog {
         Scenario scenario = null; // Assuming you have a Scenario class that contains a list of Locations
         // int lineNum = 0;
         String line;
+
+        // Set which of User or Algorithm to NOT record for
+        String whileNot;
+
+        if (userOrAlgo == "User") {
+            whileNot = "Algorithm";
+        } else if (userOrAlgo == "Algorithm") {
+            whileNot = "User";
+        } else {
+            whileNot = ""; // Never Reaches
+        }
+
+        String userOrAlgoSection = whileNot;
+
         for (int i = 0; i < lines.size(); i++) {
 
             // get next line
             line = lines.get(i);
 
+            // Flip whose section it is (User or Algo)
             if (line.equals(userOrAlgo)) {
-                isUserSection = true;
-                continue; // Skips to next line
+                userOrAlgoSection = userOrAlgo;
+                // Reset scenario
+                scenario = null; // Reset the scenario
+                curLocID = 0; // Reset the location id
+
+            } else if (line.equals(userOrAlgo)) {
+                userOrAlgoSection = userOrAlgo;
+                // Reset scenario
+                scenario = null; // Reset the scenario
+                curLocID = 0; // Reset the location id
             }
 
-            if (isUserSection) {
+            // Reset decision index
+            if (line.matches("\\d+")) {
+                chosenLocation = Integer.parseInt(line);
+                // System.out.println("updates!");
+                // If current scenario exists
+                // currentScenario.addLocation(currentLocation);
+                continue;
+            }
+
+            // Body of scenario (and correct UserOrAlgo)
+            if (userOrAlgoSection == userOrAlgo) {
                 // Scenario Header
                 if (line.startsWith("scenario:")) {
                     scenario = new Scenario(true);
                     scenario.setEmergencyDescription(line);
                     scenario.setLocations();
+                    curLocID = 0; // Reset the location id
                     continue;
                 }
-                // Decision index
-                if (line.matches("\\d+")) {
-                    chosenLocation = Integer.parseInt(line);
-                    // If current scenario exists
-                    // currentScenario.addLocation(currentLocation);
-                    continue;
-                }
+
                 // Start of location
                 if (line.startsWith("[")) {
 
@@ -146,9 +174,11 @@ public class AuditLog {
                 }
                 if (line.equals("")) { // Assuming an empty line indicates the end of a scenario
                     isUserSection = false;
-                    statistic.updateSeen(scenario);
-                    statistic.updateSaved(scenario, chosenLocation);
-                    statistic.updateAgeStatistics(scenario, chosenLocation);
+                    if (scenario != null) {
+                        statistic.updateSeen(scenario);
+                        statistic.updateSaved(scenario, chosenLocation);
+                        statistic.updateAgeStatistics(scenario, chosenLocation);
+                    }
 
                 }
             }
@@ -164,7 +194,7 @@ public class AuditLog {
             System.out.println("======================================");
             // System.out.println("- % SAVED AFTER " + seen.size() + " RUNS");
             System.out.println(statistic.displayStats(true));
-            System.out.println(statistic.getAgeStatistics().getAverageAgeOfSavedHumans());
+            // System.out.println(statistic.getAgeStatistics().getAverageAgeOfSavedHumans());
             System.out.println();
             // for (Map.Entry<String, Integer> entry : seen.entrySet()) {
             // double percentage = (double) saved.getOrDefault(entry.getKey(), 0) /

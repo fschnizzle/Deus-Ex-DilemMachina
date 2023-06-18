@@ -36,6 +36,7 @@ public class User {
         if (scenarioFilePath == null) {
             // RSG
             this.scenarioFileExists = false;
+            this.log = new AuditLog(logFilePath);
             setScenarios();
             setScenarioLoader();
             setScenariosFromRSG();
