@@ -2,136 +2,137 @@ Rough UML Class Outline
 
 @startuml
 
+package "model" {
+    class "RandomGenerator" {
+    }
+    package "character" {
+        class "Character" {
+        }
+        class "Animal" {
+            - age: int
+            - gender: String
+            - bodyType: String
+            - species: String
+            - isPet: boolean
+        }
+        class "Human" {
+            - age: int
+            - gender: String
+            - bodyType: String
+            - profession: String
+            - isPregnant: boolean
+        }
 
-enum Gender {
-    FEMALE
-    MALE
-    UNKNOWN
+        Animal --|> Character
+        Human --|> Character
+    }
+
+    package "location" {
+        class "Location" {
+            - latVal: double
+            - latCard: char
+            - lonVal: double
+            - lonCard: char
+            - isTrespassing: String
+            - characters: List<Character>
+        }
+    }
+
+    package "scenario" {
+        class "Scenario" {
+            - scenarioType: String
+            - locations: List<Location>
+        }
+        class "ScenarioLoader" {
+        }
+        Scenario *-- Location
+    }
 }
 
-enum BodyType {
-    AVERAGE
-    ATHLETIC
-    OVERWEIGHT
-    UNSPECIFIED
+class "User" {
 }
 
-enum AgeCategory {
-    BABY
-    CHILD
-    ADULT
-    SENIOR
+class "RescueBot" {
 }
 
-enum Profession {
-    DOCTOR
-    CEO
-    CRIMINAL
-    HOMELESS
-    UNEMPLOYED
-    NONE
+class "Menu" {
 }
 
-class Character {
-    - age: int
-    - gender: Gender
-    - bodyType: BodyType
+class "ErrorHandler" {
 }
 
-class Human extends Character{
-    - profession: Profession
-    - isPregnant: boolean
-    - ageCategory: AgeCategory
+package "decision" {
+    interface "DecisionAlgorithm" {
+    }
+    class "SimpleDecision" {
+    }
+
+    SimpleDecision .up.|> DecisionAlgorithm
 }
 
-class Animal extends Character{
-    - species: String
-    - isPet: boolean
+package "helper" {
+    class "HelperFunctions" {
+    }
 }
 
-class Location {
-    + boolean isTrespassing
-    + List<Character> characters
+package "statistics" {
+    class "AgeStatistics" {
+    }
+    class "AuditLog" {
+    }
+    class "Statistics" {
+    }
 }
 
-class Scenario {
-    + String emergencyDetails
-    + List<Location> locations
-}
-
-interface DecisionAlgorithm {
-    + decide(Scenario): Location
-}
-
-class User {
-    + List<Decision> decisions
-    + Statistics statistics
-}
-
-class RescueBot {
-    + DecisionAlgorithm decisionAlgorithm
-    + rescue(Scenario): void
-}
-
-class Statistics {
-    + Map<String, Double> detailsPercentage
-}
-
-class AuditLog {
-    + String outputFile
-    + log(Decision): void
-}
-
-class ScenarioManager {
-    + List<Scenario> scenarios
-    + loadScenariosFromFile(String): void
-    + generateScenario(): Scenario
-}
-
-class Decision {
-    + User user
-    + Scenario scenario
-    + Location decision
-}
+RescueBot *-- User
+RescueBot *-- Menu
+RescueBot *-- ErrorHandler
+RescueBot *-- DecisionAlgorithm
+RescueBot *-- "model.scenario.ScenarioLoader"
+RescueBot *-- "statistics.AuditLog"
+RescueBot *-- "statistics.Statistics"
+RescueBot *-- "helper.HelperFunctions"
 
 @enduml
+
 
 _______________
 
 Rough Directory Outline 
 
 
-src/
-├── main/
-│   ├── java/
-│   │   ├── decision/
-│   │   │   ├── DecisionAlgorithm.java
-│   │   │   ├── FirstLocationAlgorithm.java
-│   │   │   └── OtherAlgorithmImplementations.java
-│   │   ├── character/
-│   │   │   ├── Character.java
-│   │   │   ├── Human.java
-│   │   │   └── Animal.java
-│   │   ├── location/
-│   │   │   └── Location.java
-│   │   ├── scenario/
-│   │   │   ├── Scenario.java
-│   │   │   └── ScenarioLoader.java
-│   │   ├── statistics/
-│   │   │   ├── Statistics.java
-│   │   │   └── StatisticLogger.java
-│   │   ├── RescueBot.java
-│   │   └── Main.java
-│   └── resources/
-│       ├── scenarios/
-│       │   └── example_scenario.txt
-│       └── logs/
-│           └── audit_log.txt
-└── test (optional unit tests)/
-    └── java/
-        ├── decision/
-        ├── character/
-        ├── location/
-        ├── scenario/
-        ├── statistics/
-        └── RescueBotTest.java
+├── ErrorHandler.java
+├── Menu.java
+├── RescueBot.java
+├── admin
+│   ├── README.md
+│   └── outliner.txt
+├── audit.log
+├── data
+│   └── scenarios.csv
+├── decision
+│   ├── DecisionAlgorithm.java
+│   └── simpleDecision.java
+├── etc
+│   └── welcome.ascii
+├── helper
+│   └── HelperFunctions.java
+├── model
+│   ├── RandomGenerator.java
+│   ├── character
+│   │   ├── Animal.java
+│   │   ├── Human.java
+│   │   └── character.java
+│   ├── location
+│   │   └── Location.java
+│   └── scenario
+│       ├── Scenario.java
+│       └── ScenarioLoader.java
+├── newLog.log
+├── rescuebot.log
+├── statistics
+│   ├── AgeStatistics.java
+│   ├── AuditLog.java
+│   └── Statistics.java
+└── user
+    └── User.java
