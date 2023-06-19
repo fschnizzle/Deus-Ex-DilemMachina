@@ -86,24 +86,23 @@ public class AuditLog {
                 scenario = null; // Reset the scenario
                 curLocID = 0; // Reset the location id
 
-            } else if (line.equals(userOrAlgo)) {
-                userOrAlgoSection = userOrAlgo;
+            } else if (line.equals(whileNot)) {
+                userOrAlgoSection = whileNot;
                 // Reset scenario
                 scenario = null; // Reset the scenario
                 curLocID = 0; // Reset the location id
             }
-
-            // Reset decision index
-            if (line.matches("\\d+")) {
-                chosenLocation = Integer.parseInt(line);
-                // System.out.println("updates!");
-                // If current scenario exists
-                // currentScenario.addLocation(currentLocation);
-                continue;
-            }
-
+            
             // Body of scenario (and correct UserOrAlgo)
             if (userOrAlgoSection == userOrAlgo) {
+                // Reset decision index
+                if (line.matches("\\d+")) {
+                    chosenLocation = Integer.parseInt(line);
+                    // System.out.println("updates!");
+                    // If current scenario exists
+                    // currentScenario.addLocation(currentLocation);
+                    continue;
+                }
                 // Scenario Header
                 if (line.startsWith("scenario:")) {
                     scenario = new Scenario(true);
@@ -218,17 +217,3 @@ public class AuditLog {
         }
     }
 }
-// }
-
-// private void printStatistics(String title, Map<String, Integer> decisions) {
-// System.out.println("======================================");
-// System.out.println("# " + title);
-// System.out.println("======================================");
-
-// // You might want to sort the decisions map here by values before printing.
-
-// for (Map.Entry<String, Integer> entry : decisions.entrySet()) {
-// System.out.println(entry.getKey() + ": " + entry.getValue());
-// }
-// }
-// }

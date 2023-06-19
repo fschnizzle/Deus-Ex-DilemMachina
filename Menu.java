@@ -14,12 +14,14 @@ import user.User;
 public class Menu {
     private Scanner keyboard;
     private User user;
+    private User algoUser;
 
     // Constructor
 
     public Menu(String logFilePath, String scenarioFilePath) {
         keyboard = new Scanner(System.in);
         setUser(logFilePath, scenarioFilePath);
+        setAlgoUser(logFilePath, scenarioFilePath, true);
     }
 
     // Getters
@@ -31,7 +33,10 @@ public class Menu {
 
     public void setUser(String logFilePath, String scenarioFilePath) {
         this.user = new User(logFilePath, scenarioFilePath); // Calls to filepath DEFAULT
+    }
 
+    public void setAlgoUser(String logFilePath, String scenarioFilePath, Boolean isAlgorithm) {
+        this.algoUser = new User(logFilePath, scenarioFilePath);
     }
 
     public void displayMenuText() {
@@ -76,6 +81,7 @@ public class Menu {
 
             case "run":
             case "r":
+                algoUser.handleSimulateScenarios(keyboard);
                 // user.handleJudgeScenarios(keyboard)
                 // Prompt users for scenario count
 

@@ -76,4 +76,9 @@ public abstract class character {
     public String extendedToString() {
         return "";
     }
+    
+    private boolean isValidBodyType(String bodyType) {
+        // Replace this with your actual validation logic
+        return bodyType.equals("athletic") || bodyType.equals("average") || bodyType.equals("overweight");
+    }
 }
