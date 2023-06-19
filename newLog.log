@@ -1,0 +1,2160 @@
+User
+3
+scenario:sandstorm,,,,,,,
+[1] location:83.1687 N;167.9791 W;
+trespassing,,,,,,,
+animal,female,2,overweight,,,ferret,true
+animal,male,12,average,,,snake,false
+[2] location:81.5381 N;164.8016 W;
+legal,,,,,,,
+human,female,26,average,student,false,,
+animal,male,1,overweight,,,wallaby,false
+[3] location:82.3511 N;165.4656 W;
+trespassing,,,,,,,
+human,female,66,athletic,unemployed,true,,
+human,female,58,average,ceo,true,,
+human,female,41,average,homeless,false,,
+
+3
+scenario:cyclone,,,,,,,
+[1] location:60.1785 S;155.6176 W;
+legal,,,,,,,
+human,male,32,overweight,homeless,false,,
+animal,female,7,overweight,,,cockatoo,false
+human,female,42,overweight,professor,true,,
+[2] location:61.4006 S;156.3451 W;
+legal,,,,,,,
+human,male,34,overweight,student,false,,
+human,male,52,athletic,ceo,false,,
+animal,male,4,overweight,,,ferret,true
+animal,female,4,average,,,snake,false
+human,male,49,athletic,student,false,,
+[3] location:61.0657 S;155.3684 W;
+trespassing,,,,,,,
+human,male,64,athletic,unemployed,false,,
+human,female,40,overweight,unemployed,true,,
+human,male,72,athletic,none,false,,
+human,male,56,athletic,ceo,false,,
+
+2
+scenario:cyclone,,,,,,,
+[1] location:0.8323 S;15.1605 E;
+trespassing,,,,,,,
+animal,male,20,average,,,dog,true
+human,male,38,athletic,criminal,false,,
+[2] location:1.0819 S;16.6086 E;
+trespassing,,,,,,,
+human,female,17,average,ceo,true,,
+human,male,52,overweight,unemployed,false,,
+animal,female,16,athletic,,,koala,false
+human,female,0,overweight,none,false,,
+[3] location:2.0831 S;17.521 E;
+trespassing,,,,,,,
+human,female,68,athletic,ceo,true,,
+animal,female,8,athletic,,,dog,true
+animal,female,5,overweight,,,possum,false
+
+Algorithm
+3
+scenario:sandstorm,,,,,,,
+[1] location:83.1687 N;167.9791 W;
+trespassing,,,,,,,
+animal,female,2,overweight,,,ferret,true
+animal,male,12,average,,,snake,false
+[2] location:81.5381 N;164.8016 W;
+legal,,,,,,,
+human,female,26,average,student,false,,
+animal,male,1,overweight,,,wallaby,false
+[3] location:82.3511 N;165.4656 W;
+trespassing,,,,,,,
+human,female,66,athletic,unemployed,true,,
+human,female,58,average,ceo,true,,
+human,female,41,average,homeless,false,,
+
+3
+scenario:cyclone,,,,,,,
+[1] location:60.1785 S;155.6176 W;
+legal,,,,,,,
+human,male,32,overweight,homeless,false,,
+animal,female,7,overweight,,,cockatoo,false
+human,female,42,overweight,professor,true,,
+[2] location:61.4006 S;156.3451 W;
+legal,,,,,,,
+human,male,34,overweight,student,false,,
+human,male,52,athletic,ceo,false,,
+animal,male,4,overweight,,,ferret,true
+animal,female,4,average,,,snake,false
+human,male,49,athletic,student,false,,
+[3] location:61.0657 S;155.3684 W;
+trespassing,,,,,,,
+human,male,64,athletic,unemployed,false,,
+human,female,40,overweight,unemployed,true,,
+human,male,72,athletic,none,false,,
+human,male,56,athletic,ceo,false,,
+
+2
+scenario:cyclone,,,,,,,
+[1] location:0.8323 S;15.1605 E;
+trespassing,,,,,,,
+animal,male,20,average,,,dog,true
+human,male,38,athletic,criminal,false,,
+[2] location:1.0819 S;16.6086 E;
+trespassing,,,,,,,
+human,female,17,average,ceo,true,,
+human,male,52,overweight,unemployed,false,,
+animal,female,16,athletic,,,koala,false
+human,female,0,overweight,none,false,,
+[3] location:2.0831 S;17.521 E;
+trespassing,,,,,,,
+human,female,68,athletic,ceo,true,,
+animal,female,8,athletic,,,dog,true
+animal,female,5,overweight,,,possum,false
+
+2
+scenario:flood,,,,,,,
+[1] location:67.4482 N;35.5938 W;
+trespassing,,,,,,,
+human,female,44,athletic,student,true,,
+human,female,8,athletic,none,false,,
+animal,female,10,athletic,,,dingo,false
+human,female,57,athletic,student,true,,
+animal,female,12,overweight,,,platypus,false
+[2] location:68.597 N;37.0239 W;
+legal,,,,,,,
+human,male,74,overweight,none,false,,
+human,male,46,athletic,homeless,false,,
+human,female,14,athletic,none,false,,
+human,male,62,average,unemployed,false,,
+human,male,50,overweight,unemployed,false,,
+[3] location:68.5877 N;36.4848 W;
+legal,,,,,,,
+human,female,15,athletic,none,false,,
+human,female,16,overweight,none,false,,
+
+2
+scenario:earthquake,,,,,,,
+[1] location:88.3966 S;90.4465 E;
+legal,,,,,,,
+human,female,52,average,doctor,false,,
+animal,female,13,overweight,,,koala,false
+animal,male,11,overweight,,,ferret,false
+[2] location:89.112 S;88.929 E;
+trespassing,,,,,,,
+animal,male,19,athletic,,,platypus,false
+human,female,62,athletic,doctor,true,,
+human,female,6,average,none,false,,
+[3] location:89.2848 S;90.8264 E;
+legal,,,,,,,
+human,female,15,athletic,none,false,,
+human,male,60,athletic,unemployed,false,,
+
+3
+scenario:bushfire,,,,,,,
+[1] location:80.5979 N;90.0576 W;
+legal,,,,,,,
+animal,male,6,average,,,koala,false
+human,male,29,overweight,ceo,false,,
+[2] location:81.3395 N;91.0416 W;
+trespassing,,,,,,,
+human,female,48,average,doctor,false,,
+animal,female,5,athletic,,,dingo,false
+[3] location:81.1006 N;93.091 W;
+trespassing,,,,,,,
+human,male,65,overweight,doctor,false,,
+human,female,80,athletic,none,false,,
+human,female,61,athletic,professor,true,,
+
+2
+scenario:bushfire,,,,,,,
+[1] location:25.5404 S;11.7818 W;
+legal,,,,,,,
+human,male,13,athletic,none,false,,
+animal,male,16,average,,,wallaby,false
+[2] location:23.9174 S;11.5585 W;
+legal,,,,,,,
+human,female,41,average,professor,false,,
+human,female,10,average,none,false,,
+animal,male,19,athletic,,,wallaby,false
+human,female,30,average,homeless,true,,
+animal,female,8,overweight,,,ferret,true
+[3] location:25.0618 S;11.2796 W;
+trespassing,,,,,,,
+animal,male,6,average,,,possum,false
+human,male,67,athletic,doctor,false,,
+
+2
+scenario:bushfire,,,,,,,
+[1] location:12.3188 S;99.9829 E;
+trespassing,,,,,,,
+human,female,36,overweight,ceo,true,,
+human,male,32,athletic,professor,false,,
+[2] location:10.8416 S;101.7352 E;
+trespassing,,,,,,,
+human,male,25,athletic,professor,false,,
+human,male,30,athletic,unemployed,false,,
+animal,male,3,athletic,,,dingo,false
+human,male,15,athletic,none,false,,
+
+1
+scenario:cyclone,,,,,,,
+[1] location:22.2453 S;121.0917 W;
+trespassing,,,,,,,
+human,male,34,athletic,student,false,,
+human,female,41,average,ceo,false,,
+human,male,77,athletic,none,false,,
+[2] location:21.9675 S;122.3335 W;
+legal,,,,,,,
+animal,female,14,overweight,,,koala,false
+animal,female,15,average,,,cat,false
+animal,male,0,average,,,wallaby,false
+human,female,50,average,doctor,true,,
+animal,male,6,athletic,,,koala,false
+[3] location:21.701 S;123.2527 W;
+trespassing,,,,,,,
+human,female,24,overweight,professor,false,,
+human,female,0,athletic,none,false,,
+animal,male,20,average,,,snake,false
+animal,male,10,average,,,wallaby,false
+
+2
+scenario:flood,,,,,,,
+[1] location:74.0006 N;103.6632 W;
+trespassing,,,,,,,
+animal,male,4,athletic,,,cat,true
+animal,female,11,average,,,koala,false
+human,male,45,athletic,professor,false,,
+animal,male,4,athletic,,,cat,true
+[2] location:74.3798 N;105.3672 W;
+legal,,,,,,,
+human,female,25,athletic,ceo,true,,
+human,female,10,athletic,none,false,,
+animal,male,20,overweight,,,possum,false
+human,female,52,overweight,professor,true,,
+[3] location:75.3969 N;103.3349 W;
+legal,,,,,,,
+human,male,33,overweight,professor,false,,
+animal,female,8,average,,,dingo,false
+
+Algorithm
+4
+scenario:fire,,,,,,,
+[1] location:-53.834 S;-75.805 W;
+legal,,,,,,,
+animal,female,3,average,,,koala,false
+animal,female,36,overweight,,,chicken,true
+[2] location:-70.6271 N;-45.8 E;
+trespassing,,,,,,,
+animal,male,23,overweight,,,snake,false
+animal,male,7,average,,,dog,false
+[3] location:9.0991 S;103.4227 W;
+legal,,,,,,,
+animal,female,35,athletic,,,kangaroo,false
+animal,male,17,average,,,tiger,false
+[4] location:-85.4671 S;-115.0091 W;
+legal,,,,,,,
+human,male,94,average,none,false,,
+human,male,58,average,criminal,false,,
+animal,male,7,athletic,,,snake,false
+animal,female,11,athletic,,,tiger,false
+
+2
+scenario:cyclone,,,,,,,
+[1] location:-24.9821 N;79.3795 E;
+trespassing,,,,,,,
+human,female,20,overweight,doctor,false,,
+animal,female,29,athletic,,,ferret,false
+human,female,100,overweight,none,false,,
+[2] location:-58.1711 S;-29.9108 E;
+legal,,,,,,,
+animal,female,8,athletic,,,ferret,false
+human,male,14,overweight,none,false,,
+human,female,14,average,none,false,,
+human,male,61,athletic,student,false,,
+[3] location:18.7121 S;149.613 W;
+legal,,,,,,,
+human,male,82,overweight,none,false,,
+human,male,45,average,criminal,false,,
+animal,female,35,athletic,,,koala,false
+[4] location:51.7007 S;179.304 E;
+legal,,,,,,,
+animal,male,25,athletic,,,kangaroo,true
+
+1
+scenario:earthquake,,,,,,,
+[1] location:81.1591 S;-163.1335 W;
+trespassing,,,,,,,
+animal,female,42,average,,,kangaroo,false
+human,female,73,athletic,none,false,,
+animal,male,50,athletic,,,chicken,false
+human,male,67,overweight,teacher,false,,
+animal,female,9,athletic,,,dog,true
+[2] location:-12.0814 S;56.0333 W;
+legal,,,,,,,
+human,male,66,overweight,criminal,false,,
+
+4
+scenario:fire,,,,,,,
+[1] location:-53.834 S;-75.805 W;
+legal,,,,,,,
+animal,female,3,average,,,koala,false
+animal,female,36,overweight,,,chicken,true
+[2] location:-70.6271 N;-45.8 E;
+trespassing,,,,,,,
+animal,male,23,overweight,,,snake,false
+animal,male,7,average,,,dog,false
+[3] location:9.0991 S;103.4227 W;
+legal,,,,,,,
+animal,female,35,athletic,,,kangaroo,false
+animal,male,17,average,,,tiger,false
+[4] location:-85.4671 S;-115.0091 W;
+legal,,,,,,,
+human,male,94,average,none,false,,
+human,male,58,average,criminal,false,,
+animal,male,7,athletic,,,snake,false
+animal,female,11,athletic,,,tiger,false
+
+Algorithm
+4
+scenario:fire,,,,,,,
+[1] location:-53.834 S;-75.805 W;
+legal,,,,,,,
+animal,female,3,average,,,koala,false
+animal,female,36,overweight,,,chicken,true
+[2] location:-70.6271 N;-45.8 E;
+trespassing,,,,,,,
+animal,male,23,overweight,,,snake,false
+animal,male,7,average,,,dog,false
+[3] location:9.0991 S;103.4227 W;
+legal,,,,,,,
+animal,female,35,athletic,,,kangaroo,false
+animal,male,17,average,,,tiger,false
+[4] location:-85.4671 S;-115.0091 W;
+legal,,,,,,,
+human,male,94,average,none,false,,
+human,male,58,average,criminal,false,,
+animal,male,7,athletic,,,snake,false
+animal,female,11,athletic,,,tiger,false
+
+2
+scenario:cyclone,,,,,,,
+[1] location:-24.9821 N;79.3795 E;
+trespassing,,,,,,,
+human,female,20,overweight,doctor,false,,
+animal,female,29,athletic,,,ferret,false
+human,female,100,overweight,none,false,,
+[2] location:-58.1711 S;-29.9108 E;
+legal,,,,,,,
+animal,female,8,athletic,,,ferret,false
+human,male,14,overweight,none,false,,
+human,female,14,average,none,false,,
+human,male,61,athletic,student,false,,
+[3] location:18.7121 S;149.613 W;
+legal,,,,,,,
+human,male,82,overweight,none,false,,
+human,male,45,average,criminal,false,,
+animal,female,35,athletic,,,koala,false
+[4] location:51.7007 S;179.304 E;
+legal,,,,,,,
+animal,male,25,athletic,,,kangaroo,true
+
+Algorithm
+4
+scenario:fire,,,,,,,
+[1] location:-53.834 S;-75.805 W;
+legal,,,,,,,
+animal,female,3,average,,,koala,false
+animal,female,36,overweight,,,chicken,true
+[2] location:-70.6271 N;-45.8 E;
+trespassing,,,,,,,
+animal,male,23,overweight,,,snake,false
+animal,male,7,average,,,dog,false
+[3] location:9.0991 S;103.4227 W;
+legal,,,,,,,
+animal,female,35,athletic,,,kangaroo,false
+animal,male,17,average,,,tiger,false
+[4] location:-85.4671 S;-115.0091 W;
+legal,,,,,,,
+human,male,94,average,none,false,,
+human,male,58,average,criminal,false,,
+animal,male,7,athletic,,,snake,false
+animal,female,11,athletic,,,tiger,false
+
+2
+scenario:cyclone,,,,,,,
+[1] location:-24.9821 N;79.3795 E;
+trespassing,,,,,,,
+human,female,20,overweight,doctor,false,,
+animal,female,29,athletic,,,ferret,false
+human,female,100,overweight,none,false,,
+[2] location:-58.1711 S;-29.9108 E;
+legal,,,,,,,
+animal,female,8,athletic,,,ferret,false
+human,male,14,overweight,none,false,,
+human,female,14,average,none,false,,
+human,male,61,athletic,student,false,,
+[3] location:18.7121 S;149.613 W;
+legal,,,,,,,
+human,male,82,overweight,none,false,,
+human,male,45,average,criminal,false,,
+animal,female,35,athletic,,,koala,false
+[4] location:51.7007 S;179.304 E;
+legal,,,,,,,
+animal,male,25,athletic,,,kangaroo,true
+
+1
+scenario:earthquake,,,,,,,
+[1] location:81.1591 S;-163.1335 W;
+trespassing,,,,,,,
+animal,female,42,average,,,kangaroo,false
+human,female,73,athletic,none,false,,
+animal,male,50,athletic,,,chicken,false
+human,male,67,overweight,teacher,false,,
+animal,female,9,athletic,,,dog,true
+[2] location:-12.0814 S;56.0333 W;
+legal,,,,,,,
+human,male,66,overweight,criminal,false,,
+
+4
+scenario:fire,,,,,,,
+[1] location:-53.834 S;-75.805 W;
+legal,,,,,,,
+animal,female,3,average,,,koala,false
+animal,female,36,overweight,,,chicken,true
+[2] location:-70.6271 N;-45.8 E;
+trespassing,,,,,,,
+animal,male,23,overweight,,,snake,false
+animal,male,7,average,,,dog,false
+[3] location:9.0991 S;103.4227 W;
+legal,,,,,,,
+animal,female,35,athletic,,,kangaroo,false
+animal,male,17,average,,,tiger,false
+[4] location:-85.4671 S;-115.0091 W;
+legal,,,,,,,
+human,male,94,average,none,false,,
+human,male,58,average,criminal,false,,
+animal,male,7,athletic,,,snake,false
+animal,female,11,athletic,,,tiger,false
+
+2
+scenario:cyclone,,,,,,,
+[1] location:-24.9821 N;79.3795 E;
+trespassing,,,,,,,
+human,female,20,overweight,doctor,false,,
+animal,female,29,athletic,,,ferret,false
+human,female,100,overweight,none,false,,
+[2] location:-58.1711 S;-29.9108 E;
+legal,,,,,,,
+animal,female,8,athletic,,,ferret,false
+human,male,14,overweight,none,false,,
+human,female,14,average,none,false,,
+human,male,61,athletic,student,false,,
+[3] location:18.7121 S;149.613 W;
+legal,,,,,,,
+human,male,82,overweight,none,false,,
+human,male,45,average,criminal,false,,
+animal,female,35,athletic,,,koala,false
+[4] location:51.7007 S;179.304 E;
+legal,,,,,,,
+animal,male,25,athletic,,,kangaroo,true
+
+1
+scenario:earthquake,,,,,,,
+[1] location:81.1591 S;-163.1335 W;
+trespassing,,,,,,,
+animal,female,42,average,,,kangaroo,false
+human,female,73,athletic,none,false,,
+animal,male,50,athletic,,,chicken,false
+human,male,67,overweight,teacher,false,,
+animal,female,9,athletic,,,dog,true
+[2] location:-12.0814 S;56.0333 W;
+legal,,,,,,,
+human,male,66,overweight,criminal,false,,
+
+2
+scenario:earthquake,,,,,,,
+[1] location:-65.3931 N;93.8753 W;
+trespassing,,,,,,,
+animal,female,33,overweight,,,cat,false
+human,male,68,average,retiree,false,,
+animal,female,17,athletic,,,chicken,false
+human,female,99,athletic,none,false,,
+human,male,81,overweight,none,false,,
+[2] location:45.1766 N;171.7049 E;
+trespassing,,,,,,,
+human,female,19,overweight,unemployed,true,,
+human,female,39,athletic,criminal,false,,
+animal,female,44,overweight,,,tiger,false
+human,male,42,athletic,criminal,false,,
+
+1
+scenario:earthquake,,,,,,,
+[1] location:-39.6415 S;-66.0995 W;
+legal,,,,,,,
+human,female,64,overweight,retiree,false,,
+human,female,88,overweight,none,false,,
+[2] location:-70.5662 N;109.4411 W;
+legal,,,,,,,
+animal,male,5,athletic,,,cockatoo,false
+human,female,33,overweight,doctor,false,,
+[3] location:-45.3434 S;-115.9161 W;
+legal,,,,,,,
+human,female,51,average,teacher,false,,
+[4] location:69.1312 N;5.2116 W;
+trespassing,,,,,,,
+animal,female,34,athletic,,,tiger,false
+
+3
+scenario:fire,,,,,,,
+[1] location:17.9646 S;-1.3198 E;
+legal,,,,,,,
+human,male,71,overweight,none,false,,
+animal,male,5,athletic,,,cockatoo,false
+human,male,20,overweight,teacher,false,,
+animal,female,12,average,,,tiger,false
+[2] location:-51.7456 N;-8.0293 E;
+trespassing,,,,,,,
+animal,female,15,athletic,,,kangaroo,false
+human,male,12,athletic,none,false,,
+human,female,13,overweight,none,false,,
+animal,male,47,average,,,cat,false
+[3] location:88.7849 S;2.0002 E;
+trespassing,,,,,,,
+human,female,23,athletic,homeless,false,,
+human,female,40,athletic,criminal,false,,
+human,female,54,average,teacher,false,,
+
+1
+scenario:hurricane,,,,,,,
+[1] location:47.8436 N;13.7144 E;
+trespassing,,,,,,,
+animal,female,27,overweight,,,ferret,true
+human,female,61,average,student,false,,
+human,female,58,overweight,homeless,false,,
+[2] location:14.6483 S;176.6108 E;
+legal,,,,,,,
+animal,male,47,athletic,,,chicken,false
+human,female,9,athletic,none,false,,
+human,female,74,average,none,false,,
+[3] location:-56.4921 S;134.8207 W;
+trespassing,,,,,,,
+animal,female,14,average,,,kangaroo,false
+animal,female,50,overweight,,,dog,true
+
+1
+scenario:flood,,,,,,,
+[1] location:76.7484 N;-74.5769 W;
+trespassing,,,,,,,
+human,male,41,athletic,student,false,,
+animal,female,47,athletic,,,cockatoo,true
+[2] location:-49.4263 N;125.7624 E;
+trespassing,,,,,,,
+animal,female,44,overweight,,,snake,false
+human,female,26,overweight,homeless,false,,
+
+2
+scenario:earthquake,,,,,,,
+[1] location:38.7939 S;154.2985 W;
+trespassing,,,,,,,
+human,male,94,overweight,none,false,,
+animal,male,6,average,,,tiger,false
+animal,female,35,athletic,,,snake,false
+[2] location:-54.6707 N;105.6363 W;
+trespassing,,,,,,,
+human,female,97,athletic,none,false,,
+animal,female,44,athletic,,,chicken,true
+animal,male,50,average,,,wallaby,true
+animal,female,21,athletic,,,koala,false
+human,female,37,athletic,teacher,false,,
+
+2
+scenario:fire,,,,,,,
+[1] location:78.8389 S;157.3019 E;
+legal,,,,,,,
+animal,female,16,overweight,,,wallaby,true
+human,male,59,athletic,criminal,false,,
+animal,female,48,overweight,,,tiger,true
+animal,female,24,athletic,,,dog,false
+[2] location:24.9587 S;-128.8506 W;
+legal,,,,,,,
+animal,male,26,athletic,,,dog,false
+human,female,47,average,doctor,false,,
+human,female,22,athletic,unemployed,false,,
+animal,male,29,overweight,,,koala,true
+human,male,81,overweight,none,false,,
+
+1
+scenario:hurricane,,,,,,,
+[1] location:-70.8563 N;-28.5813 E;
+trespassing,,,,,,,
+animal,male,15,average,,,wallaby,false
+human,female,82,athletic,none,true,,
+[2] location:-42.3279 S;-163.2329 E;
+trespassing,,,,,,,
+human,male,44,overweight,student,false,,
+animal,male,45,average,,,tiger,false
+animal,male,49,athletic,,,kangaroo,false
+animal,male,40,athletic,,,chicken,false
+[3] location:-73.4943 N;-160.6041 W;
+legal,,,,,,,
+animal,female,12,overweight,,,koala,false
+animal,female,16,athletic,,,tiger,false
+human,male,12,athletic,none,false,,
+animal,male,28,athletic,,,snake,true
+[4] location:71.6162 N;-110.9549 W;
+legal,,,,,,,
+animal,male,38,overweight,,,kangaroo,true
+human,female,10,average,none,false,,
+
+1
+scenario:cyclone,,,,,,,
+[1] location:-48.7137 N;-151.314 E;
+trespassing,,,,,,,
+human,male,52,average,student,false,,
+animal,female,16,overweight,,,snake,false
+human,male,92,athletic,none,false,,
+animal,male,50,average,,,wallaby,false
+[2] location:21.8887 S;-99.2161 E;
+trespassing,,,,,,,
+human,female,72,average,none,false,,
+animal,female,48,athletic,,,ferret,false
+animal,male,34,athletic,,,wallaby,true
+
+3
+scenario:fire,,,,,,,
+[1] location:18.7088 N;-73.6922 W;
+trespassing,,,,,,,
+human,male,17,average,teacher,false,,
+animal,male,18,overweight,,,kangaroo,true
+[2] location:56.4592 N;-120.9113 W;
+legal,,,,,,,
+animal,female,30,athletic,,,tiger,false
+animal,female,19,average,,,koala,true
+[3] location:-41.6288 N;-152.0166 W;
+trespassing,,,,,,,
+human,female,92,average,none,true,,
+human,male,85,overweight,none,false,,
+animal,male,45,overweight,,,ferret,false
+
+1
+scenario:flood,,,,,,,
+[1] location:74.2854 N;170.0618 E;
+trespassing,,,,,,,
+human,female,91,average,none,false,,
+[2] location:-11.4487 N;112.0696 E;
+trespassing,,,,,,,
+human,female,36,athletic,doctor,false,,
+
+3
+scenario:cyclone,,,,,,,
+[1] location:36.8166 N;137.1812 W;
+legal,,,,,,,
+animal,male,18,average,,,cockatoo,false
+[2] location:86.76 S;-31.8871 W;
+trespassing,,,,,,,
+animal,male,3,average,,,tiger,false
+human,female,38,average,retiree,true,,
+[3] location:63.9069 N;-126.0896 E;
+legal,,,,,,,
+animal,female,32,average,,,wallaby,false
+animal,male,18,average,,,snake,false
+human,female,14,average,none,false,,
+human,female,86,athletic,none,true,,
+[4] location:79.1454 N;40.9333 E;
+trespassing,,,,,,,
+animal,male,31,athletic,,,dog,false
+
+1
+scenario:cyclone,,,,,,,
+[1] location:20.8099 N;1.6337 W;
+trespassing,,,,,,,
+human,male,94,average,none,false,,
+animal,female,10,overweight,,,snake,true
+human,male,54,athletic,doctor,false,,
+human,female,64,overweight,teacher,false,,
+[2] location:-63.7963 N;-109.1537 W;
+legal,,,,,,,
+animal,male,19,athletic,,,snake,false
+human,female,42,athletic,criminal,false,,
+human,male,73,average,none,false,,
+human,female,19,athletic,student,false,,
+animal,female,2,athletic,,,tiger,true
+
+1
+scenario:flood,,,,,,,
+[1] location:38.8966 N;-34.2365 W;
+trespassing,,,,,,,
+animal,male,35,average,,,snake,true
+human,female,3,overweight,none,false,,
+animal,female,21,overweight,,,snake,true
+[2] location:53.9299 N;93.5501 E;
+legal,,,,,,,
+animal,female,14,average,,,snake,false
+animal,female,38,athletic,,,tiger,false
+animal,female,25,average,,,kangaroo,true
+
+1
+scenario:flood,,,,,,,
+[1] location:-83.0218 N;-130.6647 E;
+legal,,,,,,,
+animal,male,39,athletic,,,ferret,true
+human,female,74,overweight,none,false,,
+[2] location:29.9285 S;-43.9019 E;
+trespassing,,,,,,,
+human,male,17,overweight,teacher,false,,
+animal,female,43,athletic,,,snake,false
+
+3
+scenario:earthquake,,,,,,,
+[1] location:68.2109 N;-79.0367 E;
+legal,,,,,,,
+animal,female,31,overweight,,,dog,false
+human,male,24,overweight,ceo,false,,
+animal,male,11,average,,,koala,false
+animal,male,41,athletic,,,koala,true
+[2] location:-17.6284 S;-53.3895 W;
+trespassing,,,,,,,
+animal,female,11,athletic,,,kangaroo,true
+animal,female,9,athletic,,,snake,false
+animal,male,39,average,,,koala,false
+[3] location:-22.0185 S;-102.5575 E;
+legal,,,,,,,
+animal,male,36,average,,,kangaroo,false
+human,female,64,athletic,homeless,true,,
+human,male,62,overweight,retiree,false,,
+animal,female,17,average,,,ferret,false
+animal,female,38,average,,,dog,false
+[4] location:-55.6248 N;-58.1563 W;
+legal,,,,,,,
+animal,female,33,overweight,,,koala,false
+
+2
+scenario:earthquake,,,,,,,
+[1] location:88.4287 S;-159.5035 E;
+trespassing,,,,,,,
+animal,female,44,average,,,dog,false
+human,female,26,average,ceo,false,,
+[2] location:6.9875 N;-112.9247 W;
+trespassing,,,,,,,
+human,male,69,athletic,none,false,,
+human,female,11,average,none,false,,
+animal,female,23,average,,,ferret,false
+human,male,62,overweight,criminal,false,,
+
+3
+scenario:fire,,,,,,,
+[1] location:-89.2341 N;-13.2467 W;
+trespassing,,,,,,,
+animal,male,32,athletic,,,koala,false
+animal,female,8,overweight,,,dog,true
+animal,female,27,average,,,tiger,false
+human,male,1,overweight,none,false,,
+[2] location:21.9373 S;-64.461 E;
+legal,,,,,,,
+animal,female,24,athletic,,,wallaby,false
+[3] location:11.8803 N;-65.0724 W;
+trespassing,,,,,,,
+human,male,47,athletic,unemployed,false,,
+animal,male,14,average,,,dog,false
+human,male,40,athletic,doctor,false,,
+animal,female,36,athletic,,,chicken,false
+
+1
+scenario:earthquake,,,,,,,
+[1] location:-65.5621 S;-109.0372 W;
+trespassing,,,,,,,
+human,male,31,average,ceo,false,,
+human,female,35,average,student,false,,
+human,female,83,overweight,none,false,,
+animal,female,9,average,,,koala,false
+human,male,87,overweight,none,false,,
+[2] location:52.7254 S;-167.14 E;
+trespassing,,,,,,,
+animal,male,35,average,,,cat,false
+animal,male,28,overweight,,,chicken,false
+human,female,15,overweight,none,false,,
+[3] location:-10.0651 N;-37.6082 E;
+trespassing,,,,,,,
+human,female,39,average,retiree,false,,
+animal,female,9,athletic,,,snake,false
+human,male,37,overweight,retiree,false,,
+animal,male,22,overweight,,,snake,true
+human,male,6,overweight,none,false,,
+[4] location:33.9236 N;74.2058 E;
+legal,,,,,,,
+animal,male,47,athletic,,,cockatoo,true
+
+2
+scenario:flood,,,,,,,
+[1] location:78.9198 N;98.0409 W;
+legal,,,,,,,
+human,female,76,overweight,none,true,,
+human,female,31,athletic,teacher,false,,
+[2] location:73.9629 N;39.3272 E;
+legal,,,,,,,
+human,female,40,athletic,retiree,false,,
+animal,female,16,athletic,,,dog,true
+human,male,82,athletic,none,false,,
+human,male,60,average,teacher,false,,
+human,female,84,overweight,none,false,,
+[3] location:29.2477 S;139.0308 W;
+trespassing,,,,,,,
+animal,male,20,average,,,chicken,false
+human,male,48,average,doctor,false,,
+human,male,84,athletic,none,false,,
+human,male,7,athletic,none,false,,
+human,female,40,athletic,criminal,false,,
+
+1
+scenario:earthquake,,,,,,,
+[1] location:16.1319 S;101.894 W;
+trespassing,,,,,,,
+animal,female,35,average,,,wallaby,false
+human,female,98,average,none,true,,
+animal,male,19,average,,,cockatoo,false
+human,male,63,athletic,unemployed,false,,
+animal,male,11,average,,,chicken,false
+[2] location:30.6427 S;79.6796 E;
+trespassing,,,,,,,
+human,male,48,average,retiree,false,,
+[3] location:-51.8466 N;-167.1074 W;
+legal,,,,,,,
+human,female,89,average,none,false,,
+human,female,74,average,none,false,,
+
+2
+scenario:flood,,,,,,,
+[1] location:-86.6616 N;-67.1014 W;
+trespassing,,,,,,,
+animal,male,9,athletic,,,tiger,false
+animal,male,10,athletic,,,tiger,false
+animal,female,12,athletic,,,chicken,true
+animal,male,8,athletic,,,wallaby,false
+[2] location:52.0616 S;45.4333 W;
+legal,,,,,,,
+human,female,62,athletic,teacher,false,,
+animal,male,20,average,,,cat,false
+human,female,5,overweight,none,false,,
+animal,female,33,overweight,,,dog,false
+animal,female,24,athletic,,,snake,false
+
+3
+scenario:flood,,,,,,,
+[1] location:-37.3844 N;31.5691 W;
+legal,,,,,,,
+human,female,56,overweight,criminal,false,,
+[2] location:-57.8312 S;-84.5115 E;
+legal,,,,,,,
+human,male,71,average,none,false,,
+animal,male,34,overweight,,,dog,true
+animal,female,37,athletic,,,dog,false
+human,male,14,average,none,false,,
+[3] location:-6.6055 N;-0.9551 W;
+trespassing,,,,,,,
+animal,male,7,average,,,koala,false
+animal,female,5,overweight,,,chicken,true
+human,male,90,overweight,none,false,,
+human,female,23,overweight,doctor,true,,
+animal,female,24,athletic,,,kangaroo,false
+[4] location:36.056 N;65.7686 W;
+trespassing,,,,,,,
+animal,male,31,athletic,,,snake,false
+human,male,71,average,none,false,,
+animal,female,13,athletic,,,wallaby,false
+
+2
+scenario:cyclone,,,,,,,
+[1] location:-40.1507 N;37.6873 E;
+legal,,,,,,,
+animal,male,50,overweight,,,cat,false
+human,male,22,athletic,doctor,false,,
+human,female,13,average,none,false,,
+animal,female,24,overweight,,,ferret,false
+[2] location:45.5921 S;-78.2121 W;
+legal,,,,,,,
+human,female,73,athletic,none,false,,
+human,male,57,overweight,unemployed,false,,
+human,female,87,average,none,false,,
+[3] location:-80.3842 N;-118.7369 E;
+trespassing,,,,,,,
+human,male,49,overweight,retiree,false,,
+animal,male,36,athletic,,,snake,false
+human,female,39,athletic,unemployed,true,,
+animal,male,42,athletic,,,cat,true
+[4] location:-54.0924 N;-123.6059 W;
+trespassing,,,,,,,
+human,male,34,overweight,unemployed,false,,
+human,female,100,athletic,none,true,,
+animal,male,1,overweight,,,ferret,false
+
+1
+scenario:fire,,,,,,,
+[1] location:40.3763 N;-162.5631 W;
+legal,,,,,,,
+human,male,42,overweight,criminal,false,,
+human,female,87,average,none,false,,
+animal,female,8,overweight,,,cat,false
+[2] location:-78.994 S;-128.5952 E;
+legal,,,,,,,
+animal,male,20,athletic,,,dog,false
+human,female,80,average,none,false,,
+human,female,7,overweight,none,false,,
+animal,female,42,overweight,,,wallaby,false
+[3] location:-79.5402 N;10.7982 E;
+trespassing,,,,,,,
+human,male,1,average,none,false,,
+human,male,64,average,unemployed,false,,
+
+2
+scenario:hurricane,,,,,,,
+[1] location:-80.4399 S;-170.238 W;
+legal,,,,,,,
+animal,female,39,athletic,,,snake,false
+animal,female,21,average,,,snake,false
+human,female,80,athletic,none,false,,
+human,female,87,athletic,none,false,,
+[2] location:61.5846 S;117.5153 E;
+trespassing,,,,,,,
+human,male,3,average,none,false,,
+human,male,27,athletic,homeless,false,,
+animal,female,17,athletic,,,dog,true
+animal,female,41,overweight,,,ferret,true
+human,female,4,overweight,none,false,,
+
+1
+scenario:flood,,,,,,,
+[1] location:52.206 N;6.5011 W;
+legal,,,,,,,
+human,male,10,average,none,false,,
+human,female,36,overweight,student,false,,
+human,male,2,overweight,none,false,,
+human,male,64,athletic,teacher,false,,
+[2] location:-34.3934 N;73.5827 W;
+legal,,,,,,,
+animal,female,47,overweight,,,tiger,false
+animal,female,24,athletic,,,tiger,true
+animal,male,40,athletic,,,ferret,false
+[3] location:38.7888 N;145.0459 E;
+legal,,,,,,,
+human,male,87,average,none,false,,
+animal,male,30,athletic,,,snake,true
+human,male,60,average,homeless,false,,
+[4] location:86.9858 N;-98.1255 W;
+trespassing,,,,,,,
+animal,female,24,average,,,wallaby,false
+animal,female,13,athletic,,,koala,false
+human,female,97,athletic,none,false,,
+animal,female,36,average,,,dog,true
+
+2
+scenario:flood,,,,,,,
+[1] location:-70.728 N;-60.4035 W;
+legal,,,,,,,
+human,female,6,athletic,none,false,,
+animal,male,31,average,,,kangaroo,false
+[2] location:-80.6501 S;131.0307 E;
+trespassing,,,,,,,
+animal,male,35,athletic,,,snake,false
+animal,female,6,overweight,,,chicken,true
+human,female,29,athletic,student,false,,
+animal,male,34,average,,,koala,false
+human,male,51,average,ceo,false,,
+
+2
+scenario:fire,,,,,,,
+[1] location:63.528 N;-97.3861 W;
+legal,,,,,,,
+human,female,39,athletic,criminal,false,,
+human,male,69,athletic,none,false,,
+[2] location:-33.6559 S;-68.7251 W;
+trespassing,,,,,,,
+human,male,7,average,none,false,,
+human,female,28,average,doctor,false,,
+human,female,32,overweight,homeless,false,,
+human,male,63,average,doctor,false,,
+
+1
+scenario:cyclone,,,,,,,
+[1] location:-48.6538 S;-158.1434 W;
+trespassing,,,,,,,
+human,male,87,overweight,none,false,,
+human,female,82,overweight,none,true,,
+human,male,43,overweight,teacher,false,,
+[2] location:12.9244 S;162.6327 E;
+trespassing,,,,,,,
+animal,male,50,overweight,,,cockatoo,false
+[3] location:-88.4504 N;-9.9521 W;
+trespassing,,,,,,,
+animal,female,17,overweight,,,kangaroo,false
+animal,female,36,average,,,wallaby,false
+
+1
+scenario:earthquake,,,,,,,
+[1] location:23.2512 S;-130.6792 E;
+legal,,,,,,,
+human,male,59,athletic,unemployed,false,,
+animal,male,36,overweight,,,tiger,false
+animal,male,20,overweight,,,koala,false
+human,female,62,overweight,retiree,false,,
+[2] location:-10.673 S;177.5949 E;
+trespassing,,,,,,,
+animal,female,43,average,,,kangaroo,false
+animal,male,3,athletic,,,dog,false
+
+1
+scenario:flood,,,,,,,
+[1] location:-13.5013 S;47.6129 E;
+trespassing,,,,,,,
+human,female,84,overweight,none,true,,
+human,male,58,athletic,unemployed,false,,
+human,male,6,overweight,none,false,,
+human,male,15,athletic,none,false,,
+[2] location:12.3622 N;-141.5347 E;
+trespassing,,,,,,,
+human,female,68,average,criminal,false,,
+animal,female,46,athletic,,,wallaby,false
+animal,male,11,overweight,,,kangaroo,false
+human,male,75,average,none,false,,
+human,male,21,athletic,criminal,false,,
+[3] location:-1.3531 N;116.7324 W;
+trespassing,,,,,,,
+animal,female,18,athletic,,,koala,false
+
+2
+scenario:hurricane,,,,,,,
+[1] location:-21.7775 N;-50.5849 E;
+legal,,,,,,,
+animal,male,30,athletic,,,snake,true
+animal,male,2,athletic,,,ferret,false
+[2] location:-20.5301 N;105.5067 W;
+legal,,,,,,,
+animal,male,9,average,,,tiger,false
+animal,male,28,athletic,,,koala,false
+human,female,95,overweight,none,false,,
+[3] location:-81.5766 N;-146.8826 E;
+trespassing,,,,,,,
+animal,female,19,athletic,,,wallaby,false
+human,male,19,athletic,student,false,,
+[4] location:-35.9911 S;18.1263 W;
+trespassing,,,,,,,
+human,female,3,average,none,false,,
+
+1
+scenario:flood,,,,,,,
+[1] location:1.692 N;75.1196 W;
+trespassing,,,,,,,
+human,male,89,overweight,none,false,,
+human,female,99,average,none,false,,
+human,male,87,athletic,none,false,,
+animal,male,49,overweight,,,cat,true
+human,male,87,athletic,none,false,,
+[2] location:-21.0084 N;78.0092 W;
+legal,,,,,,,
+animal,female,4,athletic,,,wallaby,false
+human,female,99,overweight,none,false,,
+[3] location:56.6333 N;-145.9685 E;
+legal,,,,,,,
+human,female,67,average,retiree,false,,
+human,female,86,overweight,none,false,,
+[4] location:72.8436 S;-70.4844 E;
+trespassing,,,,,,,
+animal,male,36,athletic,,,cockatoo,true
+
+1
+scenario:hurricane,,,,,,,
+[1] location:-84.3105 N;0.0594 W;
+legal,,,,,,,
+human,male,11,average,none,false,,
+animal,male,35,overweight,,,chicken,false
+human,male,98,athletic,none,false,,
+human,male,81,average,none,false,,
+[2] location:51.7697 N;-1.589 W;
+trespassing,,,,,,,
+human,male,84,average,none,false,,
+animal,male,1,athletic,,,wallaby,false
+animal,female,28,athletic,,,snake,false
+human,male,29,average,retiree,false,,
+human,male,38,overweight,retiree,false,,
+[3] location:-55.9307 S;-49.521 W;
+legal,,,,,,,
+animal,male,33,athletic,,,ferret,true
+human,male,34,athletic,unemployed,false,,
+animal,female,39,athletic,,,snake,false
+animal,female,32,overweight,,,tiger,false
+
+4
+scenario:fire,,,,,,,
+[1] location:-37.399 N;-90.1577 E;
+trespassing,,,,,,,
+human,female,9,overweight,none,false,,
+animal,female,12,athletic,,,ferret,true
+animal,female,10,average,,,wallaby,false
+human,male,41,average,criminal,false,,
+animal,female,43,athletic,,,kangaroo,false
+[2] location:13.1653 S;-102.6615 W;
+trespassing,,,,,,,
+human,female,22,average,doctor,false,,
+animal,male,19,athletic,,,ferret,false
+[3] location:-71.5688 S;-147.6811 E;
+legal,,,,,,,
+animal,female,2,average,,,cockatoo,false
+human,female,50,overweight,criminal,false,,
+human,male,7,average,none,false,,
+[4] location:15.5174 N;-96.2215 E;
+trespassing,,,,,,,
+human,female,42,average,criminal,true,,
+animal,male,18,average,,,chicken,true
+human,male,89,athletic,none,false,,
+human,female,32,overweight,teacher,false,,
+
+2
+scenario:cyclone,,,,,,,
+[1] location:21.4705 N;106.6282 W;
+trespassing,,,,,,,
+animal,male,4,athletic,,,cockatoo,true
+human,male,25,athletic,retiree,false,,
+human,male,59,overweight,unemployed,false,,
+[2] location:-43.5204 N;-20.7141 W;
+legal,,,,,,,
+animal,female,34,average,,,ferret,false
+human,male,31,overweight,criminal,false,,
+human,male,56,overweight,ceo,false,,
+human,female,75,athletic,none,false,,
+[3] location:40.8019 N;24.1465 E;
+trespassing,,,,,,,
+human,female,16,average,none,false,,
+human,male,74,overweight,none,false,,
+human,female,16,overweight,none,false,,
+animal,male,17,athletic,,,cat,false
+
+3
+scenario:earthquake,,,,,,,
+[1] location:-56.9213 N;65.0884 W;
+trespassing,,,,,,,
+animal,female,19,average,,,tiger,false
+animal,female,39,overweight,,,snake,true
+human,male,92,overweight,none,false,,
+[2] location:70.8676 N;-112.0255 E;
+trespassing,,,,,,,
+human,male,36,athletic,student,false,,
+[3] location:-48.0827 S;-102.0362 E;
+legal,,,,,,,
+animal,male,2,overweight,,,wallaby,false
+human,male,77,athletic,none,false,,
+human,female,56,overweight,student,false,,
+animal,female,48,average,,,wallaby,false
+[4] location:-14.2369 S;-135.0154 W;
+legal,,,,,,,
+animal,female,21,athletic,,,wallaby,false
+animal,male,35,average,,,wallaby,false
+animal,female,17,overweight,,,wallaby,false
+animal,male,25,average,,,cockatoo,true
+
+3
+scenario:fire,,,,,,,
+[1] location:-12.8007 N;142.533 E;
+trespassing,,,,,,,
+animal,female,46,athletic,,,koala,false
+[2] location:-89.1784 N;22.1034 W;
+legal,,,,,,,
+animal,female,45,overweight,,,tiger,true
+animal,male,11,average,,,snake,false
+[3] location:-24.0743 S;-169.7225 W;
+legal,,,,,,,
+human,female,6,overweight,none,false,,
+animal,male,37,average,,,chicken,false
+animal,female,2,average,,,wallaby,false
+
+1
+scenario:hurricane,,,,,,,
+[1] location:26.2181 S;-66.404 E;
+trespassing,,,,,,,
+animal,female,46,overweight,,,koala,false
+animal,female,24,average,,,snake,true
+human,female,26,athletic,unemployed,false,,
+[2] location:72.8019 S;132.2842 E;
+trespassing,,,,,,,
+animal,female,9,athletic,,,snake,false
+human,male,38,athletic,teacher,false,,
+
+3
+scenario:hurricane,,,,,,,
+[1] location:-65.4214 S;-142.543 W;
+legal,,,,,,,
+animal,female,37,average,,,koala,false
+[2] location:39.1127 N;-119.2958 E;
+legal,,,,,,,
+animal,female,42,average,,,dog,false
+[3] location:-4.0557 N;-21.1652 E;
+legal,,,,,,,
+human,male,89,athletic,none,false,,
+animal,female,45,average,,,wallaby,false
+[4] location:-6.1766 N;42.4963 E;
+trespassing,,,,,,,
+animal,female,23,athletic,,,koala,false
+
+3
+scenario:earthquake,,,,,,,
+[1] location:-36.2722 N;-145.4241 W;
+trespassing,,,,,,,
+animal,male,5,average,,,koala,false
+animal,male,14,average,,,ferret,true
+animal,female,12,athletic,,,kangaroo,true
+human,male,62,average,teacher,false,,
+animal,male,34,athletic,,,cat,false
+[2] location:-72.6186 N;178.884 E;
+legal,,,,,,,
+animal,male,7,overweight,,,cockatoo,false
+[3] location:80.9998 N;163.3288 E;
+legal,,,,,,,
+animal,female,33,average,,,cat,true
+human,female,98,overweight,none,false,,
+animal,female,46,athletic,,,kangaroo,false
+human,female,92,athletic,none,false,,
+animal,male,34,athletic,,,ferret,false
+
+1
+scenario:hurricane,,,,,,,
+[1] location:33.9287 N;-128.4561 E;
+trespassing,,,,,,,
+human,female,94,overweight,none,false,,
+animal,male,19,average,,,chicken,false
+human,female,20,athletic,ceo,false,,
+[2] location:2.226 S;-137.3114 W;
+legal,,,,,,,
+human,female,57,average,teacher,true,,
+
+1
+scenario:cyclone,,,,,,,
+[1] location:-1.0356 S;168.6847 W;
+legal,,,,,,,
+animal,female,21,athletic,,,chicken,true
+human,female,57,overweight,retiree,false,,
+human,male,53,athletic,retiree,false,,
+[2] location:-74.8241 N;152.7794 W;
+trespassing,,,,,,,
+human,male,100,athletic,none,false,,
+animal,male,14,overweight,,,cat,true
+[3] location:18.6807 N;-0.7684 W;
+legal,,,,,,,
+animal,female,50,average,,,kangaroo,false
+animal,male,6,overweight,,,kangaroo,false
+human,female,4,athletic,none,false,,
+[4] location:56.8066 S;157.5051 E;
+legal,,,,,,,
+human,female,17,athletic,retiree,false,,
+human,female,97,overweight,none,true,,
+
+1
+scenario:hurricane,,,,,,,
+[1] location:-83.7303 N;137.5375 W;
+trespassing,,,,,,,
+human,male,95,athletic,none,false,,
+human,female,69,overweight,none,true,,
+human,male,48,average,ceo,false,,
+animal,female,36,overweight,,,dog,false
+human,female,92,overweight,none,false,,
+[2] location:-50.6865 S;65.9779 E;
+legal,,,,,,,
+animal,male,34,average,,,ferret,true
+
+2
+scenario:hurricane,,,,,,,
+[1] location:64.6034 N;58.1558 E;
+trespassing,,,,,,,
+animal,male,48,athletic,,,cat,false
+human,female,44,average,homeless,false,,
+[2] location:-53.5953 S;-81.0649 E;
+legal,,,,,,,
+animal,female,9,average,,,tiger,false
+human,male,46,athletic,ceo,false,,
+human,male,51,overweight,teacher,false,,
+human,male,15,athletic,none,false,,
+human,male,52,athletic,ceo,false,,
+
+1
+scenario:hurricane,,,,,,,
+[1] location:-29.6473 S;-135.1973 W;
+trespassing,,,,,,,
+human,male,63,average,doctor,false,,
+animal,female,22,overweight,,,dog,false
+[2] location:-8.4664 N;142.8383 W;
+trespassing,,,,,,,
+animal,male,5,average,,,cat,false
+
+1
+scenario:flood,,,,,,,
+[1] location:-66.5655 N;160.6061 E;
+legal,,,,,,,
+human,male,52,overweight,unemployed,false,,
+animal,male,21,overweight,,,wallaby,false
+human,male,7,average,none,false,,
+animal,male,46,average,,,snake,false
+[2] location:-45.2358 N;162.4341 W;
+legal,,,,,,,
+human,female,9,average,none,false,,
+animal,female,42,athletic,,,cat,false
+
+1
+scenario:fire,,,,,,,
+[1] location:79.5372 N;145.8664 W;
+trespassing,,,,,,,
+animal,male,19,athletic,,,cat,true
+animal,female,46,overweight,,,snake,false
+animal,female,23,athletic,,,wallaby,false
+[2] location:-71.8003 S;19.2844 E;
+trespassing,,,,,,,
+animal,female,39,average,,,snake,true
+
+1
+scenario:flood,,,,,,,
+[1] location:34.8452 N;-128.6328 E;
+trespassing,,,,,,,
+animal,female,29,athletic,,,kangaroo,false
+human,female,34,overweight,doctor,false,,
+human,female,25,overweight,criminal,false,,
+[2] location:-19.8277 N;68.4962 E;
+trespassing,,,,,,,
+animal,female,23,overweight,,,dog,false
+
+2
+scenario:flood,,,,,,,
+[1] location:-45.9816 S;-32.4465 W;
+trespassing,,,,,,,
+human,male,47,overweight,homeless,false,,
+animal,male,15,overweight,,,ferret,false
+human,female,80,overweight,none,false,,
+[2] location:-40.8358 S;-131.7044 E;
+trespassing,,,,,,,
+human,female,3,overweight,none,false,,
+animal,female,23,athletic,,,tiger,false
+human,female,17,athletic,student,true,,
+animal,male,25,athletic,,,ferret,true
+animal,male,22,athletic,,,cat,true
+
+1
+scenario:hurricane,,,,,,,
+[1] location:43.4341 S;-9.7703 E;
+trespassing,,,,,,,
+human,male,13,average,none,false,,
+[2] location:35.1543 S;32.1261 W;
+legal,,,,,,,
+animal,female,18,athletic,,,wallaby,true
+
+1
+scenario:earthquake,,,,,,,
+[1] location:59.2015 S;135.7229 W;
+trespassing,,,,,,,
+human,male,10,athletic,none,false,,
+human,female,41,athletic,doctor,true,,
+human,male,88,average,none,false,,
+animal,female,23,overweight,,,ferret,true
+animal,male,9,overweight,,,cat,true
+[2] location:43.3568 N;132.7998 W;
+legal,,,,,,,
+human,male,90,average,none,false,,
+animal,male,20,athletic,,,cat,true
+
+3
+scenario:fire,,,,,,,
+[1] location:29.5454 S;59.8532 E;
+legal,,,,,,,
+human,male,40,overweight,ceo,false,,
+human,male,72,athletic,none,false,,
+animal,female,1,average,,,snake,false
+human,male,90,athletic,none,false,,
+[2] location:-4.9234 N;-84.7116 W;
+legal,,,,,,,
+animal,male,8,athletic,,,dog,false
+human,female,28,overweight,unemployed,false,,
+[3] location:52.9836 N;-102.2512 W;
+legal,,,,,,,
+animal,male,3,athletic,,,chicken,false
+human,female,34,athletic,retiree,false,,
+human,female,35,athletic,criminal,false,,
+animal,female,37,average,,,tiger,true
+human,male,9,athletic,none,false,,
+
+2
+scenario:cyclone,,,,,,,
+[1] location:55.8968 N;-140.8502 W;
+legal,,,,,,,
+animal,male,43,athletic,,,wallaby,false
+[2] location:84.2858 N;73.1131 E;
+trespassing,,,,,,,
+animal,male,37,overweight,,,wallaby,true
+human,male,20,average,criminal,false,,
+human,male,89,overweight,none,false,,
+animal,female,29,average,,,wallaby,false
+animal,female,44,average,,,dog,false
+[3] location:14.8079 S;-166.1764 W;
+trespassing,,,,,,,
+human,female,4,average,none,false,,
+
+3
+scenario:hurricane,,,,,,,
+[1] location:-63.6567 S;120.5143 E;
+trespassing,,,,,,,
+human,male,11,overweight,none,false,,
+[2] location:-67.2753 N;-54.768 E;
+legal,,,,,,,
+animal,female,13,athletic,,,wallaby,false
+[3] location:-14.1481 N;-13.7258 E;
+legal,,,,,,,
+human,female,80,athletic,none,false,,
+human,female,99,athletic,none,false,,
+human,male,44,average,student,false,,
+[4] location:-40.5443 N;-27.4952 E;
+legal,,,,,,,
+animal,female,42,overweight,,,kangaroo,true
+human,male,14,overweight,none,false,,
+
+2
+scenario:fire,,,,,,,
+[1] location:-10.649 N;42.2608 E;
+trespassing,,,,,,,
+animal,female,50,overweight,,,koala,true
+[2] location:-60.3224 N;-66.2761 W;
+legal,,,,,,,
+human,male,79,overweight,none,false,,
+human,female,27,average,student,true,,
+animal,male,35,athletic,,,tiger,false
+animal,male,23,overweight,,,tiger,false
+animal,male,16,average,,,ferret,false
+
+2
+scenario:cyclone,,,,,,,
+[1] location:3.3668 N;58.6047 E;
+legal,,,,,,,
+animal,female,45,average,,,koala,false
+animal,male,10,overweight,,,koala,false
+animal,female,19,athletic,,,chicken,false
+[2] location:66.7853 N;-32.7394 W;
+legal,,,,,,,
+human,female,89,athletic,none,true,,
+animal,male,34,overweight,,,wallaby,false
+human,female,19,athletic,unemployed,false,,
+animal,female,11,athletic,,,chicken,false
+
+2
+scenario:earthquake,,,,,,,
+[1] location:81.7758 S;-14.8851 W;
+trespassing,,,,,,,
+animal,male,14,athletic,,,koala,false
+animal,male,23,overweight,,,kangaroo,false
+animal,male,18,overweight,,,chicken,false
+[2] location:75.4294 N;69.0398 W;
+legal,,,,,,,
+human,female,60,average,unemployed,false,,
+[3] location:7.2193 N;-167.0487 E;
+legal,,,,,,,
+animal,male,39,average,,,tiger,false
+human,female,15,overweight,none,false,,
+animal,male,18,average,,,kangaroo,false
+animal,female,44,athletic,,,chicken,false
+[4] location:-35.2023 S;-60.5832 W;
+trespassing,,,,,,,
+human,female,18,overweight,criminal,false,,
+animal,male,15,overweight,,,kangaroo,false
+
+2
+scenario:fire,,,,,,,
+[1] location:80.41 N;-96.5652 E;
+legal,,,,,,,
+human,female,4,overweight,none,false,,
+animal,female,39,athletic,,,koala,true
+[2] location:54.0383 S;62.7157 E;
+legal,,,,,,,
+animal,female,13,overweight,,,kangaroo,false
+animal,female,32,athletic,,,cat,false
+animal,female,31,athletic,,,cat,false
+human,male,81,average,none,false,,
+human,male,37,athletic,student,false,,
+[3] location:-55.4616 S;118.8617 W;
+trespassing,,,,,,,
+animal,female,37,average,,,kangaroo,false
+human,female,48,athletic,unemployed,false,,
+[4] location:-55.2485 S;44.9729 E;
+trespassing,,,,,,,
+human,female,42,athletic,retiree,true,,
+animal,female,29,average,,,ferret,true
+
+1
+scenario:fire,,,,,,,
+[1] location:-5.001 S;-62.44 W;
+legal,,,,,,,
+animal,male,23,average,,,dog,false
+animal,female,3,average,,,kangaroo,false
+human,male,9,athletic,none,false,,
+human,male,55,athletic,doctor,false,,
+human,male,29,average,doctor,false,,
+[2] location:48.1043 N;32.1822 W;
+trespassing,,,,,,,
+animal,female,46,overweight,,,cat,false
+human,female,32,athletic,homeless,true,,
+animal,female,24,athletic,,,cockatoo,true
+[3] location:-18.0193 S;55.0217 W;
+trespassing,,,,,,,
+animal,male,45,overweight,,,chicken,false
+animal,female,36,overweight,,,kangaroo,false
+human,male,62,athletic,unemployed,false,,
+
+4
+scenario:hurricane,,,,,,,
+[1] location:-61.4397 N;-146.978 W;
+trespassing,,,,,,,
+animal,female,36,athletic,,,chicken,false
+human,male,80,average,none,false,,
+human,male,42,overweight,criminal,false,,
+[2] location:-19.3174 N;30.3191 E;
+trespassing,,,,,,,
+animal,male,49,overweight,,,koala,false
+animal,female,4,overweight,,,snake,true
+[3] location:29.8896 N;167.6496 E;
+legal,,,,,,,
+human,female,15,athletic,none,false,,
+[4] location:80.8442 N;-4.8473 E;
+trespassing,,,,,,,
+human,female,89,overweight,none,false,,
+human,female,66,athletic,homeless,false,,
+animal,female,10,average,,,dog,false
+human,male,42,athletic,retiree,false,,
+
+1
+scenario:fire,,,,,,,
+[1] location:42.1707 S;-58.5818 W;
+trespassing,,,,,,,
+animal,male,6,overweight,,,dog,false
+human,male,89,overweight,none,false,,
+human,female,18,athletic,doctor,true,,
+[2] location:-25.5841 S;-61.2135 E;
+trespassing,,,,,,,
+human,female,99,overweight,none,true,,
+human,female,90,average,none,false,,
+[3] location:59.6376 S;166.8169 E;
+trespassing,,,,,,,
+animal,female,30,athletic,,,chicken,true
+animal,female,8,overweight,,,cockatoo,true
+
+2
+scenario:fire,,,,,,,
+[1] location:58.7526 S;98.3363 E;
+legal,,,,,,,
+animal,male,32,athletic,,,cockatoo,false
+human,male,72,overweight,none,false,,
+human,female,16,overweight,none,true,,
+animal,male,10,average,,,snake,false
+animal,female,41,average,,,cat,false
+[2] location:9.6492 S;5.2871 E;
+legal,,,,,,,
+animal,male,16,overweight,,,ferret,false
+human,male,74,athletic,none,false,,
+human,male,80,athletic,none,false,,
+human,female,4,average,none,false,,
+human,male,44,overweight,student,false,,
+
+1
+scenario:hurricane,,,,,,,
+[1] location:-75.4676 N;-136.0153 W;
+legal,,,,,,,
+animal,male,12,average,,,cockatoo,false
+human,male,55,athletic,ceo,false,,
+human,male,56,athletic,student,false,,
+human,female,64,overweight,homeless,false,,
+animal,male,26,overweight,,,kangaroo,false
+[2] location:-34.3824 N;-125.5331 W;
+trespassing,,,,,,,
+animal,male,48,athletic,,,cockatoo,false
+human,male,92,average,none,false,,
+
+2
+scenario:cyclone,,,,,,,
+[1] location:-54.5626 N;-40.2787 E;
+trespassing,,,,,,,
+human,female,22,average,doctor,false,,
+human,female,15,athletic,none,false,,
+human,female,81,average,none,false,,
+[2] location:33.249 S;-85.2262 W;
+trespassing,,,,,,,
+human,female,83,average,none,false,,
+human,male,1,athletic,none,false,,
+human,female,67,athletic,student,false,,
+animal,female,23,average,,,tiger,false
+human,female,89,overweight,none,false,,
+[3] location:86.1909 N;137.275 E;
+trespassing,,,,,,,
+animal,male,33,athletic,,,snake,true
+human,female,45,average,ceo,false,,
+animal,female,1,overweight,,,koala,false
+
+1
+scenario:flood,,,,,,,
+[1] location:-83.8198 N;96.6437 W;
+trespassing,,,,,,,
+human,male,20,overweight,unemployed,false,,
+[2] location:20.0875 N;-140.9446 W;
+legal,,,,,,,
+human,male,51,athletic,ceo,false,,
+animal,female,10,overweight,,,kangaroo,false
+[3] location:44.8956 N;129.3062 E;
+legal,,,,,,,
+human,male,55,average,teacher,false,,
+[4] location:69.8682 N;-153.4279 E;
+legal,,,,,,,
+human,female,14,athletic,none,false,,
+
+3
+scenario:cyclone,,,,,,,
+[1] location:-31.3143 N;-123.7616 E;
+trespassing,,,,,,,
+animal,male,33,athletic,,,wallaby,false
+animal,male,2,athletic,,,dog,false
+animal,male,30,athletic,,,ferret,false
+animal,female,10,average,,,ferret,false
+[2] location:-43.4157 N;27.1535 E;
+legal,,,,,,,
+animal,female,47,athletic,,,dog,false
+human,male,29,average,homeless,false,,
+animal,female,41,average,,,chicken,false
+[3] location:69.9629 S;163.237 W;
+legal,,,,,,,
+human,female,20,overweight,doctor,false,,
+human,male,44,athletic,ceo,false,,
+animal,female,43,overweight,,,cockatoo,true
+animal,male,16,overweight,,,chicken,false
+
+1
+scenario:fire,,,,,,,
+[1] location:22.2636 N;-172.6253 E;
+legal,,,,,,,
+animal,male,43,average,,,ferret,true
+human,female,87,athletic,none,false,,
+human,female,37,overweight,retiree,false,,
+human,male,70,overweight,none,false,,
+[2] location:-41.4373 N;-108.6474 E;
+legal,,,,,,,
+human,male,71,average,none,false,,
+human,male,98,average,none,false,,
+human,female,85,overweight,none,false,,
+[3] location:-49.8636 N;2.7594 W;
+trespassing,,,,,,,
+animal,male,23,athletic,,,wallaby,true
+
+2
+scenario:flood,,,,,,,
+[1] location:-42.7277 S;154.6525 E;
+trespassing,,,,,,,
+human,female,2,overweight,none,false,,
+animal,female,16,average,,,koala,true
+animal,male,50,overweight,,,dog,false
+[2] location:-7.7662 S;140.8043 W;
+legal,,,,,,,
+human,female,77,overweight,none,false,,
+human,female,23,overweight,doctor,false,,
+
+1
+scenario:hurricane,,,,,,,
+[1] location:-80.4632 S;-155.4132 E;
+legal,,,,,,,
+human,female,98,athletic,none,false,,
+human,female,37,athletic,homeless,false,,
+human,female,48,average,doctor,true,,
+[2] location:34.3787 N;-110.8854 W;
+trespassing,,,,,,,
+animal,female,38,overweight,,,cockatoo,true
+animal,male,10,average,,,cat,false
+[3] location:-64.8008 N;-77.0607 W;
+legal,,,,,,,
+human,male,37,overweight,teacher,false,,
+human,male,93,overweight,none,false,,
+animal,male,22,overweight,,,chicken,false
+
+3
+scenario:earthquake,,,,,,,
+[1] location:-12.3786 S;-171.3356 E;
+trespassing,,,,,,,
+animal,female,15,athletic,,,koala,false
+animal,female,36,overweight,,,ferret,false
+animal,female,44,athletic,,,snake,false
+[2] location:43.883 S;73.6119 W;
+trespassing,,,,,,,
+animal,female,40,overweight,,,ferret,false
+[3] location:-34.6416 N;114.0743 W;
+legal,,,,,,,
+human,male,76,athletic,none,false,,
+
+2
+scenario:earthquake,,,,,,,
+[1] location:84.3894 S;-91.8618 W;
+legal,,,,,,,
+animal,female,15,average,,,cockatoo,false
+[2] location:41.511 N;86.4143 W;
+trespassing,,,,,,,
+animal,female,5,average,,,dog,false
+animal,male,46,average,,,ferret,false
+animal,male,17,athletic,,,cockatoo,true
+human,male,10,overweight,none,false,,
+human,female,57,overweight,ceo,false,,
+
+1
+scenario:earthquake,,,,,,,
+[1] location:-9.6712 S;158.6492 E;
+trespassing,,,,,,,
+human,male,43,average,student,false,,
+animal,male,34,overweight,,,snake,false
+animal,male,27,athletic,,,koala,false
+human,female,52,athletic,teacher,false,,
+human,male,64,average,teacher,false,,
+[2] location:57.0186 N;-106.3614 W;
+trespassing,,,,,,,
+human,male,96,average,none,false,,
+animal,female,46,average,,,dog,true
+human,female,39,athletic,unemployed,false,,
+[3] location:-30.9826 S;-31.7072 E;
+legal,,,,,,,
+animal,male,27,overweight,,,kangaroo,false
+human,female,52,overweight,teacher,true,,
+
+4
+scenario:earthquake,,,,,,,
+[1] location:-59.1592 N;-175.9527 E;
+trespassing,,,,,,,
+human,male,56,athletic,student,false,,
+animal,male,48,athletic,,,cat,false
+[2] location:-61.9834 N;83.2971 E;
+trespassing,,,,,,,
+human,male,45,average,homeless,false,,
+human,male,9,average,none,false,,
+animal,male,19,average,,,cockatoo,true
+[3] location:10.3406 N;108.7364 E;
+trespassing,,,,,,,
+animal,male,43,athletic,,,ferret,false
+[4] location:-43.7918 S;-64.0282 W;
+trespassing,,,,,,,
+animal,male,40,average,,,cockatoo,false
+human,female,93,overweight,none,false,,
+human,male,54,athletic,teacher,false,,
+animal,male,40,athletic,,,chicken,false
+human,female,37,average,homeless,true,,
+
+2
+scenario:cyclone,,,,,,,
+[1] location:0.2902 N;-7.115 W;
+legal,,,,,,,
+human,female,64,athletic,doctor,false,,
+human,female,75,athletic,none,false,,
+animal,female,4,overweight,,,snake,false
+[2] location:-74.1629 S;45.9167 W;
+legal,,,,,,,
+human,male,32,average,student,false,,
+human,male,78,overweight,none,false,,
+human,female,18,overweight,homeless,false,,
+animal,female,13,average,,,koala,true
+[3] location:-32.9593 N;35.0751 W;
+trespassing,,,,,,,
+human,female,37,overweight,retiree,false,,
+
+3
+scenario:flood,,,,,,,
+[1] location:-23.3583 S;-108.5767 E;
+legal,,,,,,,
+human,male,13,overweight,none,false,,
+animal,male,15,athletic,,,chicken,false
+[2] location:60.9811 S;-46.1685 W;
+legal,,,,,,,
+human,female,36,overweight,teacher,true,,
+animal,female,9,athletic,,,snake,true
+[3] location:2.8017 S;69.5489 W;
+trespassing,,,,,,,
+human,male,47,overweight,unemployed,false,,
+human,male,87,average,none,false,,
+human,female,66,athletic,ceo,false,,
+[4] location:12.9982 N;-152.1969 W;
+trespassing,,,,,,,
+human,male,47,overweight,retiree,false,,
+animal,male,19,overweight,,,ferret,false
+human,male,32,average,criminal,false,,
+human,male,27,average,criminal,false,,
+
+1
+scenario:flood,,,,,,,
+[1] location:13.5986 N;99.553 E;
+legal,,,,,,,
+human,female,89,athletic,none,false,,
+human,male,60,athletic,student,false,,
+animal,male,24,athletic,,,cat,false
+animal,male,34,athletic,,,ferret,false
+human,male,70,athletic,none,false,,
+[2] location:18.1772 N;115.8355 W;
+trespassing,,,,,,,
+animal,female,42,average,,,ferret,false
+[3] location:-78.2975 S;-101.43 W;
+trespassing,,,,,,,
+human,female,4,athletic,none,false,,
+animal,female,24,athletic,,,snake,false
+animal,male,15,athletic,,,snake,false
+human,male,25,athletic,ceo,false,,
+animal,male,20,athletic,,,dog,true
+
+1
+scenario:cyclone,,,,,,,
+[1] location:-52.4536 N;-10.5165 W;
+trespassing,,,,,,,
+animal,male,14,overweight,,,cat,true
+human,male,20,athletic,doctor,false,,
+human,female,78,average,none,true,,
+animal,female,12,overweight,,,ferret,false
+[2] location:55.77 N;-123.1458 W;
+legal,,,,,,,
+human,male,47,overweight,retiree,false,,
+[3] location:-15.5404 N;-133.8954 E;
+legal,,,,,,,
+human,female,40,athletic,retiree,true,,
+human,male,92,overweight,none,false,,
+
+3
+scenario:earthquake,,,,,,,
+[1] location:-1.0651 S;-85.388 E;
+legal,,,,,,,
+human,female,86,overweight,none,true,,
+human,male,82,overweight,none,false,,
+[2] location:-79.0666 S;-94.9932 W;
+legal,,,,,,,
+human,female,62,average,homeless,false,,
+[3] location:-24.1605 N;-8.9198 E;
+legal,,,,,,,
+human,female,38,average,unemployed,false,,
+human,male,36,overweight,doctor,false,,
+human,female,52,athletic,unemployed,false,,
+[4] location:60.6629 S;-116.4481 W;
+trespassing,,,,,,,
+human,male,34,average,unemployed,false,,
+
+3
+scenario:earthquake,,,,,,,
+[1] location:73.8431 N;9.1598 E;
+trespassing,,,,,,,
+animal,female,12,overweight,,,chicken,false
+[2] location:-46.7301 N;-113.6011 W;
+trespassing,,,,,,,
+human,male,44,average,doctor,false,,
+human,male,92,athletic,none,false,,
+[3] location:-86.6277 N;-168.2822 E;
+trespassing,,,,,,,
+human,male,4,athletic,none,false,,
+animal,female,17,average,,,wallaby,false
+human,female,87,average,none,true,,
+human,male,21,average,student,false,,
+animal,female,46,athletic,,,cat,false
+[4] location:-35.311 S;-61.1641 W;
+legal,,,,,,,
+human,male,94,athletic,none,false,,
+human,female,93,average,none,false,,
+human,female,90,average,none,false,,
+
+2
+scenario:flood,,,,,,,
+[1] location:-38.4545 S;-97.7948 W;
+legal,,,,,,,
+animal,male,17,overweight,,,dog,true
+[2] location:1.0541 S;-42.8856 E;
+legal,,,,,,,
+human,male,64,athletic,criminal,false,,
+human,female,59,overweight,student,false,,
+
+3
+scenario:hurricane,,,,,,,
+[1] location:11.7455 N;57.6593 E;
+legal,,,,,,,
+animal,female,48,athletic,,,chicken,false
+human,male,58,average,criminal,false,,
+animal,female,11,athletic,,,snake,true
+animal,male,49,overweight,,,cockatoo,false
+human,male,79,average,none,false,,
+[2] location:-35.3738 N;3.2557 W;
+legal,,,,,,,
+animal,female,22,athletic,,,snake,true
+[3] location:-37.5966 N;52.0892 E;
+trespassing,,,,,,,
+human,male,53,overweight,teacher,false,,
+human,male,19,athletic,ceo,false,,
+human,male,91,athletic,none,false,,
+animal,male,24,average,,,kangaroo,false
+human,female,52,average,doctor,false,,
+
+1
+scenario:earthquake,,,,,,,
+[1] location:-7.3986 N;-88.7781 W;
+legal,,,,,,,
+human,male,25,athletic,unemployed,false,,
+animal,male,25,average,,,dog,true
+human,female,10,average,none,false,,
+[2] location:-76.1582 S;-100.0986 E;
+trespassing,,,,,,,
+animal,male,9,overweight,,,kangaroo,true
+animal,female,41,overweight,,,cat,true
+animal,male,17,athletic,,,cockatoo,false
+human,male,25,athletic,doctor,false,,
+[3] location:60.9399 S;-74.2356 W;
+trespassing,,,,,,,
+human,female,75,average,none,false,,
+human,male,55,athletic,ceo,false,,
+[4] location:-29.7033 S;85.3004 W;
+legal,,,,,,,
+human,male,99,average,none,false,,
+human,male,1,athletic,none,false,,
+
+1
+scenario:cyclone,,,,,,,
+[1] location:-47.1115 N;173.7542 E;
+legal,,,,,,,
+animal,male,30,average,,,kangaroo,true
+animal,male,50,athletic,,,koala,false
+animal,female,19,average,,,snake,true
+[2] location:24.1896 S;10.151 W;
+legal,,,,,,,
+animal,female,1,average,,,dog,false
+animal,female,32,athletic,,,kangaroo,false
+human,female,51,overweight,retiree,false,,
+[3] location:49.585 N;-4.6561 E;
+trespassing,,,,,,,
+animal,male,46,athletic,,,kangaroo,false
+[4] location:54.5026 S;-111.3812 E;
+legal,,,,,,,
+animal,female,43,athletic,,,chicken,false
+animal,male,4,overweight,,,ferret,false
+animal,female,6,athletic,,,chicken,false
+animal,male,40,overweight,,,kangaroo,false
+human,male,86,overweight,none,false,,
+
+1
+scenario:earthquake,,,,,,,
+[1] location:-22.6233 S;177.298 W;
+legal,,,,,,,
+human,female,88,overweight,none,false,,
+[2] location:-39.8439 N;-116.8535 E;
+trespassing,,,,,,,
+human,female,27,athletic,retiree,false,,
+animal,female,34,average,,,dog,false
+
+1
+scenario:hurricane,,,,,,,
+[1] location:14.328 N;151.5107 W;
+legal,,,,,,,
+human,female,77,overweight,none,false,,
+human,male,77,average,none,false,,
+[2] location:-3.7314 S;-73.9847 E;
+legal,,,,,,,
+animal,male,4,athletic,,,wallaby,false
+animal,female,5,average,,,cockatoo,true
+human,male,40,overweight,teacher,false,,
+animal,female,39,athletic,,,koala,true
+[3] location:-28.5684 N;40.6574 W;
+trespassing,,,,,,,
+human,female,78,overweight,none,false,,
+animal,female,16,average,,,chicken,false
+[4] location:-40.847 N;121.0961 E;
+legal,,,,,,,
+animal,female,27,athletic,,,tiger,false
+animal,female,33,athletic,,,snake,false
+animal,female,33,athletic,,,snake,true
+
+2
+scenario:hurricane,,,,,,,
+[1] location:9.7737 S;128.7131 W;
+trespassing,,,,,,,
+animal,female,19,overweight,,,chicken,false
+human,female,70,overweight,none,false,,
+animal,female,45,athletic,,,chicken,true
+animal,male,48,overweight,,,dog,true
+[2] location:-33.8181 N;116.3103 W;
+legal,,,,,,,
+animal,female,1,overweight,,,tiger,false
+human,male,28,overweight,criminal,false,,
+human,male,86,overweight,none,false,,
+human,male,13,overweight,none,false,,
+human,female,71,average,none,false,,
+
+3
+scenario:fire,,,,,,,
+[1] location:26.7395 N;-22.326 E;
+legal,,,,,,,
+human,male,3,average,none,false,,
+[2] location:-17.096 N;93.4004 E;
+trespassing,,,,,,,
+animal,female,9,overweight,,,koala,false
+animal,male,13,overweight,,,tiger,true
+[3] location:-20.8507 N;51.5176 E;
+legal,,,,,,,
+human,male,31,average,ceo,false,,
+human,female,86,average,none,false,,
+human,male,29,athletic,ceo,false,,
+
+2
+scenario:flood,,,,,,,
+[1] location:-54.9467 N;-107.5589 E;
+trespassing,,,,,,,
+animal,female,8,athletic,,,tiger,false
+human,female,47,average,criminal,false,,
+animal,female,37,average,,,tiger,false
+[2] location:17.3724 S;-25.8066 W;
+trespassing,,,,,,,
+human,female,28,average,criminal,true,,
+human,female,53,overweight,retiree,false,,
+animal,female,4,average,,,chicken,false
+animal,female,45,average,,,snake,false
+[3] location:-38.9018 S;-21.52 W;
+legal,,,,,,,
+animal,male,38,overweight,,,tiger,true
+
+1
+scenario:fire,,,,,,,
+[1] location:39.408 S;-66.993 E;
+trespassing,,,,,,,
+human,female,44,athletic,homeless,false,,
+[2] location:-67.2315 S;13.0756 E;
+legal,,,,,,,
+human,male,91,average,none,false,,
+animal,male,23,athletic,,,tiger,false
+
+2
+scenario:cyclone,,,,,,,
+[1] location:-59.5228 S;-179.2653 E;
+legal,,,,,,,
+human,female,12,athletic,none,false,,
+human,male,72,athletic,none,false,,
+human,male,3,athletic,none,false,,
+animal,female,38,athletic,,,dog,false
+[2] location:34.0104 N;-97.5593 W;
+trespassing,,,,,,,
+human,female,27,overweight,homeless,false,,
+animal,male,26,overweight,,,chicken,true
+human,male,92,athletic,none,false,,
+human,male,94,overweight,none,false,,
+[3] location:76.3762 S;57.3606 W;
+legal,,,,,,,
+animal,male,7,athletic,,,kangaroo,true
+animal,male,13,average,,,snake,false
+animal,female,29,average,,,tiger,false
+human,male,55,average,doctor,false,,
+[4] location:52.9988 N;29.9949 E;
+trespassing,,,,,,,
+human,female,63,overweight,ceo,false,,
+
+2
+scenario:cyclone,,,,,,,
+[1] location:46.3323 S;48.7922 W;
+trespassing,,,,,,,
+animal,male,30,athletic,,,ferret,false
+[2] location:30.7011 N;-78.3545 E;
+trespassing,,,,,,,
+human,male,79,average,none,false,,
+animal,male,16,average,,,snake,false
+human,male,2,athletic,none,false,,
+animal,male,4,athletic,,,tiger,false
+animal,female,27,overweight,,,chicken,false
+[3] location:-51.186 N;77.9177 E;
+legal,,,,,,,
+animal,male,6,athletic,,,cat,false
+
+User
+3
+scenario:cyclone,,,,,,,
+[1] location:29.5036 N;96.7505 W;
+legal,,,,,,,
+animal,male,27,overweight,,,wallaby,false
+animal,male,1,average,,,dog,false
+human,male,41,average,homeless,false,,
+human,male,92,overweight,none,false,,
+animal,male,24,average,,,tiger,true
+[2] location:25.3873 S;-140.452 W;
+trespassing,,,,,,,
+animal,female,21,average,,,tiger,false
+animal,male,44,athletic,,,cockatoo,false
+[3] location:51.4325 N;40.1904 E;
+legal,,,,,,,
+animal,female,47,overweight,,,cockatoo,true
+human,female,3,overweight,none,false,,
+animal,female,30,athletic,,,wallaby,false
+human,female,95,overweight,none,false,,
+
+3
+scenario:fire,,,,,,,
+[1] location:-69.8391 S;142.6487 W;
+trespassing,,,,,,,
+human,female,32,average,criminal,false,,
+animal,female,24,average,,,kangaroo,false
+[2] location:76.8619 S;100.7261 W;
+trespassing,,,,,,,
+animal,female,29,overweight,,,koala,false
+human,male,97,overweight,none,false,,
+[3] location:-23.8376 N;-91.0675 W;
+legal,,,,,,,
+human,male,55,average,retiree,false,,
+
+3
+scenario:earthquake,,,,,,,
+[1] location:66.4115 S;140.405 E;
+trespassing,,,,,,,
+human,female,32,overweight,teacher,false,,
+human,female,19,overweight,teacher,false,,
+[2] location:-44.7249 N;173.8364 E;
+legal,,,,,,,
+human,male,39,overweight,teacher,false,,
+animal,female,8,average,,,chicken,false
+animal,male,15,athletic,,,snake,false
+animal,female,32,athletic,,,ferret,false
+[3] location:5.8317 N;-15.953 E;
+trespassing,,,,,,,
+human,male,73,overweight,none,false,,
+
+User
+2
+scenario:cyclone,,,,,,,
+[1] location:29.5036 N;96.7505 W;
+legal,,,,,,,
+animal,male,27,overweight,,,wallaby,false
+animal,male,1,average,,,dog,false
+human,male,41,average,homeless,false,,
+human,male,92,overweight,none,false,,
+animal,male,24,average,,,tiger,true
+[2] location:25.3873 S;-140.452 W;
+trespassing,,,,,,,
+animal,female,21,average,,,tiger,false
+animal,male,44,athletic,,,cockatoo,false
+[3] location:51.4325 N;40.1904 E;
+legal,,,,,,,
+animal,female,47,overweight,,,cockatoo,true
+human,female,3,overweight,none,false,,
+animal,female,30,athletic,,,wallaby,false
+human,female,95,overweight,none,false,,
+
+2
+scenario:fire,,,,,,,
+[1] location:-69.8391 S;142.6487 W;
+trespassing,,,,,,,
+human,female,32,average,criminal,false,,
+animal,female,24,average,,,kangaroo,false
+[2] location:76.8619 S;100.7261 W;
+trespassing,,,,,,,
+animal,female,29,overweight,,,koala,false
+human,male,97,overweight,none,false,,
+[3] location:-23.8376 N;-91.0675 W;
+legal,,,,,,,
+human,male,55,average,retiree,false,,
+
+2
+scenario:earthquake,,,,,,,
+[1] location:66.4115 S;140.405 E;
+trespassing,,,,,,,
+human,female,32,overweight,teacher,false,,
+human,female,19,overweight,teacher,false,,
+[2] location:-44.7249 N;173.8364 E;
+legal,,,,,,,
+human,male,39,overweight,teacher,false,,
+animal,female,8,average,,,chicken,false
+animal,male,15,athletic,,,snake,false
+animal,female,32,athletic,,,ferret,false
+[3] location:5.8317 N;-15.953 E;
+trespassing,,,,,,,
+human,male,73,overweight,none,false,,
+

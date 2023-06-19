@@ -36,7 +36,7 @@ public class Menu {
     }
 
     public void setAlgoUser(String logFilePath, String scenarioFilePath, Boolean isAlgorithm) {
-        this.algoUser = new User(logFilePath, scenarioFilePath);
+        this.algoUser = new User(logFilePath, scenarioFilePath, true);
     }
 
     public void displayMenuText() {
@@ -52,7 +52,7 @@ public class Menu {
         // Print the welcome message
         String welcomeFileName = "etc/welcome.ascii";
 
-        // RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
+        RescueBot.printMessage(welcomeFileName); // UNCOMMENT LATER (TODO)
 
         // If scenarios file given, count the scenarios loaded from file and print
         if (scenarioFileExists) {

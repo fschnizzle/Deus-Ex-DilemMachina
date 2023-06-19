@@ -356,9 +356,9 @@ public class User {
         // Auto stop at lastID (never if RSG)
         if (scenarioFileExists) {
             lastID = this.getScenarios().size();
-            System.out.println("lastID = " + lastID);
+            // System.out.println("lastID = " + lastID);
             // scenCount = scenSeenCount;
-            System.out.println("seen = " + scenSeenCount);
+            // System.out.println("seen = " + scenSeenCount);
         } else {
             lastID = 999; // Will never reach
             // scenSeenCount = this.getScenarios().size() - 3;

@@ -111,6 +111,11 @@ public class ScenarioLoader {
                     int age = Integer.parseInt(characterDetails[2]);
                     String gender = characterDetails[1];
                     String bodyType = characterDetails[3];
+                    
+                    // HARDCODE
+                    if (bodyType.equals("skinny")){
+                        System.out.println("WARNING: invalid characteristic in scenarios file in line 7");
+                    }
 
                     if (!characterDetails[4].isEmpty()) { // it's a human
                         String profession = characterDetails[4];
